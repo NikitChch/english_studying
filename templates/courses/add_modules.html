@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0 text-center">
+                        <i class="fas fa-layer-group me-2"></i>Добавление модулей
+                    </h3>
+                    <p class="mb-0 text-center small">Курс: {{ course.name }}</p>
+                </div>
+                <div class="card-body">
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+                        {{ formset.management_form }}
+                        
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Название модуля</th>
+                                        <th>Описание</th>
+                                        <th>Порядок</th>
+                                        <th>Длительность (часов)</th>
+                                        <th>Удалить</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="formset-container">
+                                    {% for form in formset %}
+                                    <tr class="formset-row">
+                                        <td>
+                                            {{ form.title }}
+                                            {% if form.title.errors %}
+                                            <div class="text-danger">{{ form.title.errors }}</div>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {{ form.description }}
+                                            {% if form.description.errors %}
+                                            <div class="text-danger">{{ form.description.errors }}</div>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {{ form.order }}
+                                            {% if form.order.errors %}
+                                            <div class="text-danger">{{ form.order.errors }}</div>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {{ form.duration_hours }}
+                                            {% if form.duration_hours.errors %}
+                                            <div class="text-danger">{{ form.duration_hours.errors }}</div>
+                                            {% endif %}
+                                        </td>
+                                        <td class="text-center">
+                                            {% if form.instance.pk %}
+                                                {{ form.DELETE }}
+                                            {% else %}
+                                                <button type="button" class="btn btn-sm btn-danger remove-row">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-save me-2"></i>Сохранить модули
+                            </button>
+                            <a href="{% url 'courses:teacher_courses' %}" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left me-1"></i>Вернуться к курсам
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('formset-container');
+    const totalForms = document.getElementById('id_form-TOTAL_FORMS');
+    
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('remove-row')) {
+            e.preventDefault();
+            const row = e.target.closest('.formset-row');
+            row.remove();
+            
+            const forms = container.querySelectorAll('.formset-row');
+            totalForms.value = forms.length;
+            
+            forms.forEach((form, index) => {
+                const prefix = `form-${index}`;
+                form.querySelectorAll('[id*="-id_"], [name*="-"]').forEach(input => {
+                    const oldId = input.id;
+                    const oldName = input.name;
+                    
+                    if (oldId.includes('__prefix__')) return;
+                    
+                    if (oldId) {
+                        input.id = oldId.replace(/form-\d+/, prefix);
+                    }
+                    if (oldName) {
+                        input.name = oldName.replace(/form-\d+/, prefix);
+                    }
+                });
+            });
+        }
+    });
+});
+</script>
+{% endblock %}
+{% endblock %}

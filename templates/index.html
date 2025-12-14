@@ -1,0 +1,955 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Главная - ENGLISH STUDING{% endblock %}
+{% block content %}
+<section class="main-content">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="content-card fade-in-up content-background">
+                    <h1 class="display-4 fw-bold text-gradient mb-4">{{ title }}</h1>
+                    <p class="lead mb-4">Инновационная платформа для изучения английского языка, сочетающая современные технологии и проверенные методики преподавания.</p>
+                    
+                    <div class="rating-card mb-4 p-3 bg-light rounded">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <h5 class="mb-1">
+                                    <i class="fas fa-star text-warning me-2"></i>
+                                    Общая оценка сайта
+                                </h5>
+                                <p class="text-muted small mb-0">На основе {{ total_feedbacks }} отзывов пользователей</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="display-5 fw-bold text-primary">{{ overall_rating }}</div>
+                                <div class="star-rating-display" data-rating="{{ overall_rating }}">
+                                </div>
+                                <small class="text-muted">из 5.0</small>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <a href="{% url 'feedback:feedback' %}" class="btn btn-sm btn-warning">
+                                <i class="fas fa-star me-1"></i>Оценить сайт
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="{% url 'grammar:grammar' %}" class="btn btn-primary btn-hero">
+                            <i class="fas fa-play me-2"></i>Начать обучение
+                        </a>
+                        <a href="{% url 'about:about' %}" class="btn btn-outline-primary btn-hero">
+                            <i class="fas fa-info-circle me-2"></i>Узнать больше
+                        </a>
+                    </div>
+                    <div class="mt-4 p-3 bg-light rounded">
+                        <p class="mb-0"><strong>Акция:</strong> {{ promo_product }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'images/main-hero.jpg' %}" 
+                     alt="Изучение английского языка"
+                     class="responsive-img img-large fade-in-up local-img"
+                     onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23667eea\' opacity=\'0.1\'/><rect width=\'400\' height=\'60\' y=\'120\' fill=\'%23667eea\' opacity=\'0.3\'/><text x=\'200\' y=\'140\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'16\' fill=\'%23667eea\'>ENGLISH STUDING</text><text x=\'200\' y=\'160\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'12\' fill=\'%23667eea\' opacity=\'0.7\'>Изучение английского языка</text></svg>'">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="site-ratings" class="content-section bg-white">
+    <div class="container">
+        <h2 class="section-title text-center">Оценки пользователей</h2>
+        <div class="row mb-4">
+            <div class="col-lg-8 mx-auto">
+                <div class="card border-primary">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-chart-bar me-2"></i>
+                            Статистика оценок
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row align-items-center mb-4">
+                            <div class="col-md-4 text-center">
+                                <div class="display-3 fw-bold text-primary">{{ overall_rating }}</div>
+                                <div class="star-rating-display large" data-rating="{{ overall_rating }}">
+                                </div>
+                                <div class="text-muted">Общая оценка</div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="progress mb-3" style="height: 30px;">
+                                    {% widthratio overall_rating 5 100 as rating_percent %}
+                                    <div class="progress-bar bg-success" 
+                                        role="progressbar" 
+                                        style="width: {{ rating_percent }}%"
+                                        aria-valuenow="{{ rating_percent }}" 
+                                        aria-valuemin="0" 
+                                        aria-valuemax="100">
+                                        <span class="progress-text fw-bold">{{ overall_rating }}/5.0</span>
+                                    </div>
+                                </div>
+                                <p class="mb-0">
+                                    <i class="fas fa-users me-1 text-primary"></i>
+                                    <strong>{{ total_feedbacks }}</strong> пользователей оценили наш сайт
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <div class="text-center p-3 border rounded h-100">
+                                    <div class="h4 text-primary mb-2">{{ avg_design }}</div>
+                                    <div class="star-rating-display small" data-rating="{{ avg_design }}">
+                                    </div>
+                                    <div class="fw-bold">Дизайн сайта</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="text-center p-3 border rounded h-100">
+                                    <div class="h4 text-primary mb-2">{{ avg_usability }}</div>
+                                    <div class="star-rating-display small" data-rating="{{ avg_usability }}">
+                                    </div>
+                                    <div class="fw-bold">Удобство</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="text-center p-3 border rounded h-100">
+                                    <div class="h4 text-primary mb-2">{{ avg_content }}</div>
+                                    <div class="star-rating-display small" data-rating="{{ avg_content }}">
+                                    </div>
+                                    <div class="fw-bold">Контент</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="text-center p-3 border rounded h-100">
+                                    <div class="h4 text-primary mb-2">{{ avg_speed }}</div>
+                                    <div class="star-rating-display small" data-rating="{{ avg_speed }}">
+                                    </div>
+                                    <div class="fw-bold">Скорость</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <p class="text-muted">
+                                <i class="fas fa-info-circle me-1"></i>
+                                Оценки основаны на реальных отзывах пользователей
+                            </p>
+                            <a href="{% url 'feedback:feedback' %}" class="btn btn-primary">
+                                <i class="fas fa-star me-2"></i>Оставить свой отзыв
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="content-section bg-light">
+    <div class="container">
+        <h2 class="section-title text-center">Почему выбирают нас?</h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4>Умный подход</h4>
+                    <p>Адаптивная система обучения, которая подстраивается под ваш уровень и цели</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Быстрый прогресс</h4>
+                    <p>95% студентов отмечают значительный прогресс уже через 2 месяца обучения</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Сообщество</h4>
+                    <p>Присоединяйтесь к тысячам студентов и практикуйте язык вместе</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stats-section">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card fade-in-up">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Довольных студентов</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card fade-in-up">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Успешных результатов</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card fade-in-up">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Учебных материалов</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card fade-in-up">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Доступ к платформе</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="user-feedbacks" class="content-section bg-white">
+    <div class="container">
+        <h2 class="section-title text-center">Последние отзывы пользователей</h2>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-light py-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">
+                                <i class="fas fa-comments me-2 text-primary"></i>
+                                Отзывы о платформе
+                            </h5>
+                            <span class="badge bg-primary">
+                                <i class="fas fa-users me-1"></i>
+                                {{ total_feedbacks }} отзывов
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="feedback-window" style="max-height: 400px; overflow-y: auto;" id="feedbackWindow">
+                            <div class="p-4" id="feedbacksContainer">
+                                <div class="text-center py-4">
+                                    <div class="spinner-border text-primary" role="status">
+                                        <span class="visually-hidden">Загрузка...</span>
+                                    </div>
+                                    <p class="text-muted mt-2">Загружаем отзывы...</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-light py-3 text-center">
+                            <button class="btn btn-primary" id="loadMoreBtn" style="display: none;">
+                                <i class="fas fa-chevron-down me-2"></i>Показать еще
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="start-learning" class="content-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="content-card content-background">
+                    <h2 class="mb-4">Готовы начать свой путь к свободному владению английским?</h2>
+                    <p class="lead mb-4">Присоединяйтесь к сообществу ENGLISH STUDING сегодня и получите доступ ко всем материалам</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="{% url 'grammar:grammar' %}" class="btn btn-primary btn-lg">
+                            <i class="fas fa-rocket me-2"></i>Начать сейчас
+                        </a>
+                        <a href="{% url 'contacts:contacts' %}" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-question-circle me-2"></i>Получить консультацию
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div style="display: none;">
+    {% csrf_token %}
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<style>
+.rating-card {
+    border-left: 4px solid #ffc107;
+    background: linear-gradient(to right, rgba(255, 193, 7, 0.1), transparent);
+}
+
+.progress-bar .progress-text {
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    height: 100%;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 1rem;
+}
+
+.display-3 {
+    font-size: 3.5rem;
+}
+
+.display-5 {
+    font-size: 2.5rem;
+}
+
+.feedback-window {
+    scrollbar-width: thin;
+    scrollbar-color: #667eea #f8f9fa;
+}
+
+.feedback-window::-webkit-scrollbar {
+    width: 8px;
+}
+
+.feedback-window::-webkit-scrollbar-track {
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.feedback-window::-webkit-scrollbar-thumb {
+    background-color: #667eea;
+    border-radius: 4px;
+}
+
+.feedback-window::-webkit-scrollbar-thumb:hover {
+    background-color: #5a67d8;
+}
+
+.feedback-card {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.feedback-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.feedback-card:last-child {
+    margin-bottom: 0;
+}
+
+.feedback-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.feedback-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.feedback-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feedback-avatar-letter {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.feedback-user-info {
+    flex: 1;
+}
+
+.feedback-user-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.feedback-date {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.star-rating-display {
+    display: inline-block;
+    position: relative;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.star-rating-display.large {
+    font-size: 1.5rem;
+}
+
+.star-rating-display.small {
+    font-size: 1rem;
+}
+
+.star-rating-display .stars-empty {
+    color: #e4e5e9;
+}
+
+.star-rating-display .stars-filled {
+    color: #ffc107;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.star-rating-display .star {
+    display: inline-block;
+    width: 1.2em;
+    text-align: center;
+}
+
+.star-rating-display.large .star {
+    width: 1.5em;
+}
+
+.star-rating-display.small .star {
+    width: 1em;
+}
+
+.feedback-subject {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #495057;
+    margin-bottom: 10px;
+}
+
+.feedback-message {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.feedback-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e9ecef;
+    font-size: 0.85rem;
+}
+
+.feedback-type {
+    background: #e7f1ff;
+    color: #0066cc;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.feedback-stats {
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feedback-stats i {
+    font-size: 0.9rem;
+}
+
+.like-btn {
+    border: 1px solid #dee2e6;
+    background: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: #6c757d;
+    cursor: pointer;
+    border: none;
+}
+
+.like-btn:hover {
+    border-color: #0d6efd;
+    color: #0d6efd;
+    background-color: rgba(13, 110, 253, 0.05);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.like-btn.liked {
+    border-color: #0d6efd;
+    color: white;
+    background-color: #0d6efd;
+}
+
+.like-btn.liked:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.like-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.like-btn i {
+    font-size: 0.9rem;
+}
+
+.like-count {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.rating-badge {
+    background: rgba(255, 193, 7, 0.1);
+    color: #856404;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.feedback-stats {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.feedback-card {
+    animation: fadeIn 0.5s ease forwards;
+}
+</style>
+
+<script>
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+function createStarRating(rating, size = 'normal') {
+    const container = document.createElement('div');
+    container.className = `star-rating-display ${size}`;
+    
+    const emptyStars = document.createElement('div');
+    emptyStars.className = 'stars-empty';
+    
+    const filledStars = document.createElement('div');
+    filledStars.className = 'stars-filled';
+    
+    const fillPercentage = (rating / 5) * 100;
+    filledStars.style.width = `${fillPercentage}%`;
+    
+    for (let i = 1; i <= 5; i++) {
+        const emptyStar = document.createElement('span');
+        emptyStar.className = 'star';
+        emptyStar.textContent = '☆';
+        emptyStars.appendChild(emptyStar);
+        
+        const filledStar = document.createElement('span');
+        filledStar.className = 'star';
+        filledStar.textContent = '★';
+        filledStars.appendChild(filledStar);
+    }
+    
+    container.appendChild(emptyStars);
+    container.appendChild(filledStars);
+    
+    return container;
+}
+
+function initializeAllStarRatings() {
+    const ratingElements = document.querySelectorAll('.star-rating-display[data-rating]');
+    ratingElements.forEach(element => {
+        const rating = parseFloat(element.getAttribute('data-rating')) || 0;
+        const size = element.classList.contains('large') ? 'large' : 
+                    element.classList.contains('small') ? 'small' : 'normal';
+        
+        element.innerHTML = '';
+        
+        const starRating = createStarRating(rating, size);
+        element.appendChild(starRating);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    initializeAllStarRatings();
+    
+    const progressBar = document.querySelector('.progress-bar.bg-success');
+    if (progressBar) {
+        const width = progressBar.style.width;
+        progressBar.style.width = '0%';
+        setTimeout(() => {
+            progressBar.style.transition = 'width 1.5s ease-in-out';
+            progressBar.style.width = width;
+        }, 500);
+    }
+
+    const feedbacksContainer = document.getElementById('feedbacksContainer');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    const feedbackWindow = document.getElementById('feedbackWindow');
+    
+    let currentPage = 1;
+    const perPage = 5;
+    let isLoading = false;
+    let hasMore = true;
+
+    async function loadFeedbacks(page) {
+        if (isLoading || !hasMore) return;
+        
+        isLoading = true;
+        
+        try {
+            const apiUrl = `/api/feedbacks/?page=${page}&per_page=${perPage}`;
+            console.log('Загрузка отзывов по URL:', apiUrl);
+            
+            const response = await fetch(apiUrl);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            console.log('Получены данные:', data);
+            
+            if (page === 1) {
+                feedbacksContainer.innerHTML = '';
+            }
+            
+            if (data.feedbacks && data.feedbacks.length > 0) {
+                data.feedbacks.forEach(feedback => {
+                    const feedbackCard = createFeedbackCard(feedback);
+                    feedbacksContainer.appendChild(feedbackCard);
+                });
+                
+                hasMore = data.has_more;
+                
+                if (hasMore) {
+                    loadMoreBtn.style.display = 'block';
+                } else {
+                    loadMoreBtn.style.display = 'none';
+                }
+            } else if (page === 1) {
+                feedbacksContainer.innerHTML = `
+                    <div class="text-center py-4">
+                        <i class="fas fa-comment-slash fa-3x text-muted mb-3"></i>
+                        <p class="text-muted">Пока нет отзывов</p>
+                        <a href="{% url 'feedback:feedback' %}" class="btn btn-primary btn-sm">
+                            <i class="fas fa-star me-1"></i>Оставить первый отзыв
+                        </a>
+                    </div>
+                `;
+            }
+        } catch (error) {
+            console.error('Ошибка загрузки отзывов:', error);
+            if (page === 1) {
+                feedbacksContainer.innerHTML = `
+                    <div class="alert alert-danger">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        Не удалось загрузить отзывы. Попробуйте обновить страницу.
+                    </div>
+                `;
+            }
+        } finally {
+            isLoading = false;
+        }
+    }
+
+    async function handleLike(feedbackId) {
+        const isAuthenticated = JSON.parse('{{ user.is_authenticated|yesno:"true,false"|safe }}');
+        
+        if (!isAuthenticated) {
+            alert('Чтобы ставить лайки, необходимо войти в систему');
+            window.location.href = '{% url "users:login" %}?next={{ request.path }}';
+            return;
+        }
+        
+        const likeBtn = document.querySelector(`.like-btn[data-feedback-id="${feedbackId}"]`);
+        const likeCount = document.querySelector(`.like-count[data-feedback-id="${feedbackId}"]`);
+        
+        if (!likeBtn || !likeCount) return;
+        
+        likeBtn.disabled = true;
+        
+        try {
+            const csrfToken = getCookie('csrftoken');
+            
+            const response = await fetch(`/api/feedbacks/${feedbackId}/like/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken
+                },
+                credentials: 'same-origin'
+            });
+            
+            if (!response.ok) {
+                throw new Error('Ошибка сервера');
+            }
+            
+            const data = await response.json();
+            console.log('Ответ от сервера:', data);
+            
+            if (data.success) {
+                if (data.action === 'liked') {
+                    likeBtn.classList.add('liked');
+                    likeBtn.innerHTML = '<i class="fas fa-thumbs-up"></i>';
+                } else {
+                    likeBtn.classList.remove('liked');
+                    likeBtn.innerHTML = '<i class="far fa-thumbs-up"></i>';
+                }
+                
+                likeCount.textContent = data.likes_count;
+                
+                likeBtn.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    likeBtn.style.transform = 'scale(1)';
+                }, 200);
+            }
+        } catch (error) {
+            console.error('Ошибка при отправке лайка:', error);
+            alert('Не удалось поставить лайк. Попробуйте еще раз.');
+        } finally {
+            likeBtn.disabled = false;
+        }
+    }
+
+    function getFirstLetter(name) {
+        if (!name || typeof name !== 'string' || name.trim() === '') {
+            return '?';
+        }
+        
+        const firstLetter = name.trim().charAt(0).toUpperCase();
+        
+        if (/^[A-ZА-ЯЁ]$/.test(firstLetter)) {
+            return firstLetter;
+        }
+        
+        return '?';
+    }
+
+    function createFeedbackCard(feedback) {
+        const div = document.createElement('div');
+        div.className = 'feedback-card';
+        
+        const userName = feedback.name || 'Анонимный пользователь';
+        
+        let avatarHtml = '';
+        if (feedback.has_avatar && feedback.avatar_url) {
+            avatarHtml = `<img src="${feedback.avatar_url}" alt="${userName}" class="feedback-avatar-img">`;
+        } else {
+            const firstLetter = getFirstLetter(userName);
+            avatarHtml = `<div class="feedback-avatar-letter">${firstLetter}</div>`;
+        }
+        
+        const formattedDate = feedback.created_at || 'Дата неизвестна';
+        
+        const formattedRating = parseFloat(feedback.average_rating || 0).toFixed(1);
+        
+        div.innerHTML = `
+            <div class="feedback-header">
+                <div class="feedback-avatar">
+                    ${avatarHtml}
+                </div>
+                <div class="feedback-user-info">
+                    <div class="feedback-user-name">${userName}</div>
+                    <div class="feedback-date">${formattedDate}</div>
+                </div>
+                <div class="feedback-rating" title="${formattedRating}/5">
+                    <!-- Звездочки будут добавлены через JavaScript -->
+                </div>
+            </div>
+            
+            <div class="feedback-subject">${feedback.subject || 'Без темы'}</div>
+            
+            <div class="feedback-message">
+                ${feedback.message ? feedback.message.substring(0, 200) + (feedback.message.length > 200 ? '...' : '') : 'Сообщение отсутствует'}
+            </div>
+            
+            <div class="feedback-footer">
+                <span class="feedback-type">${feedback.feedback_type_display || 'Общий'}</span>
+                <div class="feedback-stats">
+                    <button class="btn btn-sm like-btn ${feedback.user_has_liked ? 'liked' : ''}" 
+                            data-feedback-id="${feedback.id}"
+                            title="${feedback.user_has_liked ? 'Убрать лайк' : 'Поставить лайк'}"
+                            ${!feedback.user_has_liked ? '' : 'style="color: white; background-color: #0d6efd;"'}>
+                        <i class="${feedback.user_has_liked ? 'fas' : 'far'} fa-thumbs-up"></i>
+                        <span class="like-count" data-feedback-id="${feedback.id}">${feedback.likes_count}</span>
+                    </button>
+                    <span class="rating-badge">
+                        <i class="fas fa-star text-warning"></i> ${formattedRating}
+                    </span>
+                </div>
+            </div>
+        `;
+        
+        const ratingContainer = div.querySelector('.feedback-rating');
+        const ratingStars = createStarRating(feedback.average_rating || 0);
+        ratingContainer.appendChild(ratingStars);
+        
+        setTimeout(() => {
+            const likeBtn = div.querySelector(`.like-btn[data-feedback-id="${feedback.id}"]`);
+            if (likeBtn) {
+                likeBtn.addEventListener('click', () => handleLike(feedback.id));
+            }
+        }, 0);
+        
+        return div;
+    }
+
+    loadMoreBtn.addEventListener('click', function() {
+        currentPage++;
+        loadFeedbacks(currentPage);
+        
+        setTimeout(() => {
+            const lastFeedback = feedbacksContainer.lastElementChild;
+            if (lastFeedback) {
+                lastFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }, 300);
+    });
+
+    feedbackWindow.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        this.scrollTop += e.deltaY;
+    });
+
+    let isDragging = false;
+    let startY;
+    let scrollTop;
+
+    feedbackWindow.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        startY = e.pageY - this.offsetTop;
+        scrollTop = this.scrollTop;
+        this.style.cursor = 'grabbing';
+    });
+
+    feedbackWindow.addEventListener('mouseleave', function() {
+        isDragging = false;
+        this.style.cursor = 'grab';
+    });
+
+    feedbackWindow.addEventListener('mouseup', function() {
+        isDragging = false;
+        this.style.cursor = 'grab';
+    });
+
+    feedbackWindow.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        const y = e.pageY - this.offsetTop;
+        const walk = (y - startY) * 2;
+        this.scrollTop = scrollTop - walk;
+    });
+
+    feedbackWindow.addEventListener('touchstart', function(e) {
+        startY = e.touches[0].pageY;
+        scrollTop = this.scrollTop;
+    });
+
+    feedbackWindow.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        const y = e.touches[0].pageY;
+        const walk = (y - startY) * 1.5;
+        this.scrollTop = scrollTop - walk;
+        startY = y;
+        scrollTop = this.scrollTop;
+    });
+
+    loadFeedbacks(1);
+});
+</script>
+{% endblock %}

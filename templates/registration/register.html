@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block content %}
+<div class="container d-flex align-items-center justify-content-center min-vh-100">
+    <div class="col-md-8 col-lg-6">
+        <div class="content-card">
+            <h2 class="text-center mb-4">{{ page_title }}</h2>
+            
+            <form method="post" novalidate id="registerForm">
+                {% csrf_token %}
+                
+                {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {{ form.non_field_errors }}
+                </div>
+                {% endif %}
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="{{ form.username.id_for_label }}" class="form-label">
+                                Имя пользователя *
+                            </label>
+                            {{ form.username }}
+                            {% if form.username.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.username.errors.0 }}
+                            </div>
+                            {% endif %}
+                            <div class="form-text">
+                                Только буквы, цифры и символы @/./+/-/_
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="{{ form.email.id_for_label }}" class="form-label">
+                                Email *
+                            </label>
+                            {{ form.email }}
+                            {% if form.email.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.email.errors.0 }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="{{ form.password1.id_for_label }}" class="form-label">
+                                Пароль *
+                            </label>
+                            {{ form.password1 }}
+                            {% if form.password1.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.password1.errors.0 }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="{{ form.password2.id_for_label }}" class="form-label">
+                                Подтверждение пароля *
+                            </label>
+                            {{ form.password2 }}
+                            {% if form.password2.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.password2.errors.0 }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="{{ form.user_type.id_for_label }}" class="form-label">
+                        Тип пользователя *
+                    </label>
+                    {{ form.user_type }}
+                    {% if form.user_type.errors %}
+                    <div class="invalid-feedback d-block">
+                        {{ form.user_type.errors.0 }}
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div id="studentFields" style="display: none;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="{{ form.group.id_for_label }}" class="form-label">
+                                    Группа *
+                                </label>
+                                {{ form.group }}
+                                {% if form.group.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.group.errors.0 }}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="{{ form.level.id_for_label }}" class="form-label">
+                                    Уровень *
+                                </label>
+                                {{ form.level }}
+                                {% if form.level.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.level.errors.0 }}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="teacherFields" style="display: none;">
+                    <div class="mb-3">
+                        <label for="{{ form.specialization.id_for_label }}" class="form-label">
+                            Специализация *
+                        </label>
+                        {{ form.specialization }}
+                        {% if form.specialization.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.specialization.errors.0 }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.experience.id_for_label }}" class="form-label">
+                            Опыт (лет)
+                        </label>
+                        {{ form.experience }}
+                        {% if form.experience.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.experience.errors.0 }}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary w-100 py-2">
+                    <i class="fas fa-user-plus me-2"></i>Зарегистрироваться
+                </button>
+            </form>
+            
+            <div class="text-center mt-4">
+                <p class="mb-0">
+                    Уже есть аккаунт? 
+                    <a href="{% url 'users:login' %}" class="fw-bold text-decoration-none">
+                        Войти
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const formFields = document.querySelectorAll('#registerForm input, #registerForm select');
+    formFields.forEach(field => {
+        if (!field.classList.contains('form-control')) {
+            field.classList.add('form-control');
+        }
+    });
+    
+    const userTypeField = document.getElementById('{{ form.user_type.id_for_label }}');
+    const studentFields = document.getElementById('studentFields');
+    const teacherFields = document.getElementById('teacherFields');
+    
+    function toggleUserFields() {
+        const userType = userTypeField.value;
+        
+        if (userType === 'student') {
+            studentFields.style.display = 'block';
+            teacherFields.style.display = 'none';
+            
+        } else if (userType === 'teacher') {
+            studentFields.style.display = 'none';
+            teacherFields.style.display = 'block';
+            
+        } else {
+            studentFields.style.display = 'none';
+            teacherFields.style.display = 'none';
+        }
+    }
+    
+    if (userTypeField) {
+        userTypeField.addEventListener('change', toggleUserFields);
+        toggleUserFields();
+    }
+    
+    const password1Field = document.getElementById('{{ form.password1.id_for_label }}');
+    const password2Field = document.getElementById('{{ form.password2.id_for_label }}');
+    
+    function validatePassword() {
+        if (password1Field.value !== password2Field.value) {
+            password2Field.setCustomValidity('Пароли не совпадают');
+        } else {
+            password2Field.setCustomValidity('');
+        }
+    }
+    
+    if (password1Field && password2Field) {
+        password1Field.addEventListener('input', validatePassword);
+        password2Field.addEventListener('input', validatePassword);
+    }
+});
+</script>
+{% endblock %}

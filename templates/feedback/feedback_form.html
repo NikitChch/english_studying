@@ -1,0 +1,1008 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Оставить отзыв - ENGLISH STUDING{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="content-card">
+                <div class="text-center mb-5">
+                    <h2 class="mb-3"><i class="fas fa-star me-2"></i>Оставить отзыв о сайте</h2>
+                    <p class="lead text-muted">Поделитесь вашим мнением и помогите нам стать лучше!</p>
+                </div>
+
+                {% if messages %}
+                <div class="mb-4">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Закрыть"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if user.is_authenticated %}
+                <div class="card mb-4 border-info">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0"><i class="fas fa-user-check me-2"></i>Вы вошли как {{ user.username }}</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p><strong>Имя:</strong> {{ user.get_full_name|default:user.username }}</p>
+                            </div>
+                            <div class="col-md-4">
+                                <p><strong>Email:</strong> {{ user.email }}</p>
+                            </div>
+                            <div class="col-md-4">
+                                <p><strong>Телефон:</strong> {{ user.phone|default:"Не указан" }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form method="post" enctype="multipart/form-data" id="feedbackForm">
+                    {% csrf_token %}
+                    
+                    {{ form.site_design_rating }}
+                    {{ form.usability_rating }}
+                    {{ form.content_rating }}
+                    {{ form.speed_rating }}
+                    {{ form.average_rating }}
+                    {{ form.total_score }}
+                    {{ form.max_possible_score }}
+                    {{ form.comments_sentiment_score }}
+                    
+                    <div class="card mb-4">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0"><i class="fas fa-comment me-2"></i>Ваш отзыв</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        {{ form.feedback_type }}
+                                        <label for="{{ form.feedback_type.id_for_label }}">{{ form.feedback_type.label }}</label>
+                                        {% if form.feedback_type.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.feedback_type.errors }}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        {{ form.subject }}
+                                        <label for="{{ form.subject.id_for_label }}">{{ form.subject.label }}</label>
+                                        {% if form.subject.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.subject.errors }}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    {{ form.message }}
+                                    <label for="{{ form.message.id_for_label }}">{{ form.message.label }}</label>
+                                    {% if form.message.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ form.message.errors }}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                <div class="form-text text-end">
+                                    <small>Символов: <span id="charCount">0</span></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="mb-0"><i class="fas fa-star me-2"></i>Оцените характеристики сайта</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <h6>Дизайн сайта</h6>
+                                    <p class="text-muted small">Насколько привлекателен и современен дизайн?</p>
+                                    <div class="star-rating" data-field="site_design_rating">
+                                        <span class="star" data-value="1" title="1 звезда" aria-label="1 звезда">☆</span>
+                                        <span class="star" data-value="2" title="2 звезды" aria-label="2 звезды">☆</span>
+                                        <span class="star" data-value="3" title="3 звезды" aria-label="3 звезды">☆</span>
+                                        <span class="star" data-value="4" title="4 звезды" aria-label="4 звезды">☆</span>
+                                        <span class="star" data-value="5" title="5 звезд" aria-label="5 звезд">☆</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-4">
+                                    <h6>Удобство использования</h6>
+                                    <p class="text-muted small">Насколько легко ориентироваться на сайте?</p>
+                                    <div class="star-rating" data-field="usability_rating">
+                                        <span class="star" data-value="1" title="1 звезда" aria-label="1 звезда">☆</span>
+                                        <span class="star" data-value="2" title="2 звезды" aria-label="2 звезды">☆</span>
+                                        <span class="star" data-value="3" title="3 звезды" aria-label="3 звезды">☆</span>
+                                        <span class="star" data-value="4" title="4 звезды" aria-label="4 звезды">☆</span>
+                                        <span class="star" data-value="5" title="5 звезд" aria-label="5 звезд">☆</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-4">
+                                    <h6>Качество контента</h6>
+                                    <p class="text-muted small">Насколько полезен и интересен контент?</p>
+                                    <div class="star-rating" data-field="content_rating">
+                                        <span class="star" data-value="1" title="1 звезда" aria-label="1 звезда">☆</span>
+                                        <span class="star" data-value="2" title="2 звезды" aria-label="2 звезды">☆</span>
+                                        <span class="star" data-value="3" title="3 звезды" aria-label="3 звезды">☆</span>
+                                        <span class="star" data-value="4" title="4 звезды" aria-label="4 звезды">☆</span>
+                                        <span class="star" data-value="5" title="5 звезд" aria-label="5 звезд">☆</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-4">
+                                    <h6>Скорость работы</h6>
+                                    <p class="text-muted small">Насколько быстро загружаются страницы?</p>
+                                    <div class="star-rating" data-field="speed_rating">
+                                        <span class="star" data-value="1" title="1 звезда" aria-label="1 звезда">☆</span>
+                                        <span class="star" data-value="2" title="2 звезды" aria-label="2 звезды">☆</span>
+                                        <span class="star" data-value="3" title="3 звезды" aria-label="3 звезды">☆</span>
+                                        <span class="star" data-value="4" title="4 звезды" aria-label="4 звезды">☆</span>
+                                        <span class="star" data-value="5" title="5 звезд" aria-label="5 звезд">☆</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0"><i class="fas fa-check-circle me-2"></i>Выберите ответы на вопросы</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-floating">
+                                        {{ form.would_recommend }}
+                                        <label for="{{ form.would_recommend.id_for_label }}">{{ form.would_recommend.label }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-floating">
+                                        {{ form.overall_satisfaction }}
+                                        <label for="{{ form.overall_satisfaction.id_for_label }}">{{ form.overall_satisfaction.label }}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header bg-secondary text-white">
+                            <h5 class="mb-0"><i class="fas fa-edit me-2"></i>Ответьте на вопросы</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.most_liked.id_for_label }}" class="form-label">{{ form.most_liked.label }}</label>
+                                    {{ form.most_liked }}
+                                    <div class="form-text">
+                                        <small>Напишите, что вам особенно понравилось</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.improvements.id_for_label }}" class="form-label">{{ form.improvements.label }}</label>
+                                    {{ form.improvements }}
+                                    <div class="form-text">
+                                        <small>Расскажите, что можно улучшить</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.suggestions.id_for_label }}" class="form-label">{{ form.suggestions.label }}</label>
+                                    {{ form.suggestions }}
+                                    <div class="form-text">
+                                        <small>Ваши предложения по развитию сайта</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.additional_comments.id_for_label }}" class="form-label">{{ form.additional_comments.label }}</label>
+                                    {{ form.additional_comments }}
+                                    <div class="form-text">
+                                        <small>Любые дополнительные мысли</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header bg-danger text-white">
+                            <h5 class="mb-0"><i class="fas fa-chart-line me-2"></i>Ваша оценка сайта</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <div class="final-rating mb-3">
+                                        <div style="position: relative; display: inline-block; font-size: 2.5rem;">
+                                            <div style="color: #6c757d;">
+                                                <span aria-hidden="true">☆</span><span aria-hidden="true">☆</span><span aria-hidden="true">☆</span><span aria-hidden="true">☆</span><span aria-hidden="true">☆</span>
+                                            </div>
+                                            <div id="starsForeground" 
+                                                 style="color: #ffc107; position: absolute; top: 0; left: 0; overflow: hidden; white-space: nowrap; width: 0%;">
+                                                <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                                            </div>
+                                        </div>
+                                        <h3 class="mt-2" id="finalRatingValue">0.0 / 5.0</h3>
+                                        <p class="text-muted small mb-0">Ваша текущая оценка</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="score-display">
+                                        <div class="progress mb-2" style="height: 25px;">
+                                            <div class="progress-bar" id="scoreProgressBar" 
+                                                role="progressbar" style="width: 0%;" 
+                                                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                                                aria-label="Прогресс оценки">
+                                                <span class="progress-text" id="progressText">0%</span>
+                                            </div>
+                                        </div>
+                                        <div class="score-details">
+                                            <small>Набрано баллов: <span id="currentScore">0</span> из <span id="maxScore">165</span></small>
+                                            <div class="text-muted extra-small mt-1">
+                                                <i class="fas fa-info-circle"></i> Ваши комментарии влияют на оценку!
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 pt-3 border-top">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <div class="me-2">
+                                                <div class="rating-stars small" style="color: #ffc107;">
+                                                    {% for i in "12345" %}
+                                                        {% if forloop.counter <= site_overall_rating|default:4.5|add:"0" %}
+                                                            ★
+                                                        {% elif forloop.counter|add:"-0.5" <= site_overall_rating|default:4.5 %}
+                                                            ½
+                                                        {% else %}
+                                                            ☆
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                            <div class="text-start">
+                                                <div class="small"><strong>{{ site_overall_rating|default:"4.5" }}/5.0</strong></div>
+                                                <div class="text-muted" style="font-size: 0.75rem;">
+                                                    Общая оценка сайта ({{ site_total_feedbacks|default:"125" }} отзывов)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header bg-dark text-white">
+                            <h5 class="mb-0"><i class="fas fa-paperclip me-2"></i>Дополнительно</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.attach_file.id_for_label }}" class="form-label">{{ form.attach_file.label }}</label>
+                                    {{ form.attach_file }}
+                                    {% if form.attach_file.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ form.attach_file.errors }}
+                                    </div>
+                                    {% endif %}
+                                    <div class="form-text">
+                                        <small>Можно прикрепить: JPG, PNG, PDF, DOC, DOCX (макс. 5MB)</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-check form-switch">
+                                        {{ form.subscribe_newsletter }}
+                                        <label class="form-check-label" for="{{ form.subscribe_newsletter.id_for_label }}">
+                                            {{ form.subscribe_newsletter.label }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary btn-lg w-100" aria-label="Отправить отзыв">
+                                <i class="fas fa-paper-plane me-2"></i>Отправить отзыв
+                            </button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="reset" class="btn btn-outline-secondary btn-lg w-100" id="resetBtn" aria-label="Очистить форму">
+                                <i class="fas fa-undo me-2"></i>Очистить форму
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                {% else %}
+                <div class="card mb-4 border-warning">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i>Требуется авторизация</h5>
+                    </div>
+                    <div class="card-body text-center py-5">
+                        <div class="mb-4">
+                            <i class="fas fa-lock fa-4x text-warning mb-3"></i>
+                            <h4>Чтобы оставить отзыв, необходимо войти в систему</h4>
+                            <p class="text-muted mb-4">Авторизуйтесь, чтобы поделиться вашим мнением и помочь нам стать лучше</p>
+                        </div>
+                        
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <div class="disabled-form-overlay position-relative">
+                                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-light opacity-75 z-index-1"></div>
+                                    <div class="position-absolute top-50 start-50 translate-middle z-index-2 text-center">
+                                    </div>
+                                    
+                                    <div class="card mb-4" style="opacity: 0.5; pointer-events: none;">
+                                        <div class="card-header bg-info text-white">
+                                            <h5 class="mb-0"><i class="fas fa-comment me-2"></i>Ваш отзыв</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="disabledSubject" placeholder="Тема" disabled>
+                                                <label for="disabledSubject">Тема отзыва *</label>
+                                            </div>
+                                            <div class="form-floating">
+                                                <textarea class="form-control" id="disabledMessage" placeholder="Отзыв" style="height: 100px" disabled></textarea>
+                                                <label for="disabledMessage">Текст отзыва *</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card mb-4" style="opacity: 0.5; pointer-events: none;">
+                                        <div class="card-header bg-warning text-dark">
+                                            <h5 class="mb-0"><i class="fas fa-star me-2"></i>Оцените характеристики сайта</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-4">
+                                                    <h6>Дизайн сайта</h6>
+                                                    <div class="star-rating">
+                                                        <span class="star text-muted">☆</span>
+                                                        <span class="star text-muted">☆</span>
+                                                        <span class="star text-muted">☆</span>
+                                                        <span class="star text-muted">☆</span>
+                                                        <span class="star text-muted">☆</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-4">
+                                                    <h6>Удобство использования</h6>
+                                                    <div class="star-rating">
+                                                        <span class="star text-muted">☆</span>
+                                                        <span class="star text-muted">☆</span>
+                                                        <span class="star text-muted">☆</span>
+                                                        <span class="star text-muted">☆</span>
+                                                        <span class="star text-muted">☆</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+                            <a href="{% url 'users:login' %}?next={{ request.path }}" class="btn btn-primary btn-lg me-md-2">
+                                <i class="fas fa-sign-in-alt me-2"></i>Войти в систему
+                            </a>
+                            <a href="{% url 'users:register' %}" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-user-plus me-2"></i>Зарегистрироваться
+                            </a>
+                        </div>
+                        
+                        <div class="mt-4 pt-4 border-top">
+                            <h5>Преимущества авторизованных пользователей:</h5>
+                            <div class="row text-start mt-3">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Автоматическое заполнение данных</li>
+                                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>История ваших отзывов</li>
+                                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Быстрое заполнение форм</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Персональные ответы на отзывы</li>
+                                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Участие в рейтинге активных пользователей</li>
+                                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Доступ к дополнительным функциям</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM загружен, инициализируем форму');
+    
+    const isAuthenticated = JSON.parse('{{ user.is_authenticated|yesno:"true,false"|safe }}');
+    
+    if (!isAuthenticated) {
+        document.querySelectorAll('form input, form textarea, form select, form button').forEach(element => {
+            element.disabled = true;
+        });
+        return;
+    }
+    
+    const form = document.getElementById('feedbackForm');
+    if (!form) return;
+    
+    const starRatings = document.querySelectorAll('.star-rating');
+    
+    const siteDesignInput = document.getElementById('id_site_design_rating');
+    const usabilityInput = document.getElementById('id_usability_rating');
+    const contentInput = document.getElementById('id_content_rating');
+    const speedInput = document.getElementById('id_speed_rating');
+    const averageRatingInput = document.getElementById('id_average_rating');
+    const totalScoreInput = document.getElementById('id_total_score');
+    const maxScoreInput = document.getElementById('id_max_possible_score');
+    const commentsSentimentInput = document.getElementById('id_comments_sentiment_score');
+    
+    const POSITIVE_WORDS = [
+        'хорошо', 'отлично', 'прекрасно', 'замечательно', 'супер', 'отличный',
+        'понравилось', 'нравится', 'удобно', 'понятно', 'легко', 'просто',
+        'быстро', 'эффективно', 'полезно', 'интересно', 'класс', 'великолепно',
+        'восхитительно', 'приятно', 'удобный', 'понятный', 'качественный',
+        'интуитивный', 'современный', 'красивый', 'стильный', 'надежный',
+        'рад', 'радость', 'счастлив', 'доволен', 'удовлетворен', 'впечатлен',
+        'восторг', 'восхищение', 'удовольствие', 'наслаждение', 'увлечение',
+        'комфортно', 'комфортный', 'эргономично', 'практично', 'функционально',
+        'доступно', 'наглядно', 'логично', 'организовано', 'профессиональный',
+        'высококачественный', 'стабильный', 'безопасный', 'точный', 'корректный',
+        'грамотный', 'результативный', 'продуктивный', 'эстетичный',
+        'привлекательный', 'яркий', 'красочный', 'инновационный', 'оригинальный',
+        'мгновенно', 'оперативно', 'молниеносно', 'рекомендую', 'советую',
+        'помогло', 'увлекательно', 'блестяще', 'гениально', 'шикарно',
+        'безупречно', 'идеально', 'здорово', 'круто', 'превосходно',
+        'спасибо', 'благодарю', 'отличная работа', 'молодцы', 'так держать',
+        'суперский', 'потрясающе', 'обалденно', 'невероятно', 'фантастически',
+        'люблю', 'обожаю', 'симпатичный', 'замечательный', 'прекрасный',
+        'супер', 'классно', 'здорово', 'круто', 'отлично', 'прекрасно',
+        'великолепно', 'восхитительно', 'превосходно', 'идеально'
+    ];
+    
+    const NEGATIVE_WORDS = [
+        'плохо', 'ужасно', 'отвратительно', 'кошмар', 'ужасный', 'плохой',
+        'неудобно', 'непонятно', 'сложно', 'запутанно', 'медленно', 'тормозит',
+        'глючит', 'баги', 'ошибки', 'не работает', 'сломалось', 'неправильно',
+        'некорректно', 'неприятно', 'раздражает', 'бесит', 'злит', 'сложный',
+        'неудобный', 'непонятный', 'некачественный', 'старый', 'устаревший',
+        'скверно', 'мерзко', 'гадко', 'паршиво', 'неприемлемо', 'расстроен',
+        'разочарован', 'зол', 'раздражен', 'беспокоит', 'напрягает', 'утомляет',
+        'уныло', 'грустно', 'некомфортно', 'запутался', 'заблудился',
+        'неразборчиво', 'мешает', 'путаница', 'хаос', 'беспорядок', 'дешевый',
+        'кустарный', 'любительский', 'ненадежный', 'нестабильный', 'глюк',
+        'ошибка', 'упал', 'упало', 'завис', 'ошибочно', 'неверно', 'унылый',
+        'скучный', 'серый', 'блеклый', 'непривлекательный', 'некрасивый',
+        'безвкусный', 'аляповатый', 'зависает', 'тупит', 'долго', 'медленный',
+        'разочарование', 'жалоба', 'проблема', 'недостаток', 'минус',
+        'не рекомендую', 'не советую', 'бесполезно', 'бессмысленно',
+        'ужас', 'кошмарно', 'отстой', 'лажа', 'фигня', 'ерунда', 'беспонтовый',
+        'не нравится', 'неуд', 'отвратно', 'мерзость', 'гадость', 'паршиво',
+        'отвратительно', 'ужасно', 'плохо', 'скучно', 'неинтересно', 'бесполезно'
+    ];
+    
+    function analyzeTextSentiment(text) {
+        if (!text || text.trim() === '') {
+            return 2.5;
+        }
+        
+        const textLower = text.toLowerCase();
+        let positiveCount = 0;
+        let negativeCount = 0;
+        
+        POSITIVE_WORDS.forEach(word => {
+            const regex = new RegExp(word, 'gi');
+            const matches = textLower.match(regex);
+            if (matches) {
+                positiveCount += matches.length;
+            }
+        });
+        
+        NEGATIVE_WORDS.forEach(word => {
+            const regex = new RegExp(word, 'gi');
+            const matches = textLower.match(regex);
+            if (matches) {
+                negativeCount += matches.length;
+            }
+        });
+        
+        let sentimentScore = 2.5;
+        
+        const adjustment = (positiveCount * 0.3) - (negativeCount * 0.3);
+        sentimentScore += adjustment;
+        
+        sentimentScore = Math.max(0, Math.min(5, sentimentScore));
+        
+        return Math.round(sentimentScore * 100) / 100;
+    }
+    
+    function updateStarsDisplay(stars, value) {
+        stars.forEach(star => {
+            const starValue = parseInt(star.getAttribute('data-value'));
+            if (starValue <= value) {
+                star.textContent = '★';
+                star.style.color = '#ffc107';
+            } else {
+                star.textContent = '☆';
+                star.style.color = '#6c757d';
+            }
+        });
+    }
+    
+    function initializeStarRatings() {
+        starRatings.forEach(ratingContainer => {
+            const fieldName = ratingContainer.getAttribute('data-field');
+            const stars = ratingContainer.querySelectorAll('.star');
+            
+            let currentValue = 0;
+            let hiddenField;
+            
+            switch(fieldName) {
+                case 'site_design_rating':
+                    hiddenField = siteDesignInput;
+                    break;
+                case 'usability_rating':
+                    hiddenField = usabilityInput;
+                    break;
+                case 'content_rating':
+                    hiddenField = contentInput;
+                    break;
+                case 'speed_rating':
+                    hiddenField = speedInput;
+                    break;
+            }
+            
+            if (hiddenField) {
+                currentValue = parseInt(hiddenField.value) || 0;
+                console.log(`${fieldName}: ${currentValue}`);
+            }
+            
+            updateStarsDisplay(stars, currentValue);
+            
+            stars.forEach(star => {
+                star.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const value = parseInt(this.getAttribute('data-value'));
+                    
+                    console.log(`Клик по звезде ${fieldName}: ${value}`);
+                    
+                    updateStarsDisplay(stars, value);
+                    
+                    switch(fieldName) {
+                        case 'site_design_rating':
+                            siteDesignInput.value = value;
+                            break;
+                        case 'usability_rating':
+                            usabilityInput.value = value;
+                            break;
+                        case 'content_rating':
+                            contentInput.value = value;
+                            break;
+                        case 'speed_rating':
+                            speedInput.value = value;
+                            break;
+                    }
+                    
+                    calculateFinalRating();
+                });
+                
+                star.addEventListener('mouseover', function() {
+                    const hoverValue = parseInt(this.getAttribute('data-value'));
+                    updateStarsDisplay(stars, hoverValue);
+                });
+                
+                star.addEventListener('mouseout', function() {
+                    let currentValue = 0;
+                    switch(fieldName) {
+                        case 'site_design_rating':
+                            currentValue = parseInt(siteDesignInput.value) || 0;
+                            break;
+                        case 'usability_rating':
+                            currentValue = parseInt(usabilityInput.value) || 0;
+                            break;
+                        case 'content_rating':
+                            currentValue = parseInt(contentInput.value) || 0;
+                            break;
+                        case 'speed_rating':
+                            currentValue = parseInt(speedInput.value) || 0;
+                            break;
+                    }
+                    updateStarsDisplay(stars, currentValue);
+                });
+            });
+        });
+    }
+    
+    function calculateFinalRating() {
+        console.log('=== Расчет рейтинга ===');
+        
+        const textFields = [
+            document.getElementById('id_message'),
+            document.getElementById('id_most_liked'),
+            document.getElementById('id_improvements'),
+            document.getElementById('id_suggestions'),
+            document.getElementById('id_additional_comments')
+        ];
+        
+        let allText = '';
+        let fieldTexts = [];
+        
+        textFields.forEach(field => {
+            if (field && field.value && field.value.trim()) {
+                allText += ' ' + field.value;
+                fieldTexts.push(field.value);
+            }
+        });
+        
+        const sentimentScore = analyzeTextSentiment(allText);
+        
+        if (commentsSentimentInput) {
+            commentsSentimentInput.value = sentimentScore.toFixed(2);
+        }
+        
+        const ratings = [
+            parseInt(siteDesignInput.value) || 0,
+            parseInt(usabilityInput.value) || 0,
+            parseInt(contentInput.value) || 0,
+            parseInt(speedInput.value) || 0
+        ];
+        
+        console.log('Рейтинги звезд:', ratings);
+        
+        const validRatings = ratings.filter(r => r > 0);
+        let starsAvg = 0;
+        if (validRatings.length > 0) {
+            starsAvg = validRatings.reduce((a, b) => a + b, 0) / validRatings.length;
+        }
+        console.log('Средний рейтинг звезд:', starsAvg);
+        
+        let choiceAvg = 0;
+        let choiceCount = 0;
+        
+        const recommendSelect = document.getElementById('id_would_recommend');
+        const satisfactionSelect = document.getElementById('id_overall_satisfaction');
+        
+        if (recommendSelect && recommendSelect.value) {
+            const choiceScores = {
+                'definitely': 5,
+                'probably': 4,
+                'not_sure': 3,
+                'probably_not': 2,
+                'definitely_not': 1
+            };
+            const score = choiceScores[recommendSelect.value] || 0;
+            choiceAvg += score;
+            choiceCount++;
+        }
+        
+        if (satisfactionSelect && satisfactionSelect.value) {
+            const satisfactionScores = {
+                'very_satisfied': 5,
+                'satisfied': 4,
+                'neutral': 3,
+                'unsatisfied': 2,
+                'very_unsatisfied': 1
+            };
+            const score = satisfactionScores[satisfactionSelect.value] || 0;
+            choiceAvg += score;
+            choiceCount++;
+        }
+        
+        if (choiceCount > 0) {
+            choiceAvg = choiceAvg / choiceCount;
+        }
+        console.log('Средний рейтинг выбора:', choiceAvg);
+        
+        console.log('Оценка тональности:', sentimentScore);
+        
+        let totalAvg = 0;
+        let weightSum = 0;
+        
+        if (starsAvg > 0) {
+            totalAvg += starsAvg * 0.35;
+            weightSum += 0.35;
+        }
+        
+        if (choiceAvg > 0) {
+            totalAvg += choiceAvg * 0.35;
+            weightSum += 0.35;
+        }
+        
+        if (sentimentScore > 0) {
+            totalAvg += sentimentScore * 0.3;
+            weightSum += 0.3;
+        }
+        
+        const finalRating = weightSum > 0 ? totalAvg / weightSum : 0;
+        console.log('Итоговый рейтинг:', finalRating);
+        
+        let ratingScore = 0;
+        ratings.forEach(rating => {
+            ratingScore += rating * 4;
+        });
+        
+        ratingScore += (sentimentScore * 5);
+        
+        let choiceScore = 0;
+        if (recommendSelect && recommendSelect.value) {
+            const recommendScores = {
+                'definitely': 20,
+                'probably': 15,
+                'not_sure': 10,
+                'probably_not': 5,
+                'definitely_not': 0
+            };
+            choiceScore += recommendScores[recommendSelect.value] || 0;
+        }
+        
+        if (satisfactionSelect && satisfactionSelect.value) {
+            const satisfactionScores = {
+                'very_satisfied': 20,
+                'satisfied': 15,
+                'neutral': 10,
+                'unsatisfied': 5,
+                'very_unsatisfied': 0
+            };
+            choiceScore += satisfactionScores[satisfactionSelect.value] || 0;
+        }
+        
+        const totalScore = Math.round(ratingScore + choiceScore);
+        const maxPossibleScore = 165;
+        
+        console.log('Баллы:', {
+            ratingScore,
+            choiceScore,
+            totalScore,
+            maxPossibleScore,
+            sentimentScore: sentimentScore * 5
+        });
+        
+        if (averageRatingInput) {
+            averageRatingInput.value = finalRating.toFixed(2);
+        }
+        if (totalScoreInput) {
+            totalScoreInput.value = totalScore;
+        }
+        if (maxScoreInput) {
+            maxScoreInput.value = maxPossibleScore;
+        }
+        
+        if (commentsSentimentInput) {
+            commentsSentimentInput.value = sentimentScore.toFixed(2);
+        }
+        
+        updateFinalRatingDisplay(finalRating, totalScore, maxPossibleScore);
+        
+        return {
+            finalRating: finalRating,
+            totalScore: totalScore,
+            sentimentScore: sentimentScore
+        };
+    }
+    
+    function updateFinalRatingDisplay(finalRating, totalScore, maxScore) {
+        const starsForeground = document.getElementById('starsForeground');
+        if (starsForeground) {
+            const percentage = (finalRating / 5) * 100;
+            starsForeground.style.width = percentage + '%';
+        }
+        
+        const finalRatingValue = document.getElementById('finalRatingValue');
+        if (finalRatingValue) {
+            finalRatingValue.textContent = `${finalRating.toFixed(1)} / 5.0`;
+        }
+        
+        const scoreProgressBar = document.getElementById('scoreProgressBar');
+        const progressText = document.getElementById('progressText');
+        if (scoreProgressBar && progressText) {
+            const percentage = maxScore > 0 ? (totalScore / maxScore) * 100 : 0;
+            scoreProgressBar.style.width = `${percentage}%`;
+            scoreProgressBar.setAttribute('aria-valuenow', percentage);
+            progressText.textContent = `${percentage.toFixed(1)}%`;
+            
+            if (percentage >= 80) {
+                scoreProgressBar.className = 'progress-bar bg-success';
+            } else if (percentage >= 60) {
+                scoreProgressBar.className = 'progress-bar bg-info';
+            } else if (percentage >= 40) {
+                scoreProgressBar.className = 'progress-bar bg-warning';
+            } else {
+                scoreProgressBar.className = 'progress-bar bg-danger';
+            }
+        }
+        
+        const currentScoreSpan = document.getElementById('currentScore');
+        const maxScoreSpan = document.getElementById('maxScore');
+        if (currentScoreSpan) {
+            currentScoreSpan.textContent = totalScore;
+        }
+        if (maxScoreSpan) {
+            maxScoreSpan.textContent = maxScore;
+        }
+    }
+    
+    const textFieldsIds = [
+        'id_message',
+        'id_most_liked',
+        'id_improvements',
+        'id_suggestions',
+        'id_additional_comments'
+    ];
+    
+    textFieldsIds.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        if (field) {
+            field.addEventListener('input', function() {
+                clearTimeout(window.sentimentTimeout);
+                window.sentimentTimeout = setTimeout(() => {
+                    calculateFinalRating();
+                }, 300);
+            });
+        }
+    });
+    
+    const choiceSelects = document.querySelectorAll('select');
+    choiceSelects.forEach(select => {
+        select.addEventListener('change', function() {
+            console.log(`Изменен select: ${this.id}`);
+            calculateFinalRating();
+        });
+    });
+    
+    document.getElementById('resetBtn').addEventListener('click', function() {
+        setTimeout(() => {
+            console.log('Сброс формы');
+            if (siteDesignInput) siteDesignInput.value = 0;
+            if (usabilityInput) usabilityInput.value = 0;
+            if (contentInput) contentInput.value = 0;
+            if (speedInput) speedInput.value = 0;
+            
+            starRatings.forEach(ratingContainer => {
+                const fieldName = ratingContainer.getAttribute('data-field');
+                const stars = ratingContainer.querySelectorAll('.star');
+                
+                updateStarsDisplay(stars, 0);
+            });
+            
+            calculateFinalRating();
+        }, 100);
+    });
+    
+    const phoneInput = document.getElementById('id_phone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                if (value[0] === '7' || value[0] === '8') {
+                    value = value.substring(1);
+                }
+                let formatted = '+7 (';
+                if (value.length > 0) formatted += value.substring(0, 3);
+                if (value.length > 3) formatted += ') ' + value.substring(3, 6);
+                if (value.length > 6) formatted += '-' + value.substring(6, 8);
+                if (value.length > 8) formatted += '-' + value.substring(8, 10);
+                e.target.value = formatted;
+            }
+        });
+    }
+    
+    const messageTextarea = document.getElementById('id_message');
+    if (messageTextarea) {
+        messageTextarea.addEventListener('input', function() {
+            document.getElementById('charCount').textContent = this.value.length;
+        });
+        document.getElementById('charCount').textContent = messageTextarea.value.length;
+    }
+    
+    initializeStarRatings();
+    calculateFinalRating();
+    
+    console.log('Инициализация завершена');
+});
+</script>
+
+<style>
+.disabled-form-overlay {
+    position: relative;
+}
+
+.disabled-form-overlay .z-index-1 {
+    z-index: 1;
+}
+
+.disabled-form-overlay .z-index-2 {
+    z-index: 2;
+}
+
+.star-rating {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.star-rating .star {
+    font-size: 2rem;
+    color: #6c757d;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.star-rating .star:hover {
+    transform: scale(1.2);
+}
+
+.final-stars span {
+    font-size: 2.5rem;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.progress-bar {
+    transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+.progress-text {
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.form-switch .form-check-input {
+    width: 3em;
+    height: 1.5em;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    border-radius: 0.375rem 0.375rem 0 0 !important;
+}
+
+.extra-small {
+    font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .star-rating .star {
+        font-size: 1.8rem;
+    }
+    
+    .final-stars span {
+        font-size: 2rem;
+    }
+}
+</style>
+{% endblock %}

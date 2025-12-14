@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-warning text-white">
+                    <h3 class="mb-0 text-center">
+                        <i class="fas fa-exclamation-triangle me-2"></i>Отмена курса
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <h5 class="alert-heading"><i class="fas fa-exclamation-circle me-2"></i>Внимание!</h5>
+                        <p>Вы собираетесь отменить курс "{{ order.course.name }}".</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5>Информация о курсе:</h5>
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <p><strong>Название курса:</strong> {{ order.course.name }}</p>
+                                <p><strong>Преподаватель:</strong> {{ order.course.teacher.get_full_name|default:order.course.teacher.username }}</p>
+                                <p><strong>Дата начала:</strong> {{ order.start_date|date:"d.m.Y" }}</p>
+                                <p><strong>Прогресс:</strong> {{ order.progress }}%</p>
+                                <p><strong>Статус:</strong> <span class="badge bg-warning">{{ order.get_status_display }}</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <h6><i class="fas fa-info-circle me-2"></i>Что произойдет при отмене:</h6>
+                        <ul class="mb-0">
+                            <li>Курс будет помечен как "Отменен"</li>
+                            <li>Ваше место освободится для других студентов</li>
+                            <li>Прогресс обучения будет сохранен</li>
+                            <li>Вы сможете записаться на этот курс снова в будущем</li>
+                        </ul>
+                    </div>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        <div class="mb-4">
+                            <label for="reason" class="form-label">Причина отмены (необязательно):</label>
+                            <textarea name="reason" id="reason" class="form-control" rows="3" 
+                                      placeholder="Почему вы хотите отменить курс?"></textarea>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" 
+                                       name="confirm_cancel" id="confirm_cancel" required>
+                                <label class="form-check-label" for="confirm_cancel">
+                                    <strong>Я подтверждаю, что хочу отменить этот курс</strong>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-warning btn-lg">
+                                <i class="fas fa-ban me-2"></i>Отменить курс
+                            </button>
+                            <a href="{% url 'courses:course_student_detail' order.id %}" 
+                               class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left me-1"></i>Вернуться к курсу
+                            </a>
+                            <a href="{% url 'courses:my_courses' %}" class="btn btn-outline-primary">
+                                <i class="fas fa-list me-1"></i>Вернуться к списку курсов
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

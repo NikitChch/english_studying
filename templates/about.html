@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block content %}
+<section class="main-content">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="content-card fade-in-up content-background">
+                    <h1 class="display-4 fw-bold text-gradient mb-4">{{ page_title }}</h1>
+                    <p class="lead mb-4">ENGLISH STUDING - это инновационная образовательная платформа, созданная для того, чтобы сделать изучение английского языка доступным, эффективным и увлекательным для каждого.</p>
+                    <div class="mt-4 p-3 bg-light rounded">
+                        <p class="mb-0"><strong>Особенность:</strong> {{ promo_product }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'images/about-main.jpg' %}"
+                     alt="Наша команда"
+                     class="responsive-img img-large fade-in-up local-img"
+                     onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23667eea\' opacity=\'0.1\'/><rect width=\'400\' height=\'60\' y=\'120\' fill=\'%23667eea\' opacity=\'0.3\'/><text x=\'200\' y=\'140\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'16\' fill=\'%23667eea\'>О нашем проекте</text><text x=\'200\' y=\'160\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'12\' fill=\'%23667eea\' opacity=\'0.7\'>ENGLISH STUDING</text></svg>'">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="content-card text-center fade-in-up content-background">
+                    <h2 class="section-title">Наша миссия</h2>
+                    <p class="fs-5">Мы создаем доступные и эффективные инструменты для изучения английского языка, делая качественное образование доступным для всех, независимо от возраста, местоположения или финансовых возможностей.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <h2 class="section-title text-center">Наша история</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="content-card fade-in-up content-background">
+                    <h3>С чего все начиналось</h3>
+                    <p>Основанный в 2020 году, наш проект вырос из небольшой группы энтузиастов в команду из 15 профессионалов. За это время мы помогли более 10,000 студентов достичь их целей в изучении английского.</p>
+                    <p>Начав с нескольких онлайн-курсов, мы постепенно развивали платформу, добавляя новые функции и методики, основанные на последних исследованиях в области лингвистики и педагогики.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'images/about-history.jpg' %}"
+                     alt="Развитие проекта"
+                     class="responsive-img img-medium fade-in-up local-img"
+                     onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23764ba2\' opacity=\'0.1\'/><rect width=\'400\' height=\'60\' y=\'120\' fill=\'%23764ba2\' opacity=\'0.3\'/><text x=\'200\' y=\'140\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'16\' fill=\'%23764ba2\'>Наша история</text><text x=\'200\' y=\'160\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'12\' fill=\'%23764ba2\' opacity=\'0.7\'>Основано в 2020 году</text></svg>'">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section bg-light">
+    <div class="container">
+        <h2 class="section-title text-center">Наша команда</h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card text-center fade-in-up">
+                    <img src="{% static 'images/team-1.jpg' %}"
+                         alt="Рустам Емельянов"
+                         class="rounded-circle mb-3 local-img"
+                         style="width: 150px; height: 150px; object-fit: cover;"
+                         onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\' viewBox=\'0 0 150 150\'><circle cx=\'75\' cy=\'75\' r=\'75\' fill=\'%23667eea\' opacity=\'0.1\'/><text x=\'75\' y=\'80\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'14\' fill=\'%23667eea\'>Рустам</text></svg>'">
+                    <h4>Рустам Емельянов</h4>
+                    <p class="text-muted">Главный методист</p>
+                    <p>Дипломированный лингвист с международными сертификатами CELTA и DELTA. Опыт преподавания - 12 лет.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card text-center fade-in-up">
+                    <img src="{% static 'images/team-2.jpg' %}"
+                         alt="Андрей Синиелюбов"
+                         class="rounded-circle mb-3 local-img"
+                         style="width: 150px; height: 150px; object-fit: cover;"
+                         onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\' viewBox=\'0 0 150 150\'><circle cx=\'75\' cy=\'75\' r=\'75\' fill=\'%23764ba2\' opacity=\'0.1\'/><text x=\'75\' y=\'80\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'14\' fill=\'%23764ba2\'>Андрей</text></svg>'">
+                    <h4>Андрей Синелюбов</h4>
+                    <p class="text-muted">Носитель языка</p>
+                    <p>Преподаватель из Великобритании с 8-летним опытом работы. Специализируется на бизнес-английском.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card text-center fade-in-up">
+                    <img src="{% static 'images/team-3.jpg' %}"
+                         alt="Никита Чеченев"
+                         class="rounded-circle mb-3 local-img"
+                         style="width: 150px; height: 150px; object-fit: cover;"
+                         onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\' viewBox=\'0 0 150 150\'><circle cx=\'75\' cy=\'75\' r=\'75\' fill=\'%23f093fb\' opacity=\'0.1\'/><text x=\'75\' y=\'80\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'14\' fill=\'%23f093fb\'>Никита</text></svg>'">
+                    <h4>Никита Чеченев</h4>
+                    <p class="text-muted">Разработчик курсов</p>
+                    <p>Эксперт в создании интерактивных материалов. Опыт работы в образовательных технологиях - 6 лет.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <h2 class="section-title text-center">Наши ценности</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="content-card fade-in-up content-background">
+                    <div class="feature-icon" style="width: 60px; height: 60px; margin: 0 0 20px 0;">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Качество</h4>
+                    <p>Мы постоянно совершенствуем наши материалы и методики, следуя последним тенденциям в образовании и подтверждая эффективность наших подходов результатами студентов.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="content-card fade-in-up content-background">
+                    <div class="feature-icon" style="width: 60px; height: 60px; margin: 0 0 20px 0;">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h4>Доступность</h4>
+                    <p>Мы верим, что качественное образование должно быть доступно каждому. Поэтому создаем решения, которые работают для людей с разным уровнем дохода и возможностей.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="content-card fade-in-up content-background">
+                    <div class="feature-icon" style="width: 60px; height: 60px; margin: 0 0 20px 0;">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h4>Инновации</h4>
+                    <p>Мы активно внедряем новые технологии в образовательный процесс, используя искусственный интеллект для персонализации обучения и анализа прогресса.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="content-card fade-in-up content-background">
+                    <div class="feature-icon" style="width: 60px; height: 60px; margin: 0 0 20px 0;">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h4>Индивидуальный подход</h4>
+                    <p>Мы понимаем, что каждый студент уникален. Поэтому создаем персонализированные траектории обучения и предоставляем индивидуальную поддержку.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stats-section">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card fade-in-up">
+                    <div class="stat-number">5 лет</div>
+                    <div class="stat-label">Успешной работы</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card fade-in-up">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Профессионалов в команде</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card fade-in-up">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Успешных студентов</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card fade-in-up">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Довольных клиентов</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

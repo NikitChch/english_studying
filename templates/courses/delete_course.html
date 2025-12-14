@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h3 class="mb-0 text-center">
+                        <i class="fas fa-trash-alt me-2"></i>Удаление записи о курсе
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-danger">
+                        <h5 class="alert-heading"><i class="fas fa-exclamation-triangle me-2"></i>Внимание! Это действие необратимо!</h5>
+                        <p>Вы собираетесь удалить запись о курсе "{{ order.course.name }}".</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5>Информация о курсе:</h5>
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <p><strong>Название курса:</strong> {{ order.course.name }}</p>
+                                <p><strong>Преподаватель:</strong> {{ order.course.teacher.get_full_name|default:order.course.teacher.username }}</p>
+                                <p><strong>Дата начала:</strong> {{ order.start_date|date:"d.m.Y" }}</p>
+                                <p><strong>Дата окончания:</strong> {{ order.actual_end_date|date:"d.m.Y"|default:"Не завершен" }}</p>
+                                <p><strong>Прогресс:</strong> {{ order.progress }}%</p>
+                                <p><strong>Статус:</strong> 
+                                    <span class="badge {% if order.status == 'completed' %}bg-success{% else %}bg-warning{% endif %}">
+                                        {{ order.get_status_display }}
+                                    </span>
+                                </p>
+                                {% if order.rating %}
+                                <p><strong>Ваша оценка:</strong> 
+                                    {% for i in "12345" %}
+                                        {% if forloop.counter <= order.rating %}
+                                            <i class="fas fa-star text-warning"></i>
+                                        {% else %}
+                                            <i class="far fa-star text-warning"></i>
+                                        {% endif %}
+                                    {% endfor %}
+                                </p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <h6><i class="fas fa-info-circle me-2"></i>Что произойдет при удалении:</h6>
+                        <ul class="mb-0">
+                            <li>Запись о курсе будет <strong>полностью удалена</strong> из вашей истории</li>
+                            <li>Прогресс обучения и отзыв будут утеряны</li>
+                            <li>Это действие нельзя отменить</li>
+                            <li>Вы сможете записаться на этот курс снова в будущем</li>
+                        </ul>
+                    </div>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        <div class="mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" 
+                                       name="confirm_delete" id="confirm_delete" required>
+                                <label class="form-check-label" for="confirm_delete">
+                                    <strong>Я понимаю, что удаляю запись о курсе без возможности восстановления</strong>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-danger btn-lg">
+                                <i class="fas fa-trash-alt me-2"></i>Удалить запись о курсе
+                            </button>
+                            <a href="{% url 'courses:my_courses' %}" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left me-1"></i>Отмена - вернуться к списку курсов
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

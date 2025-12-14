@@ -1,0 +1,44 @@
+<header class="modern-header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <div class="brand-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-main">ENGLISH</span>
+                    <span class="brand-sub">STUDING</span>
+                </div>
+            </a>
+            <div class="navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">
+                            <i class="fas fa-home me-1"></i>Главная
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if 'grammar' in request.path %}active{% endif %}" href="{% url 'grammar' %}">
+                            <i class="fas fa-book me-1"></i>Грамматика
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if 'vocabulary' in request.path %}active{% endif %}" href="{% url 'vocabulary' %}">
+                            <i class="fas fa-bookmark me-1"></i>Словарь
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if 'about' in request.path %}active{% endif %}" href="{% url 'about' %}">
+                            <i class="fas fa-info-circle me-1"></i>О нас
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if 'contacts' in request.path %}active{% endif %}" href="{% url 'contacts' %}">
+                            <i class="fas fa-envelope me-1"></i>Контакты
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

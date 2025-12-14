@@ -1,0 +1,726 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block content %}
+<div class="content-card">
+    <h2><i class="fas fa-book me-2"></i>{{ page_title }}</h2>
+    
+    {% if user.is_authenticated %}
+        <input type="hidden" id="currentUserId" value="{{ user.id }}">
+        <input type="hidden" id="currentUserType" value="{{ user.user_type }}">
+        <input type="hidden" id="allStudentsData" value="{{ all_students_json|escape }}">
+        <input type="hidden" id="currentStudentGrades" value="{{ student_grades_json|escape }}">
+        <input type="hidden" id="currentStudentAttendance" value="{{ student_attendance_json|escape }}">
+        
+        <div id="notificationArea" style="display: none;"></div>
+        
+        <div id="diaryContent">
+            <div class="text-center py-4">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Загрузка...</span>
+                </div>
+                <p class="mt-2 text-muted">Загрузка дневника...</p>
+            </div>
+        </div>
+    {% else %}
+        <div class="alert alert-warning">
+            <i class="fas fa-exclamation-triangle me-2"></i>
+            Для просмотра дневника необходимо <a href="{% url 'users:login' %}" class="alert-link">войти в систему</a>.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+function showNotification(message, type = 'success') {
+    const notificationArea = document.getElementById('notificationArea');
+    const alertClass = type === 'success' ? 'alert-success' : 
+                      type === 'error' ? 'alert-danger' : 
+                      type === 'warning' ? 'alert-warning' : 'alert-info';
+    
+    const notificationHTML = `
+        <div class="alert ${alertClass} alert-dismissible fade show" role="alert">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : 
+                         type === 'error' ? 'fa-times-circle' : 
+                         type === 'warning' ? 'fa-exclamation-triangle' : 'fa-info-circle'} me-2"></i>
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    `;
+    
+    notificationArea.innerHTML = notificationHTML;
+    notificationArea.style.display = 'block';
+    
+    setTimeout(() => {
+        if (notificationArea.querySelector('.alert')) {
+            notificationArea.querySelector('.alert').classList.remove('show');
+            setTimeout(() => {
+                notificationArea.style.display = 'none';
+                notificationArea.innerHTML = '';
+            }, 500);
+        }
+    }, 5000);
+}
+
+function getAllStudents() {
+    try {
+        const studentsData = document.getElementById('allStudentsData').value;
+        if (studentsData) {
+            const students = JSON.parse(studentsData);
+            console.log('Реальные студенты из Django:', students);
+            return students;
+        }
+        return [];
+    } catch (e) {
+        console.error('Ошибка получения студентов из Django:', e);
+        return [];
+    }
+}
+
+function getStudentGrades() {
+    try {
+        const userType = document.getElementById('currentUserType').value;
+        const userId = document.getElementById('currentUserId').value;
+        
+        if (userType === 'student') {
+            const gradesData = document.getElementById('currentStudentGrades').value;
+            if (gradesData) {
+                return JSON.parse(gradesData);
+            }
+        }
+        return [];
+    } catch (e) {
+        console.error('Ошибка получения оценок:', e);
+        return [];
+    }
+}
+
+function getStudentAttendance() {
+    try {
+        const userType = document.getElementById('currentUserType').value;
+        const userId = document.getElementById('currentUserId').value;
+        
+        if (userType === 'student') {
+            const attendanceData = document.getElementById('currentStudentAttendance').value;
+            if (attendanceData) {
+                return JSON.parse(attendanceData);
+            }
+        }
+        return [];
+    } catch (e) {
+        console.error('Ошибка получения посещаемости:', e);
+        return [];
+    }
+}
+
+async function addGrade(studentId, gradeData) {
+    try {
+        const csrfToken = getCSRFToken();
+        const response = await fetch('/diary/api/add_grade/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrfToken
+            },
+            body: JSON.stringify({
+                student_id: studentId,
+                subject: gradeData.subject,
+                value: gradeData.value,
+                comment: gradeData.comment,
+                date: gradeData.date
+            })
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            showNotification(result.message, 'success');
+            return true;
+        } else {
+            showNotification(result.message, 'error');
+            return false;
+        }
+    } catch (e) {
+        console.error('Ошибка добавления оценки:', e);
+        showNotification('Ошибка соединения с сервером', 'error');
+        return false;
+    }
+}
+
+async function markAttendance(studentId, date, status, subject) {
+    try {
+        const csrfToken = getCSRFToken();
+        const response = await fetch('/diary/api/mark_attendance/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrfToken
+            },
+            body: JSON.stringify({
+                student_id: studentId,
+                subject: subject,
+                status: status,
+                date: date
+            })
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            showNotification(result.message, 'success');
+            return true;
+        } else {
+            showNotification(result.message, 'error');
+            return false;
+        }
+    } catch (e) {
+        console.error('Ошибка отметки посещаемости:', e);
+        showNotification('Ошибка соединения с сервером', 'error');
+        return false;
+    }
+}
+
+function getStudentNameById(studentId) {
+    const students = getAllStudents();
+    const student = students.find(s => s.id == studentId);
+    return student ? student.name : `Студент #${studentId}`;
+}
+
+function getCSRFToken() {
+    return document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
+}
+
+async function viewStudentDetails(studentId) {
+    try {
+        const response = await fetch(`/diary/api/student/${studentId}/`);
+        const result = await response.json();
+        
+        if (!result.success) {
+            showNotification(result.message, 'error');
+            return;
+        }
+        
+        const student = result.student;
+        const grades = result.grades;
+        const attendanceStats = result.attendance_stats;
+        
+        let detailsHTML = `
+            <div class="modal fade" id="studentModal" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Детали студента: ${student.full_name || student.username}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>ID:</strong> ${student.id}</p>
+                                    <p><strong>Имя пользователя:</strong> ${student.username}</p>
+                                    <p><strong>Полное имя:</strong> ${student.full_name || 'Не указано'}</p>
+                                    <p><strong>Группа:</strong> ${student.group}</p>
+                                    <p><strong>Уровень:</strong> ${student.level}</p>
+                                    <p><strong>Email:</strong> ${student.email}</p>
+                                    <p><strong>Дата регистрации:</strong> ${student.date_joined}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Всего оценок:</strong> ${result.total_grades}</p>
+                                    <p><strong>Средний балл:</strong> ${result.avg_grade ? result.avg_grade.toFixed(1) : 'Нет оценок'}</p>
+                                    <p><strong>Посещаемость:</strong> ${attendanceStats.present} из ${attendanceStats.total} занятий</p>
+                                    <p><strong>Процент посещаемости:</strong> ${attendanceStats.total > 0 ? ((attendanceStats.present / attendanceStats.total) * 100).toFixed(1) : 0}%</p>
+                                    <p><strong>Отсутствовал:</strong> ${attendanceStats.absent} раз</p>
+                                    <p><strong>Опоздал:</strong> ${attendanceStats.late} раз</p>
+                                </div>
+                            </div>
+                            <h6 class="mt-3">Последние оценки:</h6>
+                            ${grades.length > 0 ? grades.map(grade => {
+                                function getGradeBadgeClass(gradeValue) {
+                                    const numGrade = parseInt(gradeValue);
+                                    if (numGrade >= 4.5) return 'alert-success';
+                                    if (numGrade >= 3.5) return 'alert-primary';
+                                    if (numGrade >= 2.5) return 'alert-warning';
+                                    return 'alert-danger';
+                                }
+                                return `
+                                    <div class="alert ${getGradeBadgeClass(grade.value)}">
+                                        <strong>${grade.subject}:</strong> ${grade.value}
+                                        <br><small>Преподаватель: ${grade.teacher}</small>
+                                        <br><small>${grade.comment || 'Без комментария'}</small>
+                                        <br><small>Дата: ${grade.date}</small>
+                                    </div>
+                                `;
+                            }).join('') : '<p class="text-muted">Оценок пока нет</p>'}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        document.body.insertAdjacentHTML('beforeend', detailsHTML);
+        const modalElement = document.getElementById('studentModal');
+        const modal = new bootstrap.Modal(modalElement);
+        modal.show();
+        
+        modalElement.addEventListener('hidden.bs.modal', function() {
+            this.remove();
+        });
+        
+    } catch (e) {
+        console.error('Ошибка загрузки данных студента:', e);
+        showNotification('Ошибка загрузки данных студента', 'error');
+    }
+}
+
+function loadDiary() {
+    const userType = document.getElementById('currentUserType').value;
+    const userId = document.getElementById('currentUserId').value;
+    
+    console.log('=== ЗАГРУЗКА ДНЕВНИКА ===');
+    console.log('Тип пользователя:', userType);
+    console.log('ID пользователя:', userId);
+    
+    let diaryContentHTML = '';
+    
+    if (userType === 'teacher') {
+        const students = getAllStudents();
+        const defaultSubjects = ['Грамматика', 'Словарь', 'Аудирование', 'Письмо', 'Чтение', 'Разговорная практика',
+                                'Бизнес-английский', 'Подготовка к IELTS', 'Разговорный клуб', 'Академическое письмо',
+                                'Деловая переписка', 'Публичные выступления', 'Аналитическое чтение',
+                                'Профессиональный английский', 'Научная литература', 'Переводческое дело'];
+        
+        console.log('Студенты для преподавателя:', students);
+        console.log('Количество студентов:', students.length);
+        
+        if (students.length === 0) {
+            diaryContentHTML = `
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i>
+                    В системе нет студентов.
+                </div>
+            `;
+        } else {
+            diaryContentHTML = `
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="content-card">
+                            <h4><i class="fas fa-chalkboard-teacher me-2"></i>Выставление оценок</h4>
+                            <form id="gradeForm">
+                                <div class="mb-3">
+                                    <label for="selectStudent" class="form-label">Студент</label>
+                                    <select class="form-control" id="selectStudent" required>
+                                        <option value="">Выберите студента</option>
+                                        ${students.map(s => `<option value="${s.id}">${s.name} (${s.group || 'Без группы'})</option>`).join('')}
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="gradeSubject" class="form-label">Предмет</label>
+                                    <select class="form-control" id="gradeSubject" required>
+                                        <option value="">Выберите предмет</option>
+                                        ${defaultSubjects.map(s => `<option value="${s}">${s}</option>`).join('')}
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="gradeValue" class="form-label">Оценка</label>
+                                    <select class="form-control" id="gradeValue" required>
+                                        <option value="">Выберите оценку</option>
+                                        <option value="5">5 - Отлично</option>
+                                        <option value="4">4 - Хорошо</option>
+                                        <option value="3">3 - Удовлетворительно</option>
+                                        <option value="2">2 - Неудовлетворительно</option>
+                                        <option value="1">1 - Плохо</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="gradeDate" class="form-label">Дата выставления</label>
+                                    <input type="date" class="form-control" id="gradeDate" value="${new Date().toISOString().split('T')[0]}" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="gradeComment" class="form-label">Комментарий</label>
+                                    <textarea class="form-control" id="gradeComment" rows="2" placeholder="Дополнительный комментарий"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-check me-1"></i>Выставить оценку
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="content-card">
+                            <h4><i class="fas fa-clipboard-check me-2"></i>Отметка посещаемости</h4>
+                            <form id="attendanceForm">
+                                <div class="mb-3">
+                                    <label for="attendanceStudent" class="form-label">Студент</label>
+                                    <select class="form-control" id="attendanceStudent" required>
+                                        <option value="">Выберите студента</option>
+                                        ${students.map(s => `<option value="${s.id}">${s.name} (${s.group || 'Без группы'})</option>`).join('')}
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="attendanceSubject" class="form-label">Предмет</label>
+                                    <select class="form-control" id="attendanceSubject" required>
+                                        <option value="">Выберите предмет</option>
+                                        ${defaultSubjects.map(s => `<option value="${s}">${s}</option>`).join('')}
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="attendanceDate" class="form-label">Дата</label>
+                                    <input type="date" class="form-control" id="attendanceDate" value="${new Date().toISOString().split('T')[0]}" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Статус</label>
+                                    <div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="attendanceStatus" id="statusPresent" value="present" checked>
+                                            <label class="form-check-label text-success" for="statusPresent">
+                                                <i class="fas fa-check me-1"></i>Присутствовал
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="attendanceStatus" id="statusAbsent" value="absent">
+                                            <label class="form-check-label text-danger" for="statusAbsent">
+                                                <i class="fas fa-times me-1"></i>Отсутствовал
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="attendanceStatus" id="statusLate" value="late">
+                                            <label class="form-check-label text-warning" for="statusLate">
+                                                <i class="fas fa-clock me-1"></i>Опоздал
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save me-1"></i>Сохранить посещаемость
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-card mt-4">
+                    <h4><i class="fas fa-list-alt me-2"></i>Все студенты (${students.length})</h4>
+                    ${students.length > 0 ? `
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Студент</th>
+                                        <th>Группа</th>
+                                        <th>Уровень</th>
+                                        <th>Email</th>
+                                        <th>Действия</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${students.map(student => {
+                                        return `
+                                            <tr>
+                                                <td>${student.id}</td>
+                                                <td>${student.name}</td>
+                                                <td>${student.group || 'Не указана'}</td>
+                                                <td>${student.level || 'Не указан'}</td>
+                                                <td>${student.email}</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-info" onclick="viewStudentDetails(${student.id})">
+                                                        <i class="fas fa-eye"></i> Подробнее
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    ` : `
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            Нет доступных студентов.
+                        </div>
+                    `}
+                </div>
+            `;
+        }
+    } else {
+        const grades = getStudentGrades();
+        const attendance = getStudentAttendance();
+        
+        console.log('Оценки студента:', grades);
+        console.log('Посещаемость студента:', attendance);
+        
+        const totalGrades = grades.length;
+        const avgGrade = totalGrades ? (grades.reduce((sum, grade) => sum + parseInt(grade.value), 0) / totalGrades).toFixed(1) : 0;
+        const presentCount = attendance.filter(a => a.status === 'present').length;
+        const totalAttendance = attendance.length;
+        const attendanceRate = totalAttendance ? ((presentCount / totalAttendance) * 100).toFixed(0) : 0;
+        
+        function getBestSubject(gradesArray) {
+            if (!gradesArray.length) return 'Нет данных';
+            
+            const subjectAverages = {};
+            gradesArray.forEach(grade => {
+                if (!subjectAverages[grade.subject]) {
+                    subjectAverages[grade.subject] = { sum: 0, count: 0 };
+                }
+                subjectAverages[grade.subject].sum += parseInt(grade.value);
+                subjectAverages[grade.subject].count++;
+            });
+            
+            let bestSubject = '';
+            let bestAverage = 0;
+            
+            for (const [subject, data] of Object.entries(subjectAverages)) {
+                const average = data.sum / data.count;
+                if (average > bestAverage) {
+                    bestAverage = average;
+                    bestSubject = subject;
+                }
+            }
+            
+            return bestSubject;
+        }
+        
+        function getGradesBySubject(gradesArray) {
+            const subjectGroups = {};
+            gradesArray.forEach(grade => {
+                if (!subjectGroups[grade.subject]) {
+                    subjectGroups[grade.subject] = [];
+                }
+                subjectGroups[grade.subject].push(parseInt(grade.value));
+            });
+            
+            return Object.entries(subjectGroups).map(([subject, gradeValues]) => ({
+                subject,
+                grades: gradeValues,
+                average: (gradeValues.reduce((a, b) => a + b, 0) / gradeValues.length).toFixed(1)
+            }));
+        }
+        
+        function getGradeBadgeClass(grade) {
+            const numGrade = parseInt(grade);
+            if (numGrade >= 4.5) return 'bg-success';
+            if (numGrade >= 3.5) return 'bg-primary';
+            if (numGrade >= 2.5) return 'bg-warning';
+            return 'bg-danger';
+        }
+        
+        function getProgressBarClass(average) {
+            const numAvg = parseFloat(average);
+            if (numAvg >= 4.5) return 'bg-success';
+            if (numAvg >= 3.5) return 'bg-primary';
+            if (numAvg >= 2.5) return 'bg-warning';
+            return 'bg-danger';
+        }
+        
+        const bestSubject = getBestSubject(grades);
+        const gradesBySubject = getGradesBySubject(grades);
+        
+        diaryContentHTML = `
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="content-card text-center">
+                        <h5><i class="fas fa-star text-warning me-2"></i>Средний балл</h5>
+                        <h2 class="text-primary">${avgGrade}</h2>
+                        <small class="text-muted">из ${totalGrades} оценок</small>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="content-card text-center">
+                        <h5><i class="fas fa-calendar-check text-success me-2"></i>Посещаемость</h5>
+                        <h2 class="text-success">${attendanceRate}%</h2>
+                        <small class="text-muted">${presentCount} из ${totalAttendance} занятий</small>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="content-card text-center">
+                        <h5><i class="fas fa-book text-info me-2"></i>Предметы</h5>
+                        <h2 class="text-info">${new Set(grades.map(g => g.subject)).size}</h2>
+                        <small class="text-muted">изучено предметов</small>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="content-card text-center" style="min-height: 120px; display: flex; flex-direction: column; justify-content: center;">
+                        <h5><i class="fas fa-trophy text-warning me-2"></i>Лучший предмет</h5>
+                        <h2 class="text-warning" style="font-size: 1.3rem; line-height: 1.3; margin: 0.5rem 0; word-wrap: break-word; overflow-wrap: break-word;">${bestSubject}</h2>
+                        <small class="text-muted">по среднему баллу</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="content-card">
+                        <h4><i class="fas fa-chart-line me-2"></i>Последние оценки</h4>
+                        ${grades.length ? `
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Предмет</th>
+                                            <th>Оценка</th>
+                                            <th>Дата</th>
+                                            <th>Преподаватель</th>
+                                            <th>Комментарий</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        ${grades.slice(-5).reverse().map(grade => `
+                                            <tr>
+                                                <td>${grade.subject}</td>
+                                                <td><span class="badge ${getGradeBadgeClass(grade.value)}">${grade.value}</span></td>
+                                                <td>${grade.date}</td>
+                                                <td>${grade.teacher_name}</td>
+                                                <td>${grade.comment || '-'}</td>
+                                            </tr>
+                                        `).join('')}
+                                    </tbody>
+                                </table>
+                            </div>
+                        ` : '<p class="text-muted">Оценок пока нет</p>'}
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="content-card">
+                        <h4><i class="fas fa-calendar-alt me-2"></i>Последние посещения</h4>
+                        ${attendance.length ? `
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Дата</th>
+                                            <th>Предмет</th>
+                                            <th>Статус</th>
+                                            <th>Преподаватель</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        ${attendance.slice(-5).reverse().map(record => `
+                                            <tr>
+                                                <td>${record.date}</td>
+                                                <td>${record.subject}</td>
+                                                <td>
+                                                    <span class="badge ${record.status === 'present' ? 'bg-success' : record.status === 'late' ? 'bg-warning' : 'bg-danger'}">
+                                                        ${record.status === 'present' ? 'Присутствовал' : record.status === 'late' ? 'Опоздал' : 'Отсутствовал'}
+                                                    </span>
+                                                </td>
+                                                <td>${record.teacher_name}</td>
+                                            </tr>
+                                        `).join('')}
+                                    </tbody>
+                                </table>
+                            </div>
+                        ` : '<p class="text-muted">Записей о посещаемости пока нет</p>'}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card mt-4">
+                <h4><i class="fas fa-table me-2"></i>Все оценки по предметам</h4>
+                ${grades.length ? `
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Предмет</th>
+                                    <th>Оценки</th>
+                                    <th>Средний балл</th>
+                                    <th>Прогресс</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${gradesBySubject.map(subjectData => `
+                                    <tr>
+                                        <td><strong>${subjectData.subject}</strong></td>
+                                        <td>${subjectData.grades.map(g => `<span class="badge ${getGradeBadgeClass(g)} me-1">${g}</span>`).join('')}</td>
+                                        <td><span class="badge bg-primary">${subjectData.average}</span></td>
+                                        <td>
+                                            <div class="progress" style="height: 10px;">
+                                                <div class="progress-bar ${getProgressBarClass(subjectData.average)}" 
+                                                     style="width: ${(subjectData.average / 5) * 100}%"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                ` : '<p class="text-muted">Оценок пока нет</p>'}
+            </div>
+        `;
+    }
+    
+    document.getElementById('diaryContent').innerHTML = diaryContentHTML;
+    
+    if (userType === 'teacher') {
+        const gradeForm = document.getElementById('gradeForm');
+        if (gradeForm) {
+            gradeForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const studentId = document.getElementById('selectStudent').value;
+                const studentSelect = document.getElementById('selectStudent');
+                const studentName = studentSelect.options[studentSelect.selectedIndex].text.split(' (')[0];
+                const subject = document.getElementById('gradeSubject').value;
+                const value = document.getElementById('gradeValue').value;
+                const date = document.getElementById('gradeDate').value;
+                const comment = document.getElementById('gradeComment').value;
+                
+                if (!studentId || !subject || !value || !date) {
+                    showNotification('Пожалуйста, заполните все обязательные поля.', 'error');
+                    return;
+                }
+                
+                const gradeData = { 
+                    studentId: studentId,
+                    studentName: studentName,
+                    subject: subject, 
+                    value: value, 
+                    comment: comment,
+                    date: date
+                };
+                
+                const success = await addGrade(studentId, gradeData);
+                if (success) {
+                    this.reset();
+                    document.getElementById('gradeDate').value = new Date().toISOString().split('T')[0];
+                }
+            });
+        }
+        
+        const attendanceForm = document.getElementById('attendanceForm');
+        if (attendanceForm) {
+            attendanceForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const studentId = document.getElementById('attendanceStudent').value;
+                const studentSelect = document.getElementById('attendanceStudent');
+                const studentName = studentSelect.options[studentSelect.selectedIndex].text.split(' (')[0];
+                const subject = document.getElementById('attendanceSubject').value;
+                const date = document.getElementById('attendanceDate').value;
+                const status = document.querySelector('input[name="attendanceStatus"]:checked').value;
+                
+                if (!studentId || !subject || !date) {
+                    showNotification('Пожалуйста, заполните все обязательные поля.', 'error');
+                    return;
+                }
+                
+                const success = await markAttendance(studentId, date, status, subject);
+                if (success) {
+                    this.reset();
+                    document.getElementById('attendanceDate').value = new Date().toISOString().split('T')[0];
+                    document.getElementById('statusPresent').checked = true;
+                }
+            });
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('=== ИНИЦИАЛИЗАЦИЯ ДНЕВНИКА ===');
+    loadDiary();
+});
+</script>
+{% endblock %}

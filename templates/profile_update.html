@@ -1,0 +1,242 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+            <div class="content-card">
+                <h2 class="text-center mb-4">{{ page_title }}</h2>
+                
+                <form method="post" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="profile-photo-container mb-3 mx-auto">
+                                {% if user.profile_picture %}
+                                    <img src="{{ user.profile_picture.url }}" 
+                                         alt="Фото профиля" 
+                                         class="profile-photo"
+                                         id="profilePicPreview">
+                                {% else %}
+                                    <div class="profile-photo-placeholder">
+                                        <i class="fas fa-user fa-4x text-muted"></i>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="{{ form.profile_picture.id_for_label }}" 
+                                       class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-camera me-1"></i>Изменить фото
+                                </label>
+                                <input type="file" 
+                                       name="{{ form.profile_picture.name }}" 
+                                       id="{{ form.profile_picture.id_for_label }}" 
+                                       class="form-control d-none"
+                                       accept="image/*">
+                                {% if form.profile_picture.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.profile_picture.errors.0 }}
+                                </div>
+                                {% endif %}
+                                <div class="form-text">
+                                    <small>JPG, PNG, GIF. Макс. 5MB</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="{{ form.username.id_for_label }}" class="form-label">
+                                            Имя пользователя
+                                        </label>
+                                        {{ form.username }}
+                                        {% if form.username.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.username.errors.0 }}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="{{ form.email.id_for_label }}" class="form-label">
+                                            Email
+                                        </label>
+                                        {{ form.email }}
+                                        {% if form.email.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.email.errors.0 }}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="{{ form.first_name.id_for_label }}" class="form-label">
+                                            Имя
+                                        </label>
+                                        {{ form.first_name }}
+                                        {% if form.first_name.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.first_name.errors.0 }}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="{{ form.last_name.id_for_label }}" class="form-label">
+                                            Фамилия
+                                        </label>
+                                        {{ form.last_name }}
+                                        {% if form.last_name.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.last_name.errors.0 }}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="{{ form.phone.id_for_label }}" class="form-label">
+                                    Телефон
+                                </label>
+                                {{ form.phone }}
+                                {% if form.phone.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.phone.errors.0 }}
+                                </div>
+                                {% endif %}
+                            </div>
+                            
+                            {% if user.user_type == 'teacher' %}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="{{ form.specialization.id_for_label }}" class="form-label">
+                                            Специализация
+                                        </label>
+                                        {{ form.specialization }}
+                                        {% if form.specialization.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.specialization.errors.0 }}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="{{ form.experience.id_for_label }}" class="form-label">
+                                            Опыт работы (лет)
+                                        </label>
+                                        {{ form.experience }}
+                                        {% if form.experience.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.experience.errors.0 }}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            
+                            <div class="card mb-3">
+                                <div class="card-header bg-light">
+                                    <i class="fas fa-info-circle me-2"></i>Информация о пользователе
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Тип пользователя:</strong> {{ user.get_user_type_display }}</p>
+                                    
+                                    {% if user.user_type == 'student' %}
+                                        <p><strong>Группа:</strong> {{ user.group|default:"Не указана" }}</p>
+                                        <p><strong>Уровень:</strong> {{ user.level|default:"Не указан" }}</p>
+                                    {% elif user.user_type == 'teacher' %}
+                                        <p><strong>Специализация:</strong> {{ user.specialization|default:"Не указана" }}</p>
+                                        <p><strong>Опыт работы:</strong> {{ user.experience }} лет</p>
+                                    {% endif %}
+                                    
+                                    <p><strong>Дата регистрации:</strong> {{ user.date_joined|date:"d.m.Y" }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between mt-4">
+                        <div>
+                            <a href="{% url 'users:profile' %}" class="btn btn-outline-secondary me-2">
+                                <i class="fas fa-arrow-left fs-5"></i>
+                                <span class="fs-5">Отмена</span>
+                            </a>
+                            <a href="{% url 'users:password_change' %}" class="btn btn-outline-warning">
+                                <i class="fas fa-key me-2"></i>Сменить пароль
+                            </a>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-2"></i>Сохранить изменения
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const formFields = document.querySelectorAll('input, textarea, select');
+    formFields.forEach(field => {
+        if (!field.classList.contains('form-control') && 
+            field.type !== 'file' && 
+            field.type !== 'checkbox') {
+            field.classList.add('form-control');
+        }
+    });
+    
+    const fileInput = document.getElementById('{{ form.profile_picture.id_for_label }}');
+    const preview = document.getElementById('profilePicPreview');
+    const placeholder = document.querySelector('.profile-photo-placeholder');
+    
+    if (fileInput) {
+        fileInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    if (preview) {
+                        preview.src = e.target.result;
+                    } else if (placeholder) {
+                        placeholder.innerHTML = `<img src="${e.target.result}" alt="Фото профиля" class="profile-photo">`;
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+    
+    const fileLabel = document.querySelector('label[for="{{ form.profile_picture.id_for_label }}"]');
+    if (fileLabel && fileInput) {
+        fileLabel.addEventListener('click', function(e) {
+            e.preventDefault();
+            fileInput.click();
+        });
+    }
+});
+</script>
+{% endblock %}

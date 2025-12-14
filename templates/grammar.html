@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block content %}
+<section class="main-content">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="content-card fade-in-up content-background">
+                    <h1 class="display-4 fw-bold text-gradient mb-4">{{ page_title }}</h1>
+                    <p class="lead mb-4">Освойте логику английской грамматики с помощью наших наглядных схем, понятных объяснений и практических упражнений.</p>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <span class="badge bg-primary fs-6">12 времен</span>
+                        <span class="badge bg-success fs-6">Модальные глаголы</span>
+                        <span class="badge bg-warning fs-6">Условные предложения</span>
+                        <span class="badge bg-info fs-6">Пассивный залог</span>
+                    </div>
+                    <div class="mt-4 p-3 bg-light rounded">
+                        <p class="mb-0"><strong>Изучаем:</strong> {{ promo_product }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'images/grammar-main.jpg' %}"
+                     alt="Изучение грамматики"
+                     class="responsive-img img-large fade-in-up local-img"
+                     onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23667eea\' opacity=\'0.1\'/><rect width=\'400\' height=\'60\' y=\'120\' fill=\'%23667eea\' opacity=\'0.3\'/><text x=\'200\' y=\'140\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'16\' fill=\'%23667eea\'>Грамматика</text><text x=\'200\' y=\'160\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'12\' fill=\'%23667eea\' opacity=\'0.7\'>12 времен английского языка</text></svg>'">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section bg-light">
+    <div class="container">
+        <h2 class="section-title text-center">Система английских времен</h2>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="content-card text-center fade-in-up content-background">
+                    <img src="{% static 'images/grammar-tenses.jpg' %}"
+                         alt="Схема английских времен"
+                         class="responsive-img img-medium mb-4 local-img"
+                         onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23764ba2\' opacity=\'0.1\'/><rect width=\'400\' height=\'60\' y=\'120\' fill=\'%23764ba2\' opacity=\'0.3\'/><text x=\'200\' y=\'140\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'16\' fill=\'%23764ba2\'>Система времен</text><text x=\'200\' y=\'160\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'12\' fill=\'%23764ba2\' opacity=\'0.7\'>Present, Past, Future</text></svg>'">
+                    <p class="fs-5">Изучите полную систему из 12 временных форм с примерами употребления и практическими упражнениями для закрепления.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <h2 class="section-title text-center">Разделы грамматики</h2>
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon" style="width: 60px; height: 60px; margin: 0 0 20px 0;">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Времена (Tenses)</h4>
+                    <p>Полная система из 12 времен с примерами употребления и тонкостями использования в различных контекстах.</p>
+                    <ul class="styled-list">
+                        <li>Present Simple vs Present Continuous</li>
+                        <li>Past Perfect и Past Perfect Continuous</li>
+                        <li>Future Forms: will, going to, Present Continuous</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon" style="width: 60px; height: 60px; margin: 0 0 20px 0;">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h4>Модальные глаголы</h4>
+                    <p>Can, could, may, might, must, should и их тонкости. Различия в употреблении и значениях.</p>
+                    <ul class="styled-list">
+                        <li>Can vs Could - способности и возможности</li>
+                        <li>Must vs Have to - обязанности</li>
+                        <li>Should vs Ought to - советы и рекомендации</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon" style="width: 60px; height: 60px; margin: 0 0 20px 0;">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h4>Условные предложения</h4>
+                    <p>4 типа условных предложений с упражнениями. Реальные и гипотетические ситуации.</p>
+                    <ul class="styled-list">
+                        <li>Zero Conditional - научные факты</li>
+                        <li>First Conditional - реальные ситуации</li>
+                        <li>Second Conditional - маловероятные ситуации</li>
+                        <li>Third Conditional - ситуации в прошлом</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon" style="width: 60px; height: 60px; margin: 0 0 20px 0;">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h4>Пассивный залог</h4>
+                    <p>Когда и как использовать пассивные конструкции. Особенности употребления в разных временах.</p>
+                    <ul class="styled-list">
+                        <li>Formation of Passive Voice</li>
+                        <li>When to use Passive</li>
+                        <li>Passive with different tenses</li>
+                        <li>Get Passive vs Be Passive</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="highlight-box text-center fade-in-up">
+                    <h3><i class="fas fa-lightbulb me-2"></i>Грамматика дня</h3>
+                    <h4 class="mt-3">Present Perfect</h4>
+                    <p class="fs-5 mb-3">Используйте это время, чтобы говорить о действиях, которые произошли в неуточненное время в прошлом, но имеют результат в настоящем.</p>
+                    <p class="fst-italic mb-3">"I have finished my homework already." (Я уже сделал домашнюю работу.)</p>
+                    <div class="row text-start mt-4">
+                        <div class="col-md-6">
+                            <h5>Ключевые слова:</h5>
+                            <ul class="styled-list">
+                                <li>already</li>
+                                <li>just</li>
+                                <li>yet</li>
+                                <li>ever</li>
+                                <li>never</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Примеры:</h5>
+                            <ul class="styled-list">
+                                <li>I have visited London three times.</li>
+                                <li>She has never tried sushi.</li>
+                                <li>Have you ever been to Paris?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <h2 class="section-title text-center">Практические упражнения</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card text-center fade-in-up">
+                    <div class="feature-icon" style="width: 70px; height: 70px;">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h4>Тесты</h4>
+                    <p>Проверьте свои знания с помощью интерактивных тестов по всем разделам грамматики.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card text-center fade-in-up">
+                    <div class="feature-icon" style="width: 70px; height: 70px;">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h4>Упражнения</h4>
+                    <p>Практикуйтесь с помощью разнообразных упражнений на закрепление материала.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card text-center fade-in-up">
+                    <div class="feature-icon" style="width: 70px; height: 70px;">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h4>Прогресс</h4>
+                    <p>Отслеживайте свой прогресс и получайте персонализированные рекомендации.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section bg-light">
+    <div class="container">
+        <div class="content-card fade-in-up content-background">
+            <h2 class="text-center mb-4">Шпаргалка по грамматике</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Неправильные глаголы</h5>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Infinitive</th>
+                                    <th>Past Simple</th>
+                                    <th>Past Participle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>be</td>
+                                    <td>was/were</td>
+                                    <td>been</td>
+                                </tr>
+                                <tr>
+                                    <td>go</td>
+                                    <td>went</td>
+                                    <td>gone</td>
+                                </tr>
+                                <tr>
+                                    <td>see</td>
+                                    <td>saw</td>
+                                    <td>seen</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5>Предлоги времени</h5>
+                    <ul class="styled-list">
+                        <li><strong>at</strong> - для точного времени (at 5 o'clock)</li>
+                        <li><strong>on</strong> - для дней и дат (on Monday)</li>
+                        <li><strong>in</strong> - для месяцев, лет, времен года (in summer)</li>
+                        <li><strong>for</strong> - для продолжительности (for two hours)</li>
+                        <li><strong>since</strong> - с какого-то момента (since 2020)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

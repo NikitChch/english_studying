@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2><i class="fas fa-chalkboard-teacher me-2"></i>{{ page_title }}</h2>
+        <a href="{% url 'courses:create_course' %}" class="btn btn-primary">
+            <i class="fas fa-plus-circle me-1"></i>Создать новый курс
+        </a>
+    </div>
+    
+    {% if courses %}
+    <div class="row">
+        {% for course in courses %}
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">{{ course.name }}</h5>
+                    <small class="d-block">{{ course.get_level_display }}</small>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{ course.description|truncatechars:150 }}</p>
+                    
+                    <div class="mb-3">
+                        <p class="mb-1">
+                            <i class="fas fa-calendar-alt me-1"></i>
+                            <strong>Начало:</strong> {{ course.start_date|date:"d.m.Y" }}
+                        </p>
+                        <p class="mb-1">
+                            <i class="fas fa-clock me-1"></i>
+                            <strong>Длительность:</strong> {{ course.duration_days }} дней ({{ course.duration_weeks }} недель)
+                        </p>
+                        <p class="mb-1">
+                            <i class="fas fa-users me-1"></i>
+                            <strong>Студентов:</strong> {{ course.current_students }}/{{ course.max_students }}
+                        </p>
+                        <p class="mb-1">
+                            <i class="fas fa-money-bill-wave me-1"></i>
+                            <strong>Стоимость:</strong> {{ course.price }} руб.
+                        </p>
+                        <p class="mb-1">
+                            <i class="fas fa-chart-line me-1"></i>
+                            <strong>Доход:</strong> {{ course.total_income }} руб.
+                        </p>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="{% url 'courses:teacher_course_detail' course.id %}" 
+                               class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-eye me-1"></i>Просмотр
+                            </a>
+                            <a href="{% url 'courses:course_students' course.id %}" 
+                               class="btn btn-sm btn-outline-info">
+                                <i class="fas fa-users me-1"></i>Студенты
+                            </a>
+                        </div>
+                        <div class="btn-group">
+                            <a href="{% url 'courses:edit_course' course.id %}" 
+                               class="btn btn-sm btn-outline-warning">
+                                <i class="fas fa-edit me-1"></i>Редактировать
+                            </a>
+                            <a href="{% url 'courses:delete_course_teacher' course.id %}" 
+                               class="btn btn-sm btn-outline-danger">
+                                <i class="fas fa-trash-alt me-1"></i>Удалить
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="mt-4">
+        <h5>Статистика:</h5>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card text-white bg-primary">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ total_courses }}</h5>
+                        <p class="card-text">Всего курсов</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-success">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ total_students }}</h5>
+                        <p class="card-text">Всего студентов</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-info">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ total_income }} руб.</h5>
+                        <p class="card-text">Общий доход</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-warning">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">
+                            {% if total_courses > 0 %}
+                                {{ total_income|divisibleby:total_courses|yesno:"Расчет,0" }}
+                            {% else %}
+                                0
+                            {% endif %} руб.
+                        </h5>
+                        <p class="card-text">Средний доход с курса</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="alert alert-info">
+        <i class="fas fa-info-circle me-2"></i>
+        У вас пока нет активных курсов.
+    </div>
+    <div class="text-center mt-4">
+        <a href="{% url 'courses:create_course' %}" class="btn btn-primary btn-lg">
+            <i class="fas fa-plus-circle me-2"></i>Создать первый курс
+        </a>
+        <p class="mt-3 text-muted">
+            Создайте свой курс и начните обучать студентов!
+        </p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

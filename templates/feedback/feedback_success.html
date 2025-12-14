@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Отзыв отправлен - ENGLISH STUDING{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="content-card text-center">
+                
+                {% if user.is_authenticated %}
+                <div class="mb-4">
+                    <i class="fas fa-check-circle text-success" style="font-size: 4rem;"></i>
+                </div>
+                <h2 class="text-success mb-3">Спасибо за ваш отзыв, {{ user.username }}!</h2>
+                <p class="lead mb-4">Ваше мнение очень важно для нас. Мы рассмотрим ваш отзыв и обязательно учтем все замечания.</p>
+                
+                <div class="card mb-4 border-success">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0"><i class="fas fa-star me-2"></i>Ваша оценка сайта</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="mb-4">
+                                    <div style="position: relative; display: inline-block; font-size: 3rem;">
+                                        <div style="color: #6c757d;">
+                                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                        </div>
+                                        <div style="color: #ffc107; position: absolute; top: 0; left: 0; overflow: hidden; white-space: nowrap; width: {% widthratio final_rating 5 100 %}%;">
+                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                        </div>
+                                    </div>
+                                    <h2 class="text-primary">{{ final_rating }} / 5.0</h2>
+                                    <p class="text-muted">Вы оценили сайт на {{ final_rating }} из 5</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="progress mb-3" style="height: 30px;">
+                                    <div class="progress-bar {% if score_percentage|floatformat:0 >= 80 %}bg-success{% elif score_percentage|floatformat:0 >= 60 %}bg-info{% elif score_percentage|floatformat:0 >= 40 %}bg-warning{% else %}bg-danger{% endif %}" 
+                                         role="progressbar" id="progressBar" 
+                                         aria-valuenow="{{ score_percentage }}" aria-valuemin="0" aria-valuemax="100">
+                                        <span class="progress-text fw-bold" id="progressText">{{ score_percentage }}%</span>
+                                    </div>
+                                </div>
+                                <p class="mb-1">Набрано баллов: <strong>{{ total_score }}</strong> из <strong>{{ max_score }}</strong></p>
+                                <p class="text-muted small">Средняя оценка по критериям: {{ average_rating }}/5</p>
+                                <div class="text-success extra-small mt-2">
+                                    <i class="fas fa-comment-alt me-1"></i>
+                                    Ваши комментарии были учтены в оценке!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4 border-primary">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0"><i class="fas fa-chart-bar me-2"></i>Общая оценка сайта</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="d-flex align-items-center justify-content-center mb-3">
+                                    <div class="me-4">
+                                        <div class="display-4 fw-bold text-primary">{{ site_overall_rating|default:"4.5" }}</div>
+                                        <div class="text-muted">из 5.0</div>
+                                    </div>
+                                    <div>
+                                        <div style="position: relative; display: inline-block; font-size: 2rem;">
+                                            <div style="color: #6c757d;">
+                                                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                            </div>
+                                            <div style="color: #ffc107; position: absolute; top: 0; left: 0; overflow: hidden; white-space: nowrap; width: {% widthratio site_overall_rating|default:4.5 5 100 %}%;">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                            </div>
+                                        </div>
+                                        <div class="text-muted">на основе {{ site_total_feedbacks|default:"0" }} отзывов</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center">
+                                    <div class="mb-2">
+                                        <i class="fas fa-users fa-2x text-primary"></i>
+                                    </div>
+                                    <div class="h4 mb-1">{{ site_total_feedbacks|default:"0" }}+</div>
+                                    <div class="text-muted">пользователей оставили отзывы</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-4 mb-3">
+                        <div class="info-card p-3 border rounded h-100">
+                            <i class="fas fa-clock text-primary mb-2" style="font-size: 2rem;"></i>
+                            <h5>Время ответа</h5>
+                            <p class="text-muted mb-0">Обычно 1-2 рабочих дня</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="info-card p-3 border rounded h-100">
+                            <i class="fas fa-envelope text-primary mb-2" style="font-size: 2rem;"></i>
+                            <h5>Проверьте почту</h5>
+                            <p class="text-muted mb-0">Ответ придет на указанный email</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="info-card p-3 border rounded h-100">
+                            <i class="fas fa-chart-line text-primary mb-2" style="font-size: 2rem;"></i>
+                            <h5>Ваш вклад</h5>
+                            <p class="text-muted mb-0">Ваш отзыв поможет улучшить сайт</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+                    <a href="{% url 'home:home' %}" class="btn btn-primary btn-lg me-md-2">
+                        <i class="fas fa-home me-2"></i>Вернуться на главную
+                    </a>
+                    <a href="{% url 'feedback:feedback' %}" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-redo me-2"></i>Оставить еще один отзыв
+                    </a>
+                </div>
+                
+                <div class="mt-5 pt-4 border-top">
+                    <h5 class="mb-3">Как мы улучшаем сайт на основе ваших отзывов?</h5>
+                    <div class="row text-start">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Анализируем все оценки по дизайну</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Улучшаем удобство навигации</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Добавляем востребованные функции</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Анализируем содержание комментариев</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Оптимизируем скорость загрузки</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Расширяем полезный контент</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Исправляем выявленные проблемы</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Учитываем эмоции пользователей</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {% else %}
+                <div class="card mb-4 border-warning">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i>Доступ запрещен</h5>
+                    </div>
+                    <div class="card-body text-center py-5">
+                        <i class="fas fa-lock fa-4x text-warning mb-3"></i>
+                        <h4>Для просмотра этой страницы необходимо авторизоваться</h4>
+                        <p class="text-muted mb-4">Эта страница доступна только авторизованным пользователям, которые оставили отзыв.</p>
+                        
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+                            <a href="{% url 'users:login' %}" class="btn btn-primary btn-lg me-md-2">
+                                <i class="fas fa-sign-in-alt me-2"></i>Войти в систему
+                            </a>
+                            <a href="{% url 'feedback:feedback' %}" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-star me-2"></i>Оставить отзыв
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+    
+    if (progressBar && progressText) {
+        const percentage = parseFloat(progressBar.getAttribute('aria-valuenow'));
+        progressBar.style.width = percentage + '%';
+        
+        let width = 0;
+        const interval = setInterval(() => {
+            if (width >= percentage) {
+                clearInterval(interval);
+            } else {
+                width++;
+                progressBar.style.width = width + '%';
+                progressText.textContent = width + '%';
+            }
+        }, 20);
+    }
+});
+</script>
+
+<style>
+.final-rating-stars span {
+    margin: 0 3px;
+}
+
+.progress-bar {
+    transition: width 1s ease-in-out;
+    min-width: 0%;
+}
+
+.progress-text {
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    height: 100%;
+    color: white;
+}
+
+.extra-small {
+    font-size: 0.8rem;
+}
+
+.info-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+</style>
+{% endblock %}

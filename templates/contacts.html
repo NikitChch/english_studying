@@ -1,0 +1,271 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block content %}
+<section class="main-content">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="content-card fade-in-up content-background">
+                    <h1 class="display-4 fw-bold text-gradient mb-4">{{ page_title }}</h1>
+                    <p class="lead mb-4">Мы всегда рады помочь вам в изучении английского языка. Задавайте вопросы, предлагайте идеи или просто поздоровайтесь!</p>
+                    <div class="mt-4 p-3 bg-light rounded">
+                        <p class="mb-0"><strong>Приглашаем:</strong> {{ promo_product }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'images/contacts-main.jpg' %}"
+                     alt="Контакт с нами"
+                     class="responsive-img img-large fade-in-up local-img"
+                     onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23667eea\' opacity=\'0.1\'/><rect width=\'400\' height=\'60\' y=\'120\' fill=\'%23667eea\' opacity=\'0.3\'/><text x=\'200\' y=\'140\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'16\' fill=\'%23667eea\'>Контакты</text><text x=\'200\' y=\'160\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'12\' fill=\'%23667eea\' opacity=\'0.7\'>Свяжитесь с нами</text></svg>'">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section bg-light">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card text-center fade-in-up">
+                    <div class="feature-icon" style="width: 70px; height: 70px;">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>Email</h4>
+                    <p>nickchech@mail.ru</p>
+                    <p>support@englishstuding.com</p>
+                    <small class="text-muted">Отвечаем в течение 24 часов</small>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card text-center fade-in-up">
+                    <div class="feature-icon" style="width: 70px; height: 70px;">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h4>Телефон</h4>
+                    <p>+7 (915) 786-82-42</p>
+                    <p>+7 (800) 123-45-68</p>
+                    <small class="text-muted">Бесплатно по России</small>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card text-center fade-in-up">
+                    <div class="feature-icon" style="width: 70px; height: 70px;">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4>Адрес</h4>
+                    <p>г. Тула, ул. Оборонная, д. 15</p>
+                    <p>Бизнес-центр "Знание", 5 этаж</p>
+                    <small class="text-muted">Метро "Университет"</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="content-card fade-in-up content-background text-center">
+                    <div class="py-4">
+                        <i class="fas fa-headset fa-4x text-primary mb-3"></i>
+                        <h2 class="mb-3">Несколько способов связаться с нами</h2>
+                        <p class="lead mb-4">Выберите наиболее удобный для вас вариант связи</p>
+                        
+                        <div class="row g-3 mt-4">
+                            <div class="col-md-4">
+                                <div class="contact-option p-3 border rounded">
+                                    <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                                    <h5>Email</h5>
+                                    <p class="small">Для подробных вопросов и документации</p>
+                                    <a href="mailto:nickchech@mail.ru" class="btn btn-outline-primary btn-sm">
+                                        Написать email
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="contact-option p-3 border rounded">
+                                    <i class="fas fa-comment fa-2x text-primary mb-3"></i>
+                                    <h5>Обратная связь</h5>
+                                    <p class="small">Для оценок и предложений по сайту</p>
+                                    <a href="{% url 'feedback:feedback' %}" class="btn btn-outline-primary btn-sm">
+                                        Оставить отзыв
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="contact-option p-3 border rounded">
+                                    <i class="fas fa-phone fa-2x text-primary mb-3"></i>
+                                    <h5>Телефон</h5>
+                                    <p class="small">Для срочных вопросов и консультаций</p>
+                                    <a href="tel:+79157868242" class="btn btn-outline-primary btn-sm">
+                                        Позвонить
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-5 pt-4 border-top">
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                {% if user.is_authenticated %}
+                                <a href="{% url 'home:home' %}" class="btn btn-primary btn-lg me-md-2">
+                                    <i class="fas fa-home me-2"></i>На главную
+                                </a>
+                                <a href="{% url 'courses:course_list' %}" class="btn btn-outline-primary btn-lg">
+                                    <i class="fas fa-graduation-cap me-2"></i>Курсы
+                                </a>
+                                {% else %}
+                                <a href="{% url 'home:home' %}" class="btn btn-primary btn-lg me-md-2">
+                                    <i class="fas fa-home me-2"></i>На главную
+                                </a>
+                                <a href="{% url 'courses:course_list' %}" class="btn btn-outline-primary btn-lg">
+                                    <i class="fas fa-graduation-cap me-2"></i>Наши курсы
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="content-card fade-in-up content-background">
+                    <h3 class="mb-4">Мы в соцсетях</h3>
+                    <div class="d-grid gap-2">
+                        <a href="https://vk.com/sinfuisou1" target="_blank" class="btn btn-outline-primary btn-social">
+                            <i class="fab fa-vk me-2"></i>ВКонтакте
+                        </a>
+                        <a href="https://t.me/englishstuding" target="_blank" class="btn btn-outline-info btn-social">
+                            <i class="fab fa-telegram me-2"></i>Telegram
+                        </a>
+                        <a href="https://youtube.com/c/englishstuding" target="_blank" class="btn btn-outline-danger btn-social">
+                            <i class="fab fa-youtube me-2"></i>YouTube
+                        </a>
+                        <a href="https://instagram.com/englishstuding" target="_blank" class="btn btn-outline-warning btn-social">
+                            <i class="fab fa-instagram me-2"></i>Instagram
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <h5>Время работы:</h5>
+                        <ul class="styled-list">
+                            <li>Понедельник-Пятница: 9:00 - 18:00</li>
+                            <li>Суббота: 10:00 - 16:00</li>
+                            <li>Воскресенье: 10:00 - 14:00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section bg-light">
+    <div class="container">
+        <div class="content-card fade-in-up content-background">
+            <h2 class="text-center mb-4">Как нас найти</h2>
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5555.360516058066!2d37.584360021536014!3d54.166944912535456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41343ffa67ecd867%3A0x620c982482247d64!2z0KLRg9C70YzRgdC60LjQuSDQs9C-0YHRg9C00LDRgNGB0YLQstC10L3QvdGL0Lkg0YPQvdC40LLQtdGA0YHQuNGC0LXRgg!5e0!3m2!1sru!2sru!4v1762816081099!5m2!1sru!2sru"
+                        style="border:0; border-radius: 10px;"
+                        allowfullscreen=""
+                        loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <h2 class="section-title text-center">Часто задаваемые вопросы</h2>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="content-card fade-in-up content-background">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Как начать обучение?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Просто зарегистрируйтесь на нашем сайте, пройдите бесплатный тест на определение уровня, и мы подберем для вас подходящую программу обучения.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Есть ли бесплатные материалы?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Да, у нас есть множество бесплатных материалов: грамматические правила, словарные карточки, тесты и разговорные клубы.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Предоставляете ли вы сертификаты?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Да, по окончании курса вы получаете электронный сертификат, подтверждающий ваш уровень владения английским языком.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Как связаться с поддержкой?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Вы можете написать нам на email <strong>nickchech@mail.ru</strong>, позвонить по телефону <strong>+7 (915) 786-82-42</strong>, или воспользоваться формой обратной связи в соответствующем разделе сайта.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.contact-option .btn-outline-primary {
+    background-color: transparent;
+    border-color: #0d6efd;
+    color: #0d6efd;
+    transition: all 0.3s ease;
+}
+
+.contact-option .btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.contact-option i {
+    transition: transform 0.3s ease;
+}
+
+.contact-option:hover i {
+    transform: scale(1.1);
+}
+
+.contact-option {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.contact-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+</style>
+{% endblock %}

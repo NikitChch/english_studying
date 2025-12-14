@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <h2><i class="fas fa-graduation-cap me-2"></i>{{ page_title }}</h2>
+    
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title">{{ course.name }}</h4>
+                    <p class="card-text">{{ course.description }}</p>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <p><strong><i class="fas fa-chalkboard-teacher me-2"></i>Преподаватель:</strong><br>
+                            {{ course.teacher.get_full_name|default:course.teacher.username }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong><i class="fas fa-layer-group me-2"></i>Уровень:</strong><br>
+                            {{ course.get_level_display }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong><i class="fas fa-calendar-alt me-2"></i>Дата начала:</strong><br>
+                            {{ course.start_date|date:"d.m.Y" }}</p>
+                        </div>
+                        <p class="mb-1">
+                            <i class="fas fa-clock me-1"></i>
+                            <strong>Длительность:</strong> {{ course.duration_days }} дней ({{ course.duration_weeks }} недель)
+                        </p>
+                    </div>
+                    
+                    <h5><i class="fas fa-list-ol me-2"></i>Программа курса:</h5>
+                    {% if modules %}
+                    <div class="list-group mb-3">
+                        {% for module in modules %}
+                        <div class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">Модуль {{ forloop.counter }}: {{ module.title }}</h6>
+                                    <p class="mb-1 small text-muted">{{ module.description|truncatechars:100 }}</p>
+                                    <small class="text-muted"><i class="fas fa-clock me-1"></i>{{ module.duration_hours }} часов</small>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p class="text-muted">Программа курса пока не добавлена.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Запись на курс</h5>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <h2 class="text-primary">{{ course.price }} руб.</h2>
+                        <p class="text-muted">Полный доступ к курсу</p>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <p><i class="fas fa-users me-2"></i>Доступно мест: 
+                            <span class="badge {% if course.available_seats < 5 %}bg-danger{% else %}bg-success{% endif %}">
+                                {{ course.available_seats }}
+                            </span>
+                        </p>
+                        <p><i class="fas fa-calendar me-2"></i>Начало: {{ course.start_date|date:"d.m.Y" }}</p>
+                        <p><i class="fas fa-graduation-cap me-2"></i>Сертификат по окончании</p>
+                    </div>
+                    
+                    {% if is_enrolled %}
+                        <div class="alert alert-info">
+                            <i class="fas fa-check-circle me-2"></i>
+                            Вы уже записаны на этот курс.
+                            <div class="mt-2">
+                                <a href="{% url 'courses:course_student_detail' user_order.id %}" 
+                                   class="btn btn-primary btn-sm w-100">
+                                    Перейти к курсу
+                                </a>
+                            </div>
+                        </div>
+                    {% elif course.is_available %}
+                        {% if user.is_authenticated and user.user_type == 'student' %}
+                            <a href="{% url 'courses:course_enroll' course.id %}" 
+                               class="btn btn-success btn-lg w-100">
+                                <i class="fas fa-shopping-cart me-2"></i>Записаться сейчас
+                            </a>
+                        {% elif user.is_authenticated and user.user_type != 'student' %}
+                            <div class="alert alert-warning">
+                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                Только студенты могут записываться на курсы.
+                            </div>
+                        {% else %}
+                            <a href="{% url 'users:login' %}?next={% url 'courses:course_enroll' course.id %}" 
+                               class="btn btn-success btn-lg w-100">
+                                <i class="fas fa-sign-in-alt me-2"></i>Войти и записаться
+                            </a>
+                            <p class="text-center mt-2 small">
+                                Нет аккаунта? 
+                                <a href="{% url 'users:register' %}">Зарегистрируйтесь</a>
+                            </p>
+                        {% endif %}
+                    {% else %}
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-circle me-2"></i>
+                            К сожалению, на этот курс нет свободных мест.
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

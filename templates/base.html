@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{% block title %}ENGLISH STUDING - Изучение английского языка{% endblock %}</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/fontawesome/css/all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+</head>
+<body class="page-background">
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header text-center py-4">
+            <h5 class="mb-0 sidebar-title">
+                <i class="fas fa-graduation-cap me-2"></i>
+                <span class="sidebar-text">ENGLISH STUDING</span>
+            </h5>
+        </div>
+        <nav class="sidebar-nav">
+        <ul class="nav flex-column">
+            {% if not user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == '/users/login/' or request.path == '/login/' %}active{% endif %}" href="{% url 'users:login' %}">
+                    <i class="fas fa-sign-in-alt me-2"></i>
+                    <span class="sidebar-text">Вход</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == '/users/register/' or request.path == '/register/' %}active{% endif %}" href="{% url 'users:register' %}">
+                    <i class="fas fa-user-plus me-2"></i>
+                    <span class="sidebar-text">Регистрация</span>
+                </a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link {% if '/profil/' in request.path or '/users/profile/' in request.path %}active{% endif %}" href="{% url 'users:profile' %}">
+                    <i class="fas fa-user me-2"></i>
+                    <span class="sidebar-text">Личный кабинет</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if '/diary/' in request.path %}active{% endif %}" href="{% url 'diary:diary' %}">
+                    <i class="fas fa-book-open me-2"></i>
+                    <span class="sidebar-text">Дневник</span>
+                </a>
+            </li>
+            {% endif %}
+            
+            <li class="nav-item">
+                <a class="nav-link {% if 'courses' in request.path %}active{% endif %}" 
+                   href="{% if user.is_authenticated and user.user_type == 'teacher' %}{% url 'courses:teacher_courses' %}{% else %}{% url 'courses:course_list' %}{% endif %}">
+                    <i class="fas fa-graduation-cap me-2"></i>
+                    <span class="sidebar-text">Курсы</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home:home' %}">
+                    <i class="fas fa-home me-2"></i>
+                    <span class="sidebar-text">Главная</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if 'grammar' in request.path %}active{% endif %}" href="{% url 'grammar:grammar' %}">
+                    <i class="fas fa-book me-2"></i>
+                    <span class="sidebar-text">Грамматика</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if 'vocabulary' in request.path %}active{% endif %}" href="{% url 'vocabulary:vocabulary' %}">
+                    <i class="fas fa-bookmark me-2"></i>
+                    <span class="sidebar-text">Словарь</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if 'about' in request.path %}active{% endif %}" href="{% url 'about:about' %}">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <span class="sidebar-text">О нас</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if 'contacts' in request.path %}active{% endif %}" href="{% url 'contacts:contacts' %}">
+                    <i class="fas fa-envelope me-2"></i>
+                    <span class="sidebar-text">Контакты</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if 'feedback' in request.path %}active{% endif %}" href="{% url 'feedback:feedback' %}">
+                    <i class="fas fa-comment me-2"></i>
+                    <span class="sidebar-text">Оставить отзыв</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    </div>
+
+    <div class="main-content-wrapper" id="mainContent">
+    <div class="top-bar" id="topBar">
+        <div class="top-bar-content">
+            <div class="d-flex align-items-center">
+                <h6 class="mb-0 me-3">ENGLISH STUDING</h6>
+                <button type="button" id="toggleSidebar" class="btn btn-sm btn-outline-light">
+                    <i class="fas fa-chevron-left" id="toggleIcon"></i>
+                </button>
+            </div>
+            <div class="user-section">
+                {% if user.is_authenticated %}
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" 
+                                id="userDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-2"></i>{{ user.username }}
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                            <li>
+                                <a class="dropdown-item" href="{% url 'users:profile' %}">
+                                    <i class="fas fa-id-card me-2"></i>Мой профиль
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'users:profile_update' %}">
+                                    <i class="fas fa-edit me-2"></i>Редактировать профиль
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'users:password_change' %}">
+                                    <i class="fas fa-key me-2"></i>Сменить пароль
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <form method="post" action="{% url 'users:logout' %}" class="dropdown-item">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-link text-decoration-none p-0">
+                                        <i class="fas fa-sign-out-alt me-2"></i>Выйти
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                {% else %}
+                    <div class="d-flex gap-2">
+                        <a href="{% url 'users:login' %}" class="btn btn-outline-light">
+                            <i class="fas fa-sign-in-alt me-2 fs-5"></i>
+                            <span class="fs-5">Войти</span>
+                        </a>
+                        <a href="{% url 'users:register' %}" class="btn btn-primary">
+                            <i class="fas fa-user-plus me-2 fs-6"></i>
+                            <span class="fs-6">Регистрация</span>
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+        <main class="main-content-area">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+
+    {% include 'includes/footer.html' %}
+    
+    <a href="#" id="scrollToTop" class="scroll-to-top" title="Вернуться наверх">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+    
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    {% block extra_scripts %}
+    {% endblock %}
+</body>
+</html>
