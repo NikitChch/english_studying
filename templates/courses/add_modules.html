@@ -3,68 +3,330 @@
 
 {% block title %}{{ page_title }}{% endblock %}
 
+{% block extra_scripts %}
+<script>
+let formCount = 0;
+
+document.addEventListener('DOMContentLoaded', function() {
+    removeExtraDeleteFields();
+    initializeFormset();
+    setupEventListeners();
+});
+
+function removeExtraDeleteFields() {
+    const deleteCheckboxes = document.querySelectorAll('input[name$="-DELETE"]');
+    deleteCheckboxes.forEach(checkbox => {
+        if (checkbox.type === 'checkbox') {
+            checkbox.remove();
+        }
+    });
+}
+
+function initializeFormset() {
+    const container = document.getElementById('formset-container');
+    const totalForms = document.getElementById('id_form-TOTAL_FORMS');
+    
+    const existingForms = container.querySelectorAll('.formset-row');
+    formCount = existingForms.length;
+    
+    const emptyRow = document.getElementById('empty-row');
+    if (formCount > 0 && emptyRow) {
+        emptyRow.remove();
+    }
+    
+    if (totalForms) {
+        totalForms.value = formCount;
+    }
+    
+    updateDeleteButton();
+    updateSelectAll();
+}
+
+function setupEventListeners() {
+    const addBtn = document.getElementById('add-module');
+    const deleteBtn = document.getElementById('delete-selected');
+    const selectAll = document.getElementById('select-all');
+    const container = document.getElementById('formset-container');
+    
+    if (addBtn) {
+        addBtn.addEventListener('click', addForm);
+    }
+    
+    if (deleteBtn) {
+        deleteBtn.addEventListener('click', deleteSelectedForms);
+    }
+    
+    if (selectAll) {
+        selectAll.addEventListener('change', toggleSelectAll);
+    }
+    
+    if (container) {
+        container.addEventListener('change', function(e) {
+            if (e.target.classList.contains('delete-checkbox')) {
+                updateDeleteButton();
+                updateSelectAll();
+            }
+        });
+    }
+}
+
+function addForm() {
+    const container = document.getElementById('formset-container');
+    const totalForms = document.getElementById('id_form-TOTAL_FORMS');
+    const emptyRow = document.getElementById('empty-row');
+    
+    if (!container) {
+        return;
+    }
+    
+    if (emptyRow) {
+        emptyRow.remove();
+    }
+    
+    const newIndex = formCount;
+    const newRow = document.createElement('tr');
+    newRow.className = 'formset-row';
+    newRow.id = `row-${newIndex}`;
+    
+    newRow.innerHTML = `
+        <td class="text-center">${formCount + 1}</td>
+        <td class="text-center">
+            <input type="checkbox" class="form-check-input delete-checkbox">
+        </td>
+        <td>
+            <input type="text" name="form-${newIndex}-title" 
+                   maxlength="200" class="form-control" placeholder="Введите название модуля" required>
+        </td>
+        <td>
+            <textarea name="form-${newIndex}-description" 
+                      class="form-control" rows="2" placeholder="Введите описание модуля"></textarea>
+        </td>
+        <td>
+            <input type="number" name="form-${newIndex}-order" 
+                   class="form-control" value="${newIndex + 1}" min="1" required>
+        </td>
+        <td>
+            <input type="number" name="form-${newIndex}-duration_hours" 
+                   class="form-control" value="2" min="1" required>
+        </td>
+    `;
+    
+    container.appendChild(newRow);
+    formCount++;
+    
+    if (totalForms) {
+        totalForms.value = formCount;
+    }
+    
+    updateRowNumbers();
+    updateDeleteButton();
+}
+
+function deleteSelectedForms() {
+    const checkboxes = document.querySelectorAll('.delete-checkbox:checked');
+    
+    if (checkboxes.length === 0) {
+        alert('Выберите модули для удаления');
+        return;
+    }
+    
+    if (!confirm(`Вы уверены, что хотите удалить ${checkboxes.length} модуль(ей)?`)) {
+        return;
+    }
+    
+    checkboxes.forEach(checkbox => {
+        const row = checkbox.closest('.formset-row');
+        if (row) {
+            const moduleId = checkbox.getAttribute('data-pk');
+            if (moduleId) {
+                row.classList.add('deleted-row');
+                
+                const rowId = row.id.replace('row-', '');
+                let deleteInput = row.querySelector(`input[name$="-DELETE"]`);
+                if (!deleteInput) {
+                    deleteInput = document.createElement('input');
+                    deleteInput.type = 'hidden';
+                    deleteInput.name = `form-${rowId}-DELETE`;
+                    deleteInput.value = 'on';
+                    row.appendChild(deleteInput);
+                } else {
+                    deleteInput.value = 'on';
+                }
+                
+                const inputs = row.querySelectorAll('input:not([type="hidden"]), textarea');
+                inputs.forEach(input => {
+                    input.disabled = true;
+                });
+            } else {
+                row.remove();
+                formCount--;
+            }
+        }
+    });
+    
+    updateRowNumbers();
+    updateDeleteButton();
+    updateSelectAll();
+    
+    const totalForms = document.getElementById('id_form-TOTAL_FORMS');
+    if (totalForms) {
+        totalForms.value = formCount;
+    }
+    
+    alert('Модули отмечены для удаления. Нажмите "Сохранить модули" для подтверждения.');
+}
+
+function toggleSelectAll() {
+    const selectAll = document.getElementById('select-all');
+    const checkboxes = document.querySelectorAll('.delete-checkbox:not(.deleted-row input)');
+    
+    checkboxes.forEach(checkbox => {
+        if (!checkbox.closest('.deleted-row')) {
+            checkbox.checked = selectAll.checked;
+        }
+    });
+    
+    updateDeleteButton();
+}
+
+function updateDeleteButton() {
+    const deleteBtn = document.getElementById('delete-selected');
+    const checkboxes = document.querySelectorAll('.delete-checkbox:checked');
+    
+    if (deleteBtn) {
+        deleteBtn.disabled = checkboxes.length === 0;
+        if (checkboxes.length > 0) {
+            deleteBtn.innerHTML = `<i class="fas fa-trash me-1"></i>Удалить выбранные (${checkboxes.length})`;
+        } else {
+            deleteBtn.innerHTML = `<i class="fas fa-trash me-1"></i>Удалить выбранные`;
+        }
+    }
+}
+
+function updateSelectAll() {
+    const selectAll = document.getElementById('select-all');
+    const checkboxes = document.querySelectorAll('.delete-checkbox:not(.deleted-row input)');
+    
+    if (checkboxes.length === 0) {
+        selectAll.checked = false;
+        selectAll.indeterminate = false;
+        return;
+    }
+    
+    const checkedCount = document.querySelectorAll('.delete-checkbox:checked:not(.deleted-row input)').length;
+    
+    if (checkedCount === 0) {
+        selectAll.checked = false;
+        selectAll.indeterminate = false;
+    } else if (checkedCount === checkboxes.length) {
+        selectAll.checked = true;
+        selectAll.indeterminate = false;
+    } else {
+        selectAll.checked = false;
+        selectAll.indeterminate = true;
+    }
+}
+
+function updateRowNumbers() {
+    const rows = document.querySelectorAll('.formset-row:not(.deleted-row)');
+    rows.forEach((row, index) => {
+        const numberCell = row.querySelector('td:first-child');
+        if (numberCell) {
+            numberCell.textContent = index + 1;
+        }
+    });
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <div class="content-card">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header bg-primary text-white">
                     <h3 class="mb-0 text-center">
-                        <i class="fas fa-layer-group me-2"></i>Добавление модулей
+                        <i class="fas fa-layer-group me-2"></i>Редактирование модулей
                     </h3>
                     <p class="mb-0 text-center small">Курс: {{ course.name }}</p>
                 </div>
                 <div class="card-body">
-                    <form method="post" novalidate>
+                    <form method="post" novalidate id="modules-form">
                         {% csrf_token %}
                         {{ formset.management_form }}
                         
+                        <div class="alert alert-info mb-3">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Добавьте модули курса. Порядок модулей определяется числом в колонке "Порядок".
+                        </div>
+                        
+                        <div class="mb-3">
+                            <button type="button" id="add-module" class="btn btn-primary">
+                                <i class="fas fa-plus me-1"></i>Добавить модуль
+                            </button>
+                            <button type="button" id="delete-selected" class="btn btn-danger" disabled>
+                                <i class="fas fa-trash me-1"></i>Удалить выбранные
+                            </button>
+                        </div>
+                        
                         <div class="table-responsive">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered table-hover" id="modules-table">
                                 <thead class="table-light">
                                     <tr>
-                                        <th>Название модуля</th>
-                                        <th>Описание</th>
-                                        <th>Порядок</th>
-                                        <th>Длительность (часов)</th>
-                                        <th>Удалить</th>
+                                        <th style="width: 50px; min-width: 50px;">№</th>
+                                        <th style="width: 60px; min-width: 60px;">
+                                            <input type="checkbox" id="select-all" class="form-check-input">
+                                        </th>
+                                        <th style="min-width: 250px;">Название модуля *</th>
+                                        <th style="min-width: 300px;">Описание</th>
+                                        <th style="width: 120px; min-width: 120px;" class="nowrap">Порядок *</th>
+                                        <th style="width: 150px; min-width: 150px;" class="nowrap">Длительность (часов) *</th>
                                     </tr>
                                 </thead>
                                 <tbody id="formset-container">
                                     {% for form in formset %}
-                                    <tr class="formset-row">
+                                    <tr class="formset-row" id="row-{{ forloop.counter0 }}">
+                                        <td class="text-center">{{ forloop.counter }}</td>
+                                        <td class="text-center">
+                                            {% if form.instance.pk %}
+                                            <input type="checkbox" 
+                                                   class="form-check-input delete-checkbox"
+                                                   data-pk="{{ form.instance.id }}">
+                                            <input type="hidden" name="delete_modules" value="{{ form.instance.id }}">
+                                            {% else %}
+                                            <input type="checkbox" class="form-check-input delete-checkbox">
+                                            {% endif %}
+                                            {{ form.id }}
+                                        </td>
                                         <td>
                                             {{ form.title }}
                                             {% if form.title.errors %}
-                                            <div class="text-danger">{{ form.title.errors }}</div>
+                                            <div class="text-danger small">{{ form.title.errors }}</div>
                                             {% endif %}
                                         </td>
                                         <td>
                                             {{ form.description }}
                                             {% if form.description.errors %}
-                                            <div class="text-danger">{{ form.description.errors }}</div>
+                                            <div class="text-danger small">{{ form.description.errors }}</div>
                                             {% endif %}
                                         </td>
                                         <td>
                                             {{ form.order }}
                                             {% if form.order.errors %}
-                                            <div class="text-danger">{{ form.order.errors }}</div>
+                                            <div class="text-danger small">{{ form.order.errors }}</div>
                                             {% endif %}
                                         </td>
                                         <td>
                                             {{ form.duration_hours }}
                                             {% if form.duration_hours.errors %}
-                                            <div class="text-danger">{{ form.duration_hours.errors }}</div>
+                                            <div class="text-danger small">{{ form.duration_hours.errors }}</div>
                                             {% endif %}
                                         </td>
-                                        <td class="text-center">
-                                            {% if form.instance.pk %}
-                                                {{ form.DELETE }}
-                                            {% else %}
-                                                <button type="button" class="btn btn-sm btn-danger remove-row">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            {% endif %}
+                                    </tr>
+                                    {% empty %}
+                                    <tr id="empty-row">
+                                        <td colspan="6" class="text-center text-muted py-4">
+                                            Нет добавленных модулей. Нажмите "Добавить модуль", чтобы начать.
                                         </td>
                                     </tr>
                                     {% endfor %}
@@ -72,12 +334,12 @@
                             </table>
                         </div>
                         
-                        <div class="d-grid gap-2">
+                        <div class="d-grid gap-2 mt-4">
                             <button type="submit" class="btn btn-primary btn-lg">
                                 <i class="fas fa-save me-2"></i>Сохранить модули
                             </button>
-                            <a href="{% url 'courses:teacher_courses' %}" class="btn btn-outline-secondary">
-                                <i class="fas fa-arrow-left me-1"></i>Вернуться к курсам
+                            <a href="{% url 'courses:teacher_course_detail' course.id %}" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left me-1"></i>Вернуться к курсу
                             </a>
                         </div>
                     </form>
@@ -87,40 +349,109 @@
     </div>
 </div>
 
-{% block extra_scripts %}
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const container = document.getElementById('formset-container');
-    const totalForms = document.getElementById('id_form-TOTAL_FORMS');
-    
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('remove-row')) {
-            e.preventDefault();
-            const row = e.target.closest('.formset-row');
-            row.remove();
-            
-            const forms = container.querySelectorAll('.formset-row');
-            totalForms.value = forms.length;
-            
-            forms.forEach((form, index) => {
-                const prefix = `form-${index}`;
-                form.querySelectorAll('[id*="-id_"], [name*="-"]').forEach(input => {
-                    const oldId = input.id;
-                    const oldName = input.name;
-                    
-                    if (oldId.includes('__prefix__')) return;
-                    
-                    if (oldId) {
-                        input.id = oldId.replace(/form-\d+/, prefix);
-                    }
-                    if (oldName) {
-                        input.name = oldName.replace(/form-\d+/, prefix);
-                    }
-                });
-            });
-        }
-    });
-});
-</script>
-{% endblock %}
+<style>
+.nowrap {
+    white-space: nowrap !important;
+}
+
+#select-all {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.delete-checkbox {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.deleted-row {
+    opacity: 0.5;
+    background-color: #f8d7da !important;
+}
+
+.deleted-row input:not([type="hidden"]),
+.deleted-row textarea {
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+    text-decoration: line-through;
+    cursor: not-allowed;
+}
+
+.formset-row input.form-control,
+.formset-row textarea.form-control {
+    min-width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    padding: 8px 10px;
+}
+
+.formset-row td {
+    vertical-align: middle;
+    padding: 12px 8px !important;
+}
+
+#modules-table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+#modules-table th {
+    background-color: #f8f9fa;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 2px -1px rgba(0,0,0,0.1);
+}
+
+.formset-row textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.text-danger.small {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+#delete-selected:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.table th, .table td {
+    padding: 12px 8px !important;
+}
+
+.formset-row input[type="text"],
+.formset-row input[type="number"],
+.formset-row textarea {
+    background-color: white !important;
+    color: #212529 !important;
+    border: 1px solid #ced4da !important;
+    font-size: 14px !important;
+    padding: 8px 10px !important;
+    border-radius: 4px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
+
+.formset-row input[type="text"]:focus,
+.formset-row input[type="number"]:focus,
+.formset-row textarea:focus {
+    border-color: #80bdff !important;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25) !important;
+}
+
+#formset-container input.form-control,
+#formset-container textarea.form-control {
+    background-color: white !important;
+    color: #212529 !important;
+    border: 1px solid #ced4da !important;
+}
+#modules-table thead th {
+    color: #212529 !important;
+}
+</style>
 {% endblock %}

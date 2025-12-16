@@ -3695,3 +3695,1941 @@ INFO 2025-12-13 23:33:03,076 basehttp "GET /diary/ HTTP/1.1" 200 45850
 INFO 2025-12-13 23:33:07,529 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 13053
 INFO 2025-12-13 23:33:12,491 basehttp "GET /feedback/ HTTP/1.1" 200 54431
 INFO 2025-12-13 23:33:21,080 basehttp "GET /users/profile/ HTTP/1.1" 200 27481
+INFO 2025-12-14 10:51:41,851 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 10:51:44,123 basehttp "GET /users/profile/ HTTP/1.1" 200 27481
+INFO 2025-12-14 10:51:44,381 basehttp "GET /static/css/fontawesome/css/all.min.css HTTP/1.1" 200 74320
+INFO 2025-12-14 10:51:44,383 basehttp "GET /static/css/style.css HTTP/1.1" 200 34442
+INFO 2025-12-14 10:51:44,386 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 232111
+INFO 2025-12-14 10:51:44,391 basehttp "GET /media/profile_pics/3F3F3F3F_3F3F3F3F3F3F_4_QliiINP.webp HTTP/1.1" 200 63948
+INFO 2025-12-14 10:51:44,411 basehttp "GET /static/js/script.js HTTP/1.1" 200 34878
+INFO 2025-12-14 10:51:44,428 basehttp "GET /static/js/bootstrap.bundle.min.js HTTP/1.1" 200 80496
+INFO 2025-12-14 10:51:44,489 basehttp "GET /static/css/fontawesome/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 101224
+INFO 2025-12-14 10:51:44,491 basehttp "GET /static/css/fontawesome/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 113152
+INFO 2025-12-14 10:51:44,637 basehttp "GET /static/images/favicon.ico HTTP/1.1" 200 15406
+INFO 2025-12-14 10:53:33,867 basehttp "GET /users/profile/ HTTP/1.1" 200 27469
+INFO 2025-12-14 10:54:07,247 basehttp "GET /diary/ HTTP/1.1" 200 46385
+INFO 2025-12-14 10:54:07,299 basehttp "GET /static/css/style.css HTTP/1.1" 200 34442
+INFO 2025-12-14 10:54:07,301 basehttp "GET /static/js/script.js HTTP/1.1" 200 34878
+INFO 2025-12-14 10:54:07,303 basehttp "GET /static/css/fontawesome/css/all.min.css HTTP/1.1" 200 74320
+INFO 2025-12-14 10:54:07,305 basehttp "GET /static/js/bootstrap.bundle.min.js HTTP/1.1" 200 80496
+INFO 2025-12-14 10:54:07,307 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 232111
+INFO 2025-12-14 10:54:07,334 basehttp "GET /static/css/fontawesome/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 101224
+INFO 2025-12-14 10:54:07,335 basehttp "GET /static/css/fontawesome/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 113152
+INFO 2025-12-14 10:54:09,785 basehttp "GET /users/profile/ HTTP/1.1" 200 29381
+INFO 2025-12-14 10:54:31,726 basehttp "GET /users/profile/ HTTP/1.1" 200 27440
+INFO 2025-12-14 10:54:39,161 basehttp "GET /courses/teacher/courses/14/edit/ HTTP/1.1" 200 13417
+INFO 2025-12-14 10:54:49,991 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 18025
+INFO 2025-12-14 10:56:45,473 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 18025
+INFO 2025-12-14 10:56:52,664 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 18025
+INFO 2025-12-14 10:57:37,061 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 18025
+INFO 2025-12-14 10:58:11,814 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 18025
+INFO 2025-12-14 10:58:19,359 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 18025
+INFO 2025-12-14 10:58:26,367 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 18025
+INFO 2025-12-14 10:58:34,440 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 13053
+INFO 2025-12-14 10:58:37,397 basehttp "GET /courses/teacher/courses/14/detail/ HTTP/1.1" 200 14709
+INFO 2025-12-14 10:58:49,099 basehttp "GET /courses/teacher/courses/14/students/ HTTP/1.1" 200 10136
+INFO 2025-12-14 10:58:54,736 basehttp "GET /diary/ HTTP/1.1" 200 46385
+INFO 2025-12-14 10:58:56,286 basehttp "GET /courses/ HTTP/1.1" 200 40325
+INFO 2025-12-14 10:59:00,564 basehttp "GET /courses/14/enroll/ HTTP/1.1" 200 12523
+INFO 2025-12-14 10:59:09,687 basehttp "POST /courses/14/enroll/ HTTP/1.1" 302 0
+INFO 2025-12-14 10:59:09,805 basehttp "GET /courses/my-courses/ HTTP/1.1" 200 13476
+INFO 2025-12-14 10:59:14,366 basehttp "GET /courses/teacher/courses/14/students/ HTTP/1.1" 200 12832
+INFO 2025-12-14 10:59:29,901 basehttp "GET /courses/14/ HTTP/1.1" 200 12387
+INFO 2025-12-14 10:59:47,073 basehttp "GET /courses/teacher/courses/14/students/ HTTP/1.1" 200 12832
+INFO 2025-12-14 10:59:57,652 basehttp "GET /courses/order/5/ HTTP/1.1" 200 19905
+INFO 2025-12-14 10:59:57,713 basehttp "GET /static/css/fontawesome/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 18988
+INFO 2025-12-14 11:00:21,577 basehttp "GET /courses/order/5/ HTTP/1.1" 200 19905
+INFO 2025-12-14 11:00:38,971 basehttp "GET /courses/teacher/courses/14/detail/ HTTP/1.1" 200 14716
+INFO 2025-12-14 11:00:45,732 basehttp "GET /users/profile/ HTTP/1.1" 200 27440
+INFO 2025-12-14 11:00:50,581 basehttp "GET /courses/teacher/courses/14/edit/ HTTP/1.1" 200 13417
+INFO 2025-12-14 11:00:56,940 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 13063
+INFO 2025-12-14 11:02:17,332 basehttp "GET /courses/teacher/courses/create/ HTTP/1.1" 200 12884
+INFO 2025-12-14 11:02:19,659 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 13063
+INFO 2025-12-14 11:03:00,135 autoreload C:\Dev\jump_into_django\english_studing\courses\views.py changed, reloading.
+INFO 2025-12-14 11:03:01,190 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 11:03:10,185 autoreload C:\Dev\jump_into_django\english_studing\courses\views.py changed, reloading.
+INFO 2025-12-14 11:03:11,170 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 11:03:19,006 basehttp "GET /courses/teacher/courses/14/detail/ HTTP/1.1" 200 14716
+INFO 2025-12-14 11:03:21,801 basehttp "GET /courses/teacher/courses/14/students/ HTTP/1.1" 200 12832
+INFO 2025-12-14 11:03:30,433 basehttp "GET /users/profile/ HTTP/1.1" 200 32375
+INFO 2025-12-14 11:03:34,864 basehttp "GET /courses/order/5/ HTTP/1.1" 200 19905
+INFO 2025-12-14 11:03:42,532 basehttp "GET /courses/order/4/ HTTP/1.1" 200 22343
+INFO 2025-12-14 11:06:24,407 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 18025
+INFO 2025-12-14 11:06:31,223 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 13005
+INFO 2025-12-14 11:06:34,156 basehttp "GET /courses/teacher/courses/14/edit/ HTTP/1.1" 200 13417
+INFO 2025-12-14 11:07:12,577 basehttp "GET /feedback/ HTTP/1.1" 200 54005
+INFO 2025-12-14 11:07:38,802 views Начало отправки email для отзыва #12
+INFO 2025-12-14 11:07:38,803 views Отправка email: subject=Новое обращение с рейтингом 2.5/5, to=nickchech@mail.ru
+INFO 2025-12-14 11:07:38,803 views Настройки SMTP: host=smtp.mail.ru, port=587
+INFO 2025-12-14 11:07:38,804 views Отправитель: nickchech@mail.ru
+INFO 2025-12-14 11:07:44,756 views Email отправлен успешно. Результат: 1
+INFO 2025-12-14 11:07:44,760 basehttp "POST /feedback/ HTTP/1.1" 302 0
+INFO 2025-12-14 11:07:44,873 basehttp "GET /feedback/success/ HTTP/1.1" 200 18969
+INFO 2025-12-14 11:08:35,661 basehttp "GET /feedback/success/ HTTP/1.1" 302 0
+INFO 2025-12-14 11:08:35,760 basehttp "GET /feedback/ HTTP/1.1" 200 54879
+INFO 2025-12-14 11:08:47,173 views Начало отправки email для отзыва #13
+INFO 2025-12-14 11:08:47,173 views Отправка email: subject=Новое обращение с рейтингом 2.5/5, to=nickchech@mail.ru
+INFO 2025-12-14 11:08:47,177 views Настройки SMTP: host=smtp.mail.ru, port=587
+INFO 2025-12-14 11:08:47,177 views Отправитель: nickchech@mail.ru
+INFO 2025-12-14 11:08:48,111 views Email отправлен успешно. Результат: 1
+INFO 2025-12-14 11:08:48,116 basehttp "POST /feedback/ HTTP/1.1" 302 0
+INFO 2025-12-14 11:08:48,231 basehttp "GET /feedback/success/ HTTP/1.1" 200 18671
+INFO 2025-12-14 11:08:57,645 basehttp "GET /contacts/ HTTP/1.1" 200 22543
+INFO 2025-12-14 11:08:57,766 basehttp "GET /static/images/contacts-main.jpg HTTP/1.1" 200 574536
+INFO 2025-12-14 11:09:11,556 basehttp "GET /about/ HTTP/1.1" 200 20460
+INFO 2025-12-14 11:09:11,645 basehttp "GET /static/images/team-1.jpg HTTP/1.1" 200 199214
+INFO 2025-12-14 11:09:11,648 basehttp "GET /static/images/team-2.jpg HTTP/1.1" 200 206383
+INFO 2025-12-14 11:09:11,653 basehttp "GET /static/images/team-3.jpg HTTP/1.1" 200 261488
+INFO 2025-12-14 11:09:11,665 basehttp "GET /static/images/about-history.jpg HTTP/1.1" 200 574536
+INFO 2025-12-14 11:09:11,667 basehttp "GET /static/images/about-main.jpg HTTP/1.1" 200 633130
+INFO 2025-12-14 11:09:18,752 basehttp "GET /vocabulary/ HTTP/1.1" 200 27172
+INFO 2025-12-14 11:09:18,844 basehttp "GET /static/images/vocabulary-everyday.jpg HTTP/1.1" 200 350224
+INFO 2025-12-14 11:09:18,850 basehttp "GET /static/images/vocabulary-business.jpg HTTP/1.1" 200 393520
+INFO 2025-12-14 11:09:18,852 basehttp "GET /static/images/vocabulary-academic.jpg HTTP/1.1" 200 548120
+INFO 2025-12-14 11:09:18,857 basehttp "GET /static/images/vocabulary-main.jpg HTTP/1.1" 200 884909
+INFO 2025-12-14 11:09:34,880 basehttp "GET /grammar/ HTTP/1.1" 200 21658
+INFO 2025-12-14 11:09:34,967 basehttp "GET /static/images/grammar-main.jpg HTTP/1.1" 200 473657
+INFO 2025-12-14 11:09:34,971 basehttp "GET /static/images/grammar-tenses.jpg HTTP/1.1" 200 403845
+INFO 2025-12-14 11:09:40,549 basehttp "GET / HTTP/1.1" 200 41708
+INFO 2025-12-14 11:09:40,617 basehttp "GET /static/images/main-hero.jpg HTTP/1.1" 200 397095
+INFO 2025-12-14 11:09:40,744 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2915
+INFO 2025-12-14 11:09:40,768 basehttp "GET /static/css/fontawesome/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 18988
+INFO 2025-12-14 11:10:00,617 basehttp "GET /about/ HTTP/1.1" 200 20460
+INFO 2025-12-14 11:10:05,815 basehttp "GET /vocabulary/ HTTP/1.1" 200 27172
+INFO 2025-12-14 11:10:06,577 basehttp "GET /grammar/ HTTP/1.1" 200 21658
+INFO 2025-12-14 11:10:07,242 basehttp "GET / HTTP/1.1" 200 41708
+INFO 2025-12-14 11:10:07,448 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2915
+INFO 2025-12-14 11:10:58,025 basehttp "GET / HTTP/1.1" 200 41426
+INFO 2025-12-14 11:10:58,190 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2915
+INFO 2025-12-14 11:11:01,275 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 13005
+INFO 2025-12-14 11:11:03,837 basehttp "GET /diary/ HTTP/1.1" 200 45850
+INFO 2025-12-14 11:11:12,911 basehttp "GET /diary/api/student/2/ HTTP/1.1" 200 350
+INFO 2025-12-14 11:11:18,218 basehttp "GET /diary/api/student/3/ HTTP/1.1" 200 938
+INFO 2025-12-14 11:11:34,069 basehttp "GET / HTTP/1.1" 200 41414
+INFO 2025-12-14 11:11:34,107 basehttp "GET /static/images/main-hero.jpg HTTP/1.1" 200 397095
+INFO 2025-12-14 11:11:34,266 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2915
+INFO 2025-12-14 11:11:34,435 basehttp "GET /media/profile_pics/3F3F3F3F_3F3F3F3F3F3F_4_QliiINP.webp HTTP/1.1" 200 63948
+INFO 2025-12-14 11:11:37,118 basehttp "GET /feedback/ HTTP/1.1" 200 55114
+INFO 2025-12-14 11:11:43,615 basehttp "GET /users/profile/ HTTP/1.1" 200 32375
+INFO 2025-12-14 11:12:13,283 basehttp "GET /users/password_change/ HTTP/1.1" 200 11140
+INFO 2025-12-14 11:12:46,937 basehttp "POST /users/password_change/ HTTP/1.1" 302 0
+INFO 2025-12-14 11:12:47,020 basehttp "GET /users/password_change/done/ HTTP/1.1" 200 9318
+INFO 2025-12-14 11:12:54,972 basehttp "GET /users/profile/ HTTP/1.1" 200 32375
+INFO 2025-12-14 11:12:58,629 basehttp "GET /users/profile/update/ HTTP/1.1" 200 16623
+INFO 2025-12-14 11:13:35,619 basehttp "GET /users/profile/ HTTP/1.1" 200 32375
+INFO 2025-12-14 11:13:48,516 basehttp "GET /diary/ HTTP/1.1" 200 46385
+INFO 2025-12-14 11:14:29,583 basehttp "GET /diary/ HTTP/1.1" 200 46385
+INFO 2025-12-14 11:14:29,636 basehttp "GET /static/images/favicon.ico HTTP/1.1" 200 15406
+INFO 2025-12-14 11:15:07,977 basehttp "GET /diary/ HTTP/1.1" 200 46386
+INFO 2025-12-14 11:15:34,677 basehttp "GET /diary/ HTTP/1.1" 200 46387
+INFO 2025-12-14 11:15:55,069 basehttp "POST /diary/api/mark_attendance/ HTTP/1.1" 200 430
+INFO 2025-12-14 11:16:00,948 basehttp "GET /diary/ HTTP/1.1" 200 46683
+INFO 2025-12-14 11:16:29,902 basehttp "POST /diary/api/mark_attendance/ HTTP/1.1" 200 505
+INFO 2025-12-14 11:16:33,087 basehttp "GET /diary/ HTTP/1.1" 200 46686
+INFO 2025-12-14 11:16:48,056 basehttp "POST /diary/api/mark_attendance/ HTTP/1.1" 200 522
+INFO 2025-12-14 11:16:51,684 basehttp "GET /diary/ HTTP/1.1" 200 47016
+WARNING 2025-12-14 11:17:14,938 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-14 11:17:14,940 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4970
+INFO 2025-12-14 11:17:15,032 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 451427
+INFO 2025-12-14 11:17:15,044 basehttp "GET /static/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 331017
+INFO 2025-12-14 11:18:11,454 basehttp "GET /users/profile/ HTTP/1.1" 200 27440
+INFO 2025-12-14 11:30:16,107 autoreload C:\Dev\jump_into_django\english_studing\courses\forms.py changed, reloading.
+INFO 2025-12-14 11:30:17,411 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 11:31:17,325 autoreload C:\Dev\jump_into_django\english_studing\courses\views.py changed, reloading.
+INFO 2025-12-14 11:31:18,548 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 11:31:57,352 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 13005
+INFO 2025-12-14 11:31:59,444 basehttp "GET /courses/teacher/courses/14/edit/ HTTP/1.1" 200 13417
+INFO 2025-12-14 11:32:02,593 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 21869
+INFO 2025-12-14 11:32:31,560 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 13005
+INFO 2025-12-14 11:32:36,658 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 13005
+INFO 2025-12-14 11:32:38,667 basehttp "GET /courses/teacher/courses/14/detail/ HTTP/1.1" 200 14716
+INFO 2025-12-14 11:32:44,887 basehttp "GET /courses/teacher/courses/14/students/ HTTP/1.1" 200 12423
+INFO 2025-12-14 11:33:08,674 basehttp "GET /users/profile/ HTTP/1.1" 200 27440
+INFO 2025-12-14 11:33:10,954 basehttp "GET / HTTP/1.1" 200 41426
+INFO 2025-12-14 11:33:11,154 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2915
+INFO 2025-12-14 11:33:11,893 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 13005
+INFO 2025-12-14 11:33:16,185 basehttp "GET /courses/teacher/courses/14/detail/ HTTP/1.1" 200 14838
+INFO 2025-12-14 11:33:19,655 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 21869
+INFO 2025-12-14 11:33:24,068 basehttp "GET / HTTP/1.1" 200 41426
+INFO 2025-12-14 11:33:24,275 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2915
+INFO 2025-12-14 11:33:51,413 basehttp "GET /feedback/ HTTP/1.1" 200 54504
+INFO 2025-12-14 11:34:30,800 basehttp "GET /users/profile/ HTTP/1.1" 200 27440
+INFO 2025-12-14 11:34:36,502 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 13005
+INFO 2025-12-14 11:34:38,235 basehttp "GET /courses/teacher/courses/14/students/ HTTP/1.1" 200 12423
+INFO 2025-12-14 11:34:41,862 basehttp "GET /courses/teacher/courses/14/detail/ HTTP/1.1" 200 14838
+INFO 2025-12-14 11:34:47,400 basehttp "GET /courses/teacher/courses/14/edit/ HTTP/1.1" 200 13417
+INFO 2025-12-14 11:35:26,803 basehttp "GET /courses/teacher/courses/14/edit/ HTTP/1.1" 200 13417
+INFO 2025-12-14 11:35:35,129 basehttp "GET /courses/ HTTP/1.1" 200 40325
+INFO 2025-12-14 11:35:39,484 basehttp "GET /users/profile/ HTTP/1.1" 200 32375
+INFO 2025-12-14 11:35:44,261 basehttp "GET /courses/order/5/ HTTP/1.1" 200 19905
+INFO 2025-12-14 11:35:52,812 basehttp "GET /courses/order/4/ HTTP/1.1" 200 22343
+INFO 2025-12-14 11:36:09,629 basehttp "GET /courses/ HTTP/1.1" 200 40325
+INFO 2025-12-14 11:36:21,832 basehttp "GET /courses/14/enroll/ HTTP/1.1" 302 0
+INFO 2025-12-14 11:36:21,959 basehttp "GET /courses/14/ HTTP/1.1" 200 12586
+INFO 2025-12-14 11:36:28,514 basehttp "GET /courses/10/enroll/ HTTP/1.1" 200 12962
+INFO 2025-12-14 11:36:34,080 basehttp "POST /courses/10/enroll/ HTTP/1.1" 302 0
+INFO 2025-12-14 11:36:34,179 basehttp "GET /courses/my-courses/ HTTP/1.1" 200 15222
+INFO 2025-12-14 11:36:43,469 basehttp "GET /courses/order/6/ HTTP/1.1" 200 24448
+INFO 2025-12-14 11:38:32,174 basehttp "GET /courses/teacher/courses/14/students/ HTTP/1.1" 200 12423
+INFO 2025-12-14 11:38:38,544 basehttp "GET /courses/ HTTP/1.1" 200 40324
+INFO 2025-12-14 11:38:40,583 basehttp "GET /courses/1/enroll/ HTTP/1.1" 302 0
+INFO 2025-12-14 11:38:40,672 basehttp "GET /courses/1/ HTTP/1.1" 200 14665
+INFO 2025-12-14 11:38:46,326 basehttp "GET /courses/2/enroll/ HTTP/1.1" 200 12930
+INFO 2025-12-14 11:39:41,777 basehttp "GET /users/profile/ HTTP/1.1" 200 27440
+INFO 2025-12-14 11:39:43,274 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 13005
+INFO 2025-12-14 11:39:45,087 basehttp "GET /courses/teacher/courses/14/detail/ HTTP/1.1" 200 14838
+INFO 2025-12-14 11:39:47,154 basehttp "GET /courses/teacher/courses/14/edit/ HTTP/1.1" 200 13417
+INFO 2025-12-14 11:39:59,835 basehttp "GET /courses/teacher/courses/14/students/ HTTP/1.1" 200 12423
+INFO 2025-12-14 11:40:07,750 basehttp "GET /courses/14/ HTTP/1.1" 200 12387
+INFO 2025-12-14 11:40:20,863 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 21869
+INFO 2025-12-14 11:43:42,792 autoreload C:\Dev\jump_into_django\english_studing\courses\forms.py changed, reloading.
+INFO 2025-12-14 11:43:44,474 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 11:44:07,351 autoreload C:\Dev\jump_into_django\english_studing\courses\views.py changed, reloading.
+INFO 2025-12-14 11:44:08,531 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 11:44:17,797 autoreload C:\Dev\jump_into_django\english_studing\courses\views.py changed, reloading.
+INFO 2025-12-14 11:44:18,974 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 11:46:25,594 autoreload C:\Dev\jump_into_django\english_studing\courses\models.py changed, reloading.
+INFO 2025-12-14 11:46:26,803 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 11:47:22,321 autoreload C:\Dev\jump_into_django\english_studing\courses\views.py changed, reloading.
+INFO 2025-12-14 11:47:23,334 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 11:47:27,167 autoreload C:\Dev\jump_into_django\english_studing\courses\views.py changed, reloading.
+INFO 2025-12-14 11:47:28,368 autoreload Watching for file changes with StatReloader
+ERROR 2025-12-14 11:48:57,176 log Internal Server Error: /courses/teacher/courses/14/modules/
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\courses\views.py", line 416, in add_modules
+    return render(request, 'courses/add_modules.html', context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'delete_modules' not found. 'delete_modules' is not a valid view function or pattern name.
+ERROR 2025-12-14 11:48:57,182 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 500 187500
+WARNING 2025-12-14 11:48:57,414 log Not Found: /favicon.ico
+WARNING 2025-12-14 11:48:57,415 basehttp "GET /favicon.ico HTTP/1.1" 404 4859
+INFO 2025-12-14 11:49:21,682 autoreload Watching for file changes with StatReloader
+ERROR 2025-12-14 11:49:23,252 log Internal Server Error: /courses/teacher/courses/14/modules/
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\courses\views.py", line 416, in add_modules
+    return render(request, 'courses/add_modules.html', context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'delete_modules' not found. 'delete_modules' is not a valid view function or pattern name.
+ERROR 2025-12-14 11:49:23,270 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 500 187500
+ERROR 2025-12-14 11:49:24,902 log Internal Server Error: /courses/teacher/courses/14/modules/
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\courses\views.py", line 416, in add_modules
+    return render(request, 'courses/add_modules.html', context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'delete_modules' not found. 'delete_modules' is not a valid view function or pattern name.
+ERROR 2025-12-14 11:49:24,916 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 500 187500
+INFO 2025-12-14 11:50:02,098 autoreload C:\Dev\jump_into_django\english_studing\courses\urls.py changed, reloading.
+INFO 2025-12-14 11:50:03,540 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 11:50:10,900 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 19047
+INFO 2025-12-14 11:50:18,459 basehttp "GET /courses/teacher/courses/14/modules/delete/ HTTP/1.1" 200 14270
+INFO 2025-12-14 11:50:45,507 basehttp "GET /courses/teacher/courses/14/detail/ HTTP/1.1" 200 14838
+INFO 2025-12-14 11:50:48,234 basehttp "GET /courses/teacher/courses/14/edit/ HTTP/1.1" 200 13417
+INFO 2025-12-14 11:50:51,496 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 19047
+INFO 2025-12-14 11:51:22,939 autoreload C:\Dev\jump_into_django\english_studing\courses\urls.py changed, reloading.
+INFO 2025-12-14 11:51:23,916 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 11:51:35,080 autoreload C:\Dev\jump_into_django\english_studing\courses\views.py changed, reloading.
+INFO 2025-12-14 11:51:36,033 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 11:51:43,008 autoreload C:\Dev\jump_into_django\english_studing\courses\models.py changed, reloading.
+INFO 2025-12-14 11:51:44,091 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 11:52:11,216 autoreload C:\Dev\jump_into_django\english_studing\courses\forms.py changed, reloading.
+INFO 2025-12-14 11:52:12,302 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 11:59:30,504 basehttp "GET /courses/2/enroll/ HTTP/1.1" 200 12930
+INFO 2025-12-14 11:59:32,382 basehttp "GET /courses/ HTTP/1.1" 200 40324
+INFO 2025-12-14 11:59:35,122 basehttp "GET /users/profile/ HTTP/1.1" 200 35447
+INFO 2025-12-14 11:59:38,495 basehttp "GET /courses/order/4/ HTTP/1.1" 200 22369
+INFO 2025-12-14 12:00:13,795 basehttp "GET /courses/order/4/ HTTP/1.1" 200 22369
+INFO 2025-12-14 12:00:14,019 basehttp "GET /static/css/style.css HTTP/1.1" 200 34442
+INFO 2025-12-14 12:00:14,020 basehttp "GET /static/css/fontawesome/css/all.min.css HTTP/1.1" 200 74320
+INFO 2025-12-14 12:00:14,022 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 232111
+INFO 2025-12-14 12:00:14,048 basehttp "GET /static/js/script.js HTTP/1.1" 200 34878
+INFO 2025-12-14 12:00:14,060 basehttp "GET /static/css/fontawesome/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 101224
+INFO 2025-12-14 12:00:14,061 basehttp "GET /static/css/fontawesome/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 113152
+INFO 2025-12-14 12:00:14,068 basehttp "GET /static/css/fontawesome/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 18988
+INFO 2025-12-14 12:00:14,071 basehttp "GET /static/js/bootstrap.bundle.min.js HTTP/1.1" 200 80496
+INFO 2025-12-14 12:00:14,124 basehttp "GET /static/images/favicon.ico HTTP/1.1" 200 15406
+INFO 2025-12-14 12:00:37,819 autoreload C:\Dev\jump_into_django\english_studing\courses\forms.py changed, reloading.
+INFO 2025-12-14 12:00:39,046 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 12:00:42,942 autoreload C:\Dev\jump_into_django\english_studing\courses\models.py changed, reloading.
+INFO 2025-12-14 12:00:44,156 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 12:00:56,827 basehttp "GET /courses/order/4/ HTTP/1.1" 200 22369
+INFO 2025-12-14 12:03:25,240 autoreload C:\Dev\jump_into_django\english_studing\courses\views.py changed, reloading.
+INFO 2025-12-14 12:03:26,505 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 12:04:51,045 basehttp "GET /courses/teacher/courses/14/detail/ HTTP/1.1" 200 14488
+INFO 2025-12-14 12:04:53,481 basehttp "GET /courses/teacher/courses/14/edit/ HTTP/1.1" 200 13417
+INFO 2025-12-14 12:04:55,476 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 24346
+INFO 2025-12-14 12:06:01,162 basehttp "GET /courses/order/4/ HTTP/1.1" 200 22369
+INFO 2025-12-14 12:06:08,663 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 24346
+INFO 2025-12-14 12:16:36,403 autoreload C:\Dev\jump_into_django\english_studing\courses\forms.py changed, reloading.
+INFO 2025-12-14 12:16:37,663 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 12:29:45,622 autoreload C:\Dev\jump_into_django\english_studing\courses\forms.py changed, reloading.
+INFO 2025-12-14 12:29:46,794 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 12:29:53,204 basehttp "GET /courses/order/4/ HTTP/1.1" 200 24312
+INFO 2025-12-14 12:30:30,289 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 21292
+INFO 2025-12-14 12:31:09,709 autoreload C:\Dev\jump_into_django\english_studing\courses\models.py changed, reloading.
+INFO 2025-12-14 12:31:11,024 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 12:33:51,576 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 12:33:52,242 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 21300
+INFO 2025-12-14 12:34:07,640 basehttp "GET /courses/order/4/ HTTP/1.1" 200 24312
+INFO 2025-12-14 12:35:21,979 basehttp "GET /diary/ HTTP/1.1" 200 47016
+INFO 2025-12-14 12:35:23,023 basehttp "GET /courses/ HTTP/1.1" 200 40324
+INFO 2025-12-14 12:35:25,254 basehttp "GET /users/profile/ HTTP/1.1" 200 35447
+INFO 2025-12-14 12:35:27,762 basehttp "GET /courses/order/4/ HTTP/1.1" 200 24312
+INFO 2025-12-14 12:39:19,641 basehttp "GET /courses/teacher/courses/14/students/ HTTP/1.1" 200 12972
+INFO 2025-12-14 12:44:12,939 basehttp "GET /courses/teacher/courses/14/edit/ HTTP/1.1" 200 13417
+INFO 2025-12-14 12:44:12,993 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-12-14 12:44:12,999 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+INFO 2025-12-14 12:44:17,365 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 24814
+INFO 2025-12-14 12:47:10,552 autoreload C:\Dev\jump_into_django\english_studing\courses\views.py changed, reloading.
+INFO 2025-12-14 12:47:11,929 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 12:47:26,826 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 24814
+INFO 2025-12-14 12:50:23,191 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 24561
+INFO 2025-12-14 12:50:40,583 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 13006
+INFO 2025-12-14 12:50:41,874 basehttp "GET /courses/teacher/courses/create/ HTTP/1.1" 200 12884
+INFO 2025-12-14 12:50:50,001 basehttp "POST /courses/teacher/courses/create/ HTTP/1.1" 302 0
+INFO 2025-12-14 12:50:50,099 basehttp "GET /courses/teacher/courses/15/modules/ HTTP/1.1" 200 19683
+INFO 2025-12-14 12:51:29,858 basehttp "GET /courses/order/4/ HTTP/1.1" 200 24312
+INFO 2025-12-14 12:54:15,734 basehttp "GET /courses/teacher/courses/15/modules/ HTTP/1.1" 200 23691
+INFO 2025-12-14 12:54:33,522 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 15960
+INFO 2025-12-14 12:54:34,495 basehttp "GET /users/profile/ HTTP/1.1" 200 28643
+INFO 2025-12-14 12:54:37,465 basehttp "GET /courses/teacher/courses/14/edit/ HTTP/1.1" 200 13417
+INFO 2025-12-14 12:54:39,232 basehttp "GET /courses/teacher/courses/14/modules/ HTTP/1.1" 200 27824
+WARNING 2025-12-14 12:55:00,037 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-14 12:55:00,039 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4970
+INFO 2025-12-14 12:56:16,684 basehttp "GET /users/profile/ HTTP/1.1" 200 28643
+INFO 2025-12-14 12:56:17,637 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 15960
+INFO 2025-12-14 12:56:20,870 basehttp "GET /courses/teacher/courses/create/ HTTP/1.1" 200 12884
+INFO 2025-12-14 12:56:26,556 basehttp "POST /courses/teacher/courses/create/ HTTP/1.1" 200 13207
+INFO 2025-12-14 12:56:29,745 basehttp "POST /courses/teacher/courses/create/ HTTP/1.1" 302 0
+INFO 2025-12-14 12:56:29,862 basehttp "GET /courses/teacher/courses/16/modules/ HTTP/1.1" 200 23691
+INFO 2025-12-14 12:57:05,444 basehttp "GET /courses/order/4/ HTTP/1.1" 200 24312
+INFO 2025-12-14 13:02:02,532 autoreload C:\Dev\jump_into_django\english_studing\courses\views.py changed, reloading.
+INFO 2025-12-14 13:02:03,753 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 13:02:13,189 basehttp "GET /courses/teacher/courses/16/modules/ HTTP/1.1" 200 23691
+INFO 2025-12-14 13:05:14,842 basehttp "GET /courses/teacher/courses/16/modules/ HTTP/1.1" 200 21136
+INFO 2025-12-14 13:05:49,574 basehttp "GET /courses/order/4/ HTTP/1.1" 200 24312
+INFO 2025-12-14 13:06:19,357 autoreload C:\Dev\jump_into_django\english_studing\courses\forms.py changed, reloading.
+INFO 2025-12-14 13:06:20,533 autoreload Watching for file changes with StatReloader
+INFO 2025-12-14 13:06:59,092 basehttp "GET /courses/order/4/ HTTP/1.1" 200 24312
+INFO 2025-12-14 13:07:37,349 basehttp "GET /courses/order/4/ HTTP/1.1" 200 24496
+INFO 2025-12-14 13:12:39,973 basehttp "GET /courses/order/4/ HTTP/1.1" 200 26310
+INFO 2025-12-14 13:12:45,902 basehttp "GET /courses/ HTTP/1.1" 200 45230
+INFO 2025-12-14 13:12:47,842 basehttp "GET /users/profile/ HTTP/1.1" 200 35447
+INFO 2025-12-14 13:12:51,512 basehttp "GET /courses/order/5/ HTTP/1.1" 200 23872
+INFO 2025-12-14 13:24:54,612 basehttp "GET /courses/order/5/ HTTP/1.1" 200 27423
+INFO 2025-12-14 13:53:55,937 basehttp "POST /courses/order/5/module/55/complete/ HTTP/1.1" 200 300
+INFO 2025-12-14 13:53:59,400 basehttp "POST /courses/order/5/module/56/complete/ HTTP/1.1" 200 307
+INFO 2025-12-14 13:54:00,972 basehttp "POST /courses/order/5/update-progress/ HTTP/1.1" 200 190
+INFO 2025-12-14 13:54:12,580 basehttp "GET /courses/order/5/ HTTP/1.1" 200 27448
+INFO 2025-12-14 13:54:16,066 basehttp "GET /courses/order/5/complete/ HTTP/1.1" 200 15257
+INFO 2025-12-14 13:54:31,102 basehttp "POST /courses/order/5/complete/ HTTP/1.1" 302 0
+INFO 2025-12-14 13:54:31,209 basehttp "GET /courses/order/5/ HTTP/1.1" 200 26572
+INFO 2025-12-14 13:54:39,956 basehttp "GET /courses/order/5/delete/ HTTP/1.1" 200 13412
+INFO 2025-12-14 13:54:45,395 basehttp "POST /courses/order/5/delete/ HTTP/1.1" 302 0
+INFO 2025-12-14 13:54:45,488 basehttp "GET /courses/my-courses/ HTTP/1.1" 200 13558
+INFO 2025-12-14 13:54:48,905 basehttp "GET /courses/order/4/ HTTP/1.1" 200 30945
+INFO 2025-12-14 13:55:01,921 basehttp "POST /courses/order/4/module/3/complete/ HTTP/1.1" 200 343
+INFO 2025-12-14 13:55:33,112 basehttp "GET /courses/order/4/ HTTP/1.1" 200 30808
+INFO 2025-12-14 13:55:37,542 basehttp "POST /courses/order/4/module/4/complete/ HTTP/1.1" 200 373
+INFO 2025-12-14 13:55:38,724 basehttp "POST /courses/order/4/module/2/complete/ HTTP/1.1" 200 355
+INFO 2025-12-14 13:55:40,679 basehttp "POST /courses/order/4/module/1/complete/ HTTP/1.1" 200 351
+INFO 2025-12-14 13:55:44,716 basehttp "POST /courses/order/4/update-progress/ HTTP/1.1" 200 190
+INFO 2025-12-14 13:55:50,929 basehttp "GET /courses/order/4/ HTTP/1.1" 200 30595
+INFO 2025-12-14 13:57:26,765 basehttp "GET /courses/teacher/courses/create/ HTTP/1.1" 200 12884
+INFO 2025-12-14 13:57:28,988 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 18916
+INFO 2025-12-14 13:57:35,346 basehttp "GET /courses/teacher/courses/14/detail/ HTTP/1.1" 200 14486
+INFO 2025-12-14 13:57:40,040 basehttp "GET /courses/teacher/courses/14/students/ HTTP/1.1" 200 10426
+INFO 2025-12-14 13:57:44,743 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 18916
+INFO 2025-12-14 14:00:11,544 basehttp "GET /courses/order/4/ HTTP/1.1" 200 29724
+INFO 2025-12-14 14:00:11,563 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+INFO 2025-12-14 14:00:11,629 basehttp "GET /static/css/style.css HTTP/1.1" 200 35773
+INFO 2025-12-14 14:00:22,619 basehttp "GET /courses/my-courses/ HTTP/1.1" 200 13585
+INFO 2025-12-14 14:01:02,165 basehttp "GET /courses/order/6/ HTTP/1.1" 200 33532
+INFO 2025-12-14 14:01:05,506 basehttp "POST /courses/order/6/module/47/complete/ HTTP/1.1" 200 350
+INFO 2025-12-14 14:01:08,660 basehttp "POST /courses/order/6/module/48/complete/ HTTP/1.1" 200 355
+INFO 2025-12-14 14:01:10,228 basehttp "POST /courses/order/6/module/49/complete/ HTTP/1.1" 200 343
+INFO 2025-12-14 14:01:11,869 basehttp "POST /courses/order/6/module/50/complete/ HTTP/1.1" 200 373
+INFO 2025-12-14 14:01:13,420 basehttp "POST /courses/order/6/module/51/complete/ HTTP/1.1" 200 373
+INFO 2025-12-14 14:01:15,350 basehttp "POST /courses/order/6/module/52/complete/ HTTP/1.1" 200 357
+INFO 2025-12-14 14:01:16,873 basehttp "POST /courses/order/6/update-progress/ HTTP/1.1" 200 190
+INFO 2025-12-14 14:01:39,660 basehttp "GET /courses/order/6/ HTTP/1.1" 200 32531
+INFO 2025-12-14 14:01:45,020 basehttp "POST /courses/order/6/update-progress/ HTTP/1.1" 200 190
+INFO 2025-12-14 14:01:46,992 basehttp "GET /courses/order/6/ HTTP/1.1" 200 32531
+INFO 2025-12-14 14:03:14,506 basehttp "GET /courses/order/6/ HTTP/1.1" 200 33402
+INFO 2025-12-14 14:03:19,777 basehttp "GET /courses/order/6/complete/ HTTP/1.1" 200 15316
+INFO 2025-12-14 14:03:24,935 basehttp "POST /courses/order/6/complete/ HTTP/1.1" 302 0
+INFO 2025-12-14 14:03:25,041 basehttp "GET /courses/order/6/ HTTP/1.1" 200 31284
+INFO 2025-12-14 14:03:28,815 basehttp "GET /courses/ HTTP/1.1" 200 45230
+INFO 2025-12-14 14:03:31,683 basehttp "GET /users/profile/ HTTP/1.1" 200 32151
+ERROR 2025-12-14 14:03:34,398 log Internal Server Error: /courses/my-courses/
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\courses\views.py", line 84, in my_courses
+    return render(request, 'courses/my_courses.html', context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'student_courses_json' not found. 'student_courses_json' is not a valid view function or pattern name.
+ERROR 2025-12-14 14:03:34,412 basehttp "GET /courses/my-courses/ HTTP/1.1" 500 188545
+WARNING 2025-12-14 14:03:34,680 log Not Found: /favicon.ico
+WARNING 2025-12-14 14:03:34,681 basehttp "GET /favicon.ico HTTP/1.1" 404 4859
+ERROR 2025-12-14 14:03:38,499 log Internal Server Error: /courses/my-courses/
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\courses\views.py", line 84, in my_courses
+    return render(request, 'courses/my_courses.html', context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'student_courses_json' not found. 'student_courses_json' is not a valid view function or pattern name.
+ERROR 2025-12-14 14:03:38,504 basehttp "GET /courses/my-courses/ HTTP/1.1" 500 188545
+INFO 2025-12-14 14:06:59,161 basehttp "GET /courses/my-courses/ HTTP/1.1" 200 14852
+INFO 2025-12-14 14:07:49,716 basehttp "GET /courses/my-courses/ HTTP/1.1" 200 14852
+INFO 2025-12-14 14:07:49,744 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-12-14 14:07:53,929 basehttp "GET /courses/order/4/ HTTP/1.1" 200 34625
+INFO 2025-12-14 14:07:59,563 basehttp "GET /courses/ HTTP/1.1" 200 45230
+INFO 2025-12-14 14:08:02,295 basehttp "GET /courses/2/enroll/ HTTP/1.1" 200 13071
+INFO 2025-12-14 14:08:06,847 basehttp "POST /courses/2/enroll/ HTTP/1.1" 302 0
+INFO 2025-12-14 14:08:06,967 basehttp "GET /courses/my-courses/ HTTP/1.1" 200 16579
+INFO 2025-12-14 14:08:08,842 basehttp "GET /courses/order/7/ HTTP/1.1" 200 36533
+INFO 2025-12-14 14:08:12,430 basehttp "POST /courses/order/7/module/5/complete/ HTTP/1.1" 200 350
+INFO 2025-12-14 14:08:15,039 basehttp "POST /courses/order/7/module/6/complete/ HTTP/1.1" 200 355
+INFO 2025-12-14 14:08:16,844 basehttp "POST /courses/order/7/module/7/complete/ HTTP/1.1" 200 343
+INFO 2025-12-14 14:08:18,703 basehttp "POST /courses/order/7/module/8/complete/ HTTP/1.1" 200 373
+INFO 2025-12-14 14:08:20,290 basehttp "POST /courses/order/7/module/9/complete/ HTTP/1.1" 200 374
+INFO 2025-12-14 14:08:24,981 basehttp "GET /courses/my-courses/ HTTP/1.1" 200 16606
+INFO 2025-12-14 14:08:28,205 basehttp "GET /courses/order/7/ HTTP/1.1" 200 36007
+INFO 2025-12-14 14:08:32,805 basehttp "POST /courses/order/7/update-progress/ HTTP/1.1" 200 190
+INFO 2025-12-14 14:08:34,671 basehttp "GET /courses/order/7/ HTTP/1.1" 200 36007
+INFO 2025-12-14 14:08:38,809 basehttp "GET /courses/my-courses/ HTTP/1.1" 200 16606
+INFO 2025-12-14 14:08:43,204 basehttp "GET /courses/order/7/ HTTP/1.1" 200 36007
+INFO 2025-12-14 14:14:21,841 basehttp "GET /courses/order/7/ HTTP/1.1" 200 31722
+INFO 2025-12-14 14:14:25,167 basehttp "GET /courses/ HTTP/1.1" 200 45230
+INFO 2025-12-14 14:14:29,294 basehttp "GET /courses/3/enroll/ HTTP/1.1" 200 12995
+INFO 2025-12-14 14:14:33,709 basehttp "POST /courses/3/enroll/ HTTP/1.1" 302 0
+INFO 2025-12-14 14:14:33,896 basehttp "GET /courses/my-courses/ HTTP/1.1" 200 18315
+INFO 2025-12-14 14:14:35,994 basehttp "GET /courses/order/8/ HTTP/1.1" 200 33794
+INFO 2025-12-14 14:14:39,180 basehttp "POST /courses/order/8/module/10/complete/ HTTP/1.1" 200 350
+INFO 2025-12-14 14:14:42,161 basehttp "POST /courses/order/8/module/11/complete/ HTTP/1.1" 200 355
+INFO 2025-12-14 14:14:43,490 basehttp "POST /courses/order/8/module/12/complete/ HTTP/1.1" 200 343
+INFO 2025-12-14 14:14:46,710 basehttp "GET /courses/my-courses/ HTTP/1.1" 200 18330
+INFO 2025-12-14 14:56:28,742 basehttp "GET /users/profile/ HTTP/1.1" 200 29848
+INFO 2025-12-14 14:56:28,856 basehttp "GET /media/profile_pics/3F3F3F3F_3F3F3F3F3F3F_4_QliiINP.webp HTTP/1.1" 304 0
+INFO 2025-12-14 14:56:28,859 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+INFO 2025-12-14 14:56:28,861 basehttp "GET /static/css/style.css HTTP/1.1" 200 35773
+INFO 2025-12-14 23:07:29,087 basehttp "GET /diary/ HTTP/1.1" 200 45852
+INFO 2025-12-14 23:07:29,155 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-12-14 23:07:29,156 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+INFO 2025-12-15 03:50:10,802 autoreload C:\Dev\jump_into_django\english_studing\courses\views.py changed, reloading.
+INFO 2025-12-15 03:50:12,523 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 13:36:52,769 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 13:53:41,943 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 13:53:45,724 basehttp "GET /diary/ HTTP/1.1" 302 0
+INFO 2025-12-15 13:53:46,078 basehttp - Broken pipe from ('127.0.0.1', 32950)
+INFO 2025-12-15 13:53:46,738 basehttp "GET /diary/ HTTP/1.1" 302 0
+INFO 2025-12-15 13:53:46,873 basehttp "GET /users/login/?next=/diary/ HTTP/1.1" 200 9211
+INFO 2025-12-15 13:53:47,370 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 232111
+INFO 2025-12-15 13:53:47,380 basehttp "GET /static/css/style.css HTTP/1.1" 200 35773
+INFO 2025-12-15 13:53:47,391 basehttp "GET /static/css/fontawesome/css/all.min.css HTTP/1.1" 200 74320
+INFO 2025-12-15 13:53:47,444 basehttp "GET /static/js/script.js HTTP/1.1" 200 34878
+INFO 2025-12-15 13:53:47,471 basehttp "GET /static/js/bootstrap.bundle.min.js HTTP/1.1" 200 80496
+INFO 2025-12-15 13:53:47,561 basehttp "GET /static/css/fontawesome/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 113152
+INFO 2025-12-15 13:53:47,569 basehttp "GET /static/css/fontawesome/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 101224
+INFO 2025-12-15 13:53:47,821 basehttp "GET /static/images/favicon.ico HTTP/1.1" 200 15406
+INFO 2025-12-15 13:53:51,720 basehttp "GET /users/register/ HTTP/1.1" 200 15318
+INFO 2025-12-15 13:55:08,568 basehttp "POST /users/register/ HTTP/1.1" 302 0
+INFO 2025-12-15 13:55:08,925 basehttp "GET /users/profile/ HTTP/1.1" 200 24313
+INFO 2025-12-15 13:55:16,370 basehttp "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2025-12-15 13:55:16,664 basehttp "GET / HTTP/1.1" 200 39997
+INFO 2025-12-15 13:55:16,786 basehttp "GET /static/images/main-hero.jpg HTTP/1.1" 200 397095
+INFO 2025-12-15 13:55:17,173 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2650
+INFO 2025-12-15 13:55:17,300 basehttp "GET /static/css/fontawesome/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 18988
+INFO 2025-12-15 13:55:18,581 basehttp "GET /users/login/ HTTP/1.1" 200 9204
+INFO 2025-12-15 13:55:25,067 basehttp "GET /users/password_reset/ HTTP/1.1" 200 10057
+INFO 2025-12-15 13:55:32,688 basehttp "GET /users/register/ HTTP/1.1" 200 15318
+INFO 2025-12-15 13:56:27,260 basehttp "POST /users/register/ HTTP/1.1" 302 0
+INFO 2025-12-15 13:56:27,438 basehttp "GET /users/profile/ HTTP/1.1" 200 24294
+INFO 2025-12-15 13:56:31,897 basehttp "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2025-12-15 13:56:32,044 basehttp "GET / HTTP/1.1" 200 39997
+INFO 2025-12-15 13:56:32,385 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2650
+INFO 2025-12-15 13:56:33,850 basehttp "GET /users/login/ HTTP/1.1" 200 9204
+INFO 2025-12-15 13:56:41,642 basehttp "GET /users/register/ HTTP/1.1" 200 15318
+INFO 2025-12-15 13:58:48,579 basehttp "POST /users/register/ HTTP/1.1" 302 0
+INFO 2025-12-15 13:58:48,753 basehttp "GET /users/profile/ HTTP/1.1" 200 24291
+INFO 2025-12-15 13:58:57,177 basehttp "GET /users/profile/update/ HTTP/1.1" 200 18175
+INFO 2025-12-15 14:00:04,674 basehttp "POST /users/profile/update/ HTTP/1.1" 302 0
+INFO 2025-12-15 14:00:04,848 basehttp "GET /users/profile/ HTTP/1.1" 200 24279
+INFO 2025-12-15 14:00:09,288 basehttp "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2025-12-15 14:00:09,439 basehttp "GET / HTTP/1.1" 200 39997
+INFO 2025-12-15 14:00:09,809 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2650
+INFO 2025-12-15 14:00:11,106 basehttp "GET /users/login/ HTTP/1.1" 200 9204
+INFO 2025-12-15 14:00:33,913 basehttp "POST /users/login/ HTTP/1.1" 302 0
+INFO 2025-12-15 14:00:34,051 basehttp "GET /profil/ HTTP/1.1" 200 41443
+INFO 2025-12-15 14:00:34,364 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2650
+INFO 2025-12-15 14:00:37,521 basehttp "GET /users/profile/ HTTP/1.1" 200 24294
+INFO 2025-12-15 14:01:12,418 basehttp "GET /users/profile/update/ HTTP/1.1" 200 18181
+INFO 2025-12-15 14:02:01,241 basehttp "POST /users/profile/update/ HTTP/1.1" 302 0
+INFO 2025-12-15 14:02:01,414 basehttp "GET /users/profile/ HTTP/1.1" 200 24282
+INFO 2025-12-15 14:02:05,127 basehttp "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2025-12-15 14:02:05,274 basehttp "GET / HTTP/1.1" 200 39997
+INFO 2025-12-15 14:02:05,665 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2650
+INFO 2025-12-15 14:02:06,966 basehttp "GET /users/login/ HTTP/1.1" 200 9204
+INFO 2025-12-15 14:02:24,597 basehttp "POST /users/login/ HTTP/1.1" 302 0
+INFO 2025-12-15 14:02:24,734 basehttp "GET /profil/ HTTP/1.1" 200 41443
+INFO 2025-12-15 14:02:25,063 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2650
+INFO 2025-12-15 14:02:29,229 basehttp "GET /users/profile/ HTTP/1.1" 200 24313
+INFO 2025-12-15 14:02:31,370 basehttp "GET /users/profile/update/ HTTP/1.1" 200 18208
+INFO 2025-12-15 14:02:50,680 basehttp "POST /users/profile/update/ HTTP/1.1" 302 0
+INFO 2025-12-15 14:02:50,849 basehttp "GET /users/profile/ HTTP/1.1" 200 24301
+INFO 2025-12-15 14:03:23,047 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 8890
+INFO 2025-12-15 14:03:25,266 basehttp "GET /users/profile/ HTTP/1.1" 200 24301
+INFO 2025-12-15 14:07:40,944 basehttp "GET /users/profile/ HTTP/1.1" 200 29843
+INFO 2025-12-15 14:08:07,917 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 11194
+INFO 2025-12-15 14:08:09,600 basehttp "GET / HTTP/1.1" 200 43734
+INFO 2025-12-15 14:08:10,011 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2650
+INFO 2025-12-15 14:08:10,729 basehttp "GET /users/profile/ HTTP/1.1" 200 26605
+INFO 2025-12-15 14:09:16,939 basehttp "GET /users/profile/ HTTP/1.1" 200 26605
+INFO 2025-12-15 14:09:26,466 basehttp "GET /users/profile/ HTTP/1.1" 200 24301
+WARNING 2025-12-15 14:10:05,053 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-15 14:10:05,054 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4970
+INFO 2025-12-15 14:10:05,261 basehttp "GET /static/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 331017
+INFO 2025-12-15 14:10:05,371 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 451427
+INFO 2025-12-15 14:11:22,393 basehttp "GET /users/profile/ HTTP/1.1" 200 24302
+INFO 2025-12-15 14:11:46,055 basehttp "GET /courses/my-courses/ HTTP/1.1" 302 0
+INFO 2025-12-15 14:11:46,216 basehttp "GET /users/login/?next=/courses/my-courses/ HTTP/1.1" 200 9225
+INFO 2025-12-15 14:11:46,293 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 232111
+INFO 2025-12-15 14:11:46,314 basehttp "GET /static/css/style.css HTTP/1.1" 200 35773
+INFO 2025-12-15 14:11:46,319 basehttp "GET /static/js/script.js HTTP/1.1" 200 34878
+INFO 2025-12-15 14:11:46,320 basehttp "GET /static/css/fontawesome/css/all.min.css HTTP/1.1" 200 74320
+INFO 2025-12-15 14:11:46,322 basehttp "GET /static/js/bootstrap.bundle.min.js HTTP/1.1" 200 80496
+INFO 2025-12-15 14:11:46,354 basehttp "GET /static/css/fontawesome/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 101224
+INFO 2025-12-15 14:11:46,355 basehttp "GET /static/css/fontawesome/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 113152
+INFO 2025-12-15 14:11:50,185 basehttp "GET /users/register/ HTTP/1.1" 200 15319
+INFO 2025-12-15 14:12:38,302 basehttp "POST /users/register/ HTTP/1.1" 302 0
+INFO 2025-12-15 14:12:38,492 basehttp "GET /users/profile/ HTTP/1.1" 200 25918
+INFO 2025-12-15 14:13:14,906 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 14:13:15,766 basehttp "GET /users/profile/ HTTP/1.1" 302 0
+INFO 2025-12-15 14:13:15,940 basehttp "GET /users/login/?next=/users/profile/ HTTP/1.1" 200 9220
+INFO 2025-12-15 14:13:35,253 basehttp "POST /users/login/?next=/users/profile/ HTTP/1.1" 302 0
+INFO 2025-12-15 14:13:35,472 basehttp "GET /users/profile/ HTTP/1.1" 200 26065
+INFO 2025-12-15 14:14:25,279 basehttp "GET /diary/ HTTP/1.1" 200 45582
+INFO 2025-12-15 14:16:51,063 autoreload C:\Dev\jump_into_django\english_studing\users\forms.py changed, reloading.
+INFO 2025-12-15 14:16:52,990 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 14:17:00,166 basehttp "GET /users/profile/ HTTP/1.1" 200 26065
+INFO 2025-12-15 14:17:03,010 basehttp "GET /diary/ HTTP/1.1" 200 45582
+INFO 2025-12-15 14:26:10,174 basehttp "GET /diary/ HTTP/1.1" 200 45381
+INFO 2025-12-15 14:26:16,297 basehttp "GET /users/profile/ HTTP/1.1" 200 26065
+INFO 2025-12-15 14:29:40,945 basehttp "GET /users/profile/ HTTP/1.1" 200 29350
+INFO 2025-12-15 14:42:05,713 basehttp "GET /users/profile/ HTTP/1.1" 200 29515
+INFO 2025-12-15 14:42:13,043 basehttp "GET /users/profile/ HTTP/1.1" 200 29350
+INFO 2025-12-15 14:42:21,109 basehttp "GET /users/profile/ HTTP/1.1" 200 29646
+INFO 2025-12-15 14:42:21,364 basehttp "GET /static/images/favicon.ico HTTP/1.1" 200 15406
+INFO 2025-12-15 14:42:25,236 basehttp "GET /diary/ HTTP/1.1" 200 44996
+ERROR 2025-12-15 14:42:29,293 log Internal Server Error: /courses/
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    raise TypeError
+TypeError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 901, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\english_studing\courses\views.py", line 36, in course_list
+    return render(request, 'courses/course_list.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [username] in None
+ERROR 2025-12-15 14:42:29,312 basehttp "GET /courses/ HTTP/1.1" 500 251443
+WARNING 2025-12-15 14:42:29,678 log Not Found: /favicon.ico
+WARNING 2025-12-15 14:42:29,680 basehttp "GET /favicon.ico HTTP/1.1" 404 4859
+INFO 2025-12-15 14:42:57,384 autoreload Watching for file changes with StatReloader
+ERROR 2025-12-15 14:42:58,400 log Internal Server Error: /courses/
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    raise TypeError
+TypeError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 901, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\english_studing\courses\views.py", line 36, in course_list
+    return render(request, 'courses/course_list.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [username] in None
+ERROR 2025-12-15 14:42:58,415 basehttp "GET /courses/ HTTP/1.1" 500 251580
+ERROR 2025-12-15 14:43:01,708 log Internal Server Error: /courses/
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    raise TypeError
+TypeError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 901, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\english_studing\courses\views.py", line 36, in course_list
+    return render(request, 'courses/course_list.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [username] in None
+ERROR 2025-12-15 14:43:01,717 basehttp "GET /courses/ HTTP/1.1" 500 251580
+ERROR 2025-12-15 14:46:55,984 log Internal Server Error: /courses/
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    raise TypeError
+TypeError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 901, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\english_studing\courses\views.py", line 36, in course_list
+    return render(request, 'courses/course_list.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [username] in None
+ERROR 2025-12-15 14:46:55,993 basehttp "GET /courses/ HTTP/1.1" 500 246539
+ERROR 2025-12-15 14:46:58,821 log Internal Server Error: /courses/
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    raise TypeError
+TypeError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 901, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\english_studing\courses\views.py", line 36, in course_list
+    return render(request, 'courses/course_list.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\jump_into_django\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [username] in None
+ERROR 2025-12-15 14:46:58,829 basehttp "GET /courses/ HTTP/1.1" 500 246539
+INFO 2025-12-15 14:49:24,671 basehttp "GET /courses/ HTTP/1.1" 200 37967
+INFO 2025-12-15 14:50:00,562 basehttp "GET /users/profile/ HTTP/1.1" 200 33675
+INFO 2025-12-15 14:57:03,537 autoreload C:\Dev\jump_into_django\english_studing\courses\models.py changed, reloading.
+INFO 2025-12-15 14:57:05,663 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 14:57:17,528 autoreload C:\Dev\jump_into_django\english_studing\courses\views.py changed, reloading.
+INFO 2025-12-15 14:57:19,293 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 14:58:52,988 autoreload C:\Dev\jump_into_django\english_studing\courses\apps.py changed, reloading.
+INFO 2025-12-15 14:58:54,574 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 14:59:20,596 autoreload C:\Dev\jump_into_django\english_studing\courses\apps.py changed, reloading.
+INFO 2025-12-15 14:59:22,632 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 14:59:38,597 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 14:59:41,413 basehttp "GET /users/profile/ HTTP/1.1" 200 33675
+INFO 2025-12-15 15:00:05,866 basehttp "GET /users/profile/ HTTP/1.1" 200 33675
+INFO 2025-12-15 15:03:04,295 basehttp "GET /users/profile/update/ HTTP/1.1" 200 18268
+INFO 2025-12-15 15:03:15,011 basehttp "GET /about/ HTTP/1.1" 200 20465
+INFO 2025-12-15 15:03:15,511 basehttp "GET /static/images/team-1.jpg HTTP/1.1" 200 199214
+INFO 2025-12-15 15:03:15,544 basehttp "GET /static/images/team-3.jpg HTTP/1.1" 200 261488
+INFO 2025-12-15 15:03:15,545 basehttp "GET /static/images/team-2.jpg HTTP/1.1" 200 206383
+INFO 2025-12-15 15:03:15,552 basehttp "GET /static/images/about-history.jpg HTTP/1.1" 200 574536
+INFO 2025-12-15 15:03:15,569 basehttp "GET /static/images/about-main.jpg HTTP/1.1" 200 633130
+INFO 2025-12-15 15:03:31,932 basehttp "GET /users/profile/ HTTP/1.1" 200 33675
+INFO 2025-12-15 15:03:33,675 basehttp "GET /users/profile/update/ HTTP/1.1" 200 18268
+INFO 2025-12-15 15:04:35,975 basehttp "POST /users/profile/update/ HTTP/1.1" 302 0
+INFO 2025-12-15 15:04:36,132 basehttp "GET /users/profile/ HTTP/1.1" 200 33686
+INFO 2025-12-15 15:04:36,257 basehttp "GET /media/profile_pics/team-3.jpg HTTP/1.1" 200 261488
+INFO 2025-12-15 15:04:40,228 basehttp "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2025-12-15 15:04:40,362 basehttp "GET / HTTP/1.1" 200 40001
+INFO 2025-12-15 15:04:40,630 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 73
+INFO 2025-12-15 15:04:42,065 basehttp "GET /users/login/ HTTP/1.1" 200 9205
+INFO 2025-12-15 15:05:01,856 basehttp "POST /users/login/ HTTP/1.1" 200 9552
+INFO 2025-12-15 15:05:17,521 basehttp "POST /users/login/ HTTP/1.1" 302 0
+INFO 2025-12-15 15:05:17,691 basehttp "GET /profil/ HTTP/1.1" 200 41441
+INFO 2025-12-15 15:05:17,927 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 73
+INFO 2025-12-15 15:05:22,420 basehttp "GET /users/profile/ HTTP/1.1" 200 33612
+INFO 2025-12-15 15:05:31,263 basehttp "GET /users/profile/update/ HTTP/1.1" 200 18247
+INFO 2025-12-15 15:05:39,858 basehttp "POST /users/profile/update/ HTTP/1.1" 302 0
+INFO 2025-12-15 15:05:40,042 basehttp "GET /users/profile/ HTTP/1.1" 200 33623
+INFO 2025-12-15 15:05:40,191 basehttp "GET /media/profile_pics/team-2.jpg HTTP/1.1" 200 206383
+INFO 2025-12-15 15:05:44,498 basehttp "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2025-12-15 15:05:44,649 basehttp "GET / HTTP/1.1" 200 40001
+INFO 2025-12-15 15:05:44,905 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 73
+INFO 2025-12-15 15:05:46,296 basehttp "GET /users/login/ HTTP/1.1" 200 9205
+INFO 2025-12-15 15:06:04,735 basehttp "POST /users/login/ HTTP/1.1" 302 0
+INFO 2025-12-15 15:06:04,904 basehttp "GET /profil/ HTTP/1.1" 200 41441
+INFO 2025-12-15 15:06:05,155 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 73
+INFO 2025-12-15 15:06:07,741 basehttp "GET /users/profile/ HTTP/1.1" 200 33433
+INFO 2025-12-15 15:06:14,947 basehttp "GET /users/profile/update/ HTTP/1.1" 200 18239
+INFO 2025-12-15 15:06:24,495 basehttp "POST /users/profile/update/ HTTP/1.1" 302 0
+INFO 2025-12-15 15:06:24,682 basehttp "GET /users/profile/ HTTP/1.1" 200 33444
+INFO 2025-12-15 15:06:24,828 basehttp "GET /media/profile_pics/team-1.jpg HTTP/1.1" 200 199214
+INFO 2025-12-15 15:07:19,957 basehttp "GET /users/profile/ HTTP/1.1" 200 29646
+INFO 2025-12-15 15:07:22,607 basehttp "GET /users/profile/update/ HTTP/1.1" 200 16599
+INFO 2025-12-15 15:13:54,369 basehttp "POST /users/profile/update/ HTTP/1.1" 302 0
+INFO 2025-12-15 15:13:54,541 basehttp "GET /users/profile/ HTTP/1.1" 200 29742
+INFO 2025-12-15 15:13:54,604 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 200 266575
+INFO 2025-12-15 15:14:50,050 basehttp "GET /users/profile/ HTTP/1.1" 200 29712
+INFO 2025-12-15 15:14:50,088 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 304 0
+INFO 2025-12-15 16:09:40,354 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 16:09:47,712 basehttp "GET /users/profile/ HTTP/1.1" 200 29712
+INFO 2025-12-15 16:09:48,002 basehttp "GET /static/css/fontawesome/css/all.min.css HTTP/1.1" 200 74320
+INFO 2025-12-15 16:09:48,005 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 232111
+INFO 2025-12-15 16:09:48,017 basehttp "GET /static/css/style.css HTTP/1.1" 200 35773
+INFO 2025-12-15 16:09:48,019 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 200 266575
+INFO 2025-12-15 16:09:48,050 basehttp "GET /static/js/script.js HTTP/1.1" 200 34878
+INFO 2025-12-15 16:09:48,055 basehttp "GET /static/css/fontawesome/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 101224
+INFO 2025-12-15 16:09:48,057 basehttp "GET /static/css/fontawesome/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 113152
+INFO 2025-12-15 16:09:48,081 basehttp "GET /static/js/bootstrap.bundle.min.js HTTP/1.1" 200 80496
+INFO 2025-12-15 16:20:06,785 basehttp - Broken pipe from ('127.0.0.1', 52346)
+INFO 2025-12-15 16:20:19,345 basehttp "GET /users/profile/ HTTP/1.1" 200 33414
+INFO 2025-12-15 16:20:19,408 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 232111
+INFO 2025-12-15 16:20:19,428 basehttp "GET /static/css/style.css HTTP/1.1" 200 35773
+INFO 2025-12-15 16:20:19,431 basehttp "GET /static/js/script.js HTTP/1.1" 200 34878
+INFO 2025-12-15 16:20:19,432 basehttp "GET /static/css/fontawesome/css/all.min.css HTTP/1.1" 200 74320
+INFO 2025-12-15 16:20:19,434 basehttp "GET /static/js/bootstrap.bundle.min.js HTTP/1.1" 200 80496
+INFO 2025-12-15 16:20:19,452 basehttp "GET /media/profile_pics/team-1.jpg HTTP/1.1" 200 199214
+INFO 2025-12-15 16:20:19,525 basehttp "GET /static/css/fontawesome/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 101224
+INFO 2025-12-15 16:20:19,525 basehttp "GET /static/css/fontawesome/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 113152
+INFO 2025-12-15 16:20:19,683 basehttp "GET /static/images/favicon.ico HTTP/1.1" 200 15406
+INFO 2025-12-15 16:20:23,936 basehttp "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2025-12-15 16:20:24,298 basehttp "GET / HTTP/1.1" 200 40001
+INFO 2025-12-15 16:20:24,354 basehttp "GET /static/images/main-hero.jpg HTTP/1.1" 200 397095
+INFO 2025-12-15 16:20:24,471 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 73
+INFO 2025-12-15 16:21:59,855 basehttp "GET /feedback/ HTTP/1.1" 200 39943
+INFO 2025-12-15 16:22:08,805 basehttp "GET / HTTP/1.1" 200 40001
+INFO 2025-12-15 16:22:08,987 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 73
+INFO 2025-12-15 16:22:19,346 basehttp "GET /feedback/ HTTP/1.1" 200 57848
+INFO 2025-12-15 16:25:48,635 views Начало отправки email для отзыва #14
+INFO 2025-12-15 16:25:48,638 views Отправка email: subject=Новое обращение с рейтингом 3.5/5, to=nickchech@mail.ru
+INFO 2025-12-15 16:25:48,638 views Настройки SMTP: host=smtp.mail.ru, port=587
+INFO 2025-12-15 16:25:48,639 views Отправитель: nickchech@mail.ru
+INFO 2025-12-15 16:25:54,740 views Email отправлен успешно. Результат: 1
+INFO 2025-12-15 16:25:54,745 basehttp "POST /feedback/ HTTP/1.1" 302 0
+INFO 2025-12-15 16:25:54,871 basehttp "GET /feedback/success/ HTTP/1.1" 200 18662
+INFO 2025-12-15 16:26:07,371 basehttp "GET / HTTP/1.1" 200 39995
+INFO 2025-12-15 16:26:07,559 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 1150
+INFO 2025-12-15 16:26:07,570 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 200 266575
+INFO 2025-12-15 16:26:07,630 basehttp "GET /static/css/fontawesome/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 18988
+INFO 2025-12-15 16:33:15,357 basehttp "GET /users/login/?next=/ HTTP/1.1" 200 9206
+INFO 2025-12-15 16:34:26,417 basehttp "GET /users/register/ HTTP/1.1" 200 15191
+INFO 2025-12-15 16:35:46,107 basehttp "GET /users/login/ HTTP/1.1" 200 9205
+INFO 2025-12-15 16:37:36,506 basehttp "GET /users/register/ HTTP/1.1" 200 15191
+INFO 2025-12-15 16:42:53,335 basehttp "GET /users/login/ HTTP/1.1" 200 9205
+INFO 2025-12-15 16:43:24,825 basehttp "POST /users/login/ HTTP/1.1" 302 0
+INFO 2025-12-15 16:43:24,929 basehttp "GET /profil/ HTTP/1.1" 200 41435
+INFO 2025-12-15 16:43:25,347 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 1150
+INFO 2025-12-15 16:43:25,365 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 304 0
+INFO 2025-12-15 16:49:58,471 basehttp "GET /users/profile/ HTTP/1.1" 200 29712
+INFO 2025-12-15 16:49:58,502 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 304 0
+INFO 2025-12-15 16:50:28,299 basehttp "GET /courses/ HTTP/1.1" 200 37968
+INFO 2025-12-15 16:50:42,631 basehttp "GET /courses/?level=B1&search= HTTP/1.1" 200 18742
+INFO 2025-12-15 16:51:25,782 basehttp "GET /users/profile/ HTTP/1.1" 200 29712
+INFO 2025-12-15 16:52:35,429 basehttp "GET /grammar/ HTTP/1.1" 200 21645
+INFO 2025-12-15 16:52:35,498 basehttp "GET /static/images/grammar-tenses.jpg HTTP/1.1" 200 403845
+INFO 2025-12-15 16:52:35,500 basehttp "GET /static/images/grammar-main.jpg HTTP/1.1" 200 473657
+INFO 2025-12-15 16:52:45,372 basehttp "GET /vocabulary/ HTTP/1.1" 200 27159
+INFO 2025-12-15 16:52:45,432 basehttp "GET /static/images/vocabulary-everyday.jpg HTTP/1.1" 200 350224
+INFO 2025-12-15 16:52:45,442 basehttp "GET /static/images/vocabulary-main.jpg HTTP/1.1" 200 884909
+INFO 2025-12-15 16:52:45,446 basehttp "GET /static/images/vocabulary-business.jpg HTTP/1.1" 200 393520
+INFO 2025-12-15 16:52:45,449 basehttp "GET /static/images/vocabulary-academic.jpg HTTP/1.1" 200 548120
+INFO 2025-12-15 16:52:47,811 basehttp "GET /about/ HTTP/1.1" 200 20447
+INFO 2025-12-15 16:52:47,855 basehttp "GET /static/images/about-main.jpg HTTP/1.1" 200 633130
+INFO 2025-12-15 16:52:47,862 basehttp "GET /static/images/about-history.jpg HTTP/1.1" 200 574536
+INFO 2025-12-15 16:52:47,879 basehttp "GET /static/images/team-1.jpg HTTP/1.1" 200 199214
+INFO 2025-12-15 16:52:47,880 basehttp "GET /static/images/team-2.jpg HTTP/1.1" 200 206383
+INFO 2025-12-15 16:52:47,883 basehttp "GET /static/images/team-3.jpg HTTP/1.1" 200 261488
+INFO 2025-12-15 16:55:39,054 basehttp "GET /users/profile/ HTTP/1.1" 200 29712
+INFO 2025-12-15 16:55:45,440 basehttp "GET /users/profile/update/ HTTP/1.1" 200 16834
+INFO 2025-12-15 16:57:13,425 basehttp "GET /users/profile/update/ HTTP/1.1" 200 16834
+INFO 2025-12-15 16:58:09,101 basehttp "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2025-12-15 16:58:09,189 basehttp "GET / HTTP/1.1" 200 39995
+INFO 2025-12-15 16:58:09,388 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 1150
+INFO 2025-12-15 16:58:09,419 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 304 0
+INFO 2025-12-15 16:58:10,714 basehttp "GET /users/login/ HTTP/1.1" 200 9205
+INFO 2025-12-15 16:59:16,828 basehttp "GET /users/register/ HTTP/1.1" 200 15191
+INFO 2025-12-15 17:02:27,701 autoreload C:\Dev\jump_into_django\english_studing\users\forms.py changed, reloading.
+INFO 2025-12-15 17:02:29,072 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 17:02:34,949 basehttp "GET /users/register/ HTTP/1.1" 200 15201
+INFO 2025-12-15 17:04:49,866 basehttp "GET /courses/ HTTP/1.1" 200 37968
+INFO 2025-12-15 17:05:03,621 basehttp "GET /courses/?level=B1&search= HTTP/1.1" 200 18742
+INFO 2025-12-15 17:05:47,191 basehttp "GET /courses/3/ HTTP/1.1" 200 15670
+INFO 2025-12-15 17:05:51,889 basehttp "GET /courses/3/enroll/ HTTP/1.1" 200 13016
+INFO 2025-12-15 17:05:55,800 basehttp "GET /courses/3/ HTTP/1.1" 200 15670
+INFO 2025-12-15 17:07:00,132 basehttp "GET /courses/3/enroll/ HTTP/1.1" 200 13016
+INFO 2025-12-15 17:08:22,328 basehttp "POST /courses/3/enroll/ HTTP/1.1" 302 0
+INFO 2025-12-15 17:08:22,447 basehttp "GET /courses/my-courses/ HTTP/1.1" 200 11804
+INFO 2025-12-15 17:09:02,141 basehttp "GET /courses/order/9/ HTTP/1.1" 200 34050
+INFO 2025-12-15 17:09:02,265 basehttp "GET /static/css/fontawesome/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 18988
+INFO 2025-12-15 17:12:45,643 basehttp "GET /users/profile/ HTTP/1.1" 200 32859
+INFO 2025-12-15 17:12:45,681 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 304 0
+INFO 2025-12-15 17:13:54,468 basehttp "GET /courses/order/9/ HTTP/1.1" 200 34050
+INFO 2025-12-15 17:15:39,748 basehttp "POST /courses/order/9/module/10/complete/ HTTP/1.1" 200 350
+INFO 2025-12-15 17:16:45,141 basehttp "POST /courses/order/9/module/11/complete/ HTTP/1.1" 200 355
+INFO 2025-12-15 17:16:46,956 basehttp "POST /courses/order/9/module/12/complete/ HTTP/1.1" 200 343
+INFO 2025-12-15 17:16:48,608 basehttp "POST /courses/order/9/module/13/complete/ HTTP/1.1" 200 373
+INFO 2025-12-15 17:16:50,768 basehttp "POST /courses/order/9/module/14/complete/ HTTP/1.1" 200 373
+INFO 2025-12-15 17:16:52,927 basehttp "POST /courses/order/9/module/15/complete/ HTTP/1.1" 200 357
+INFO 2025-12-15 17:17:16,042 basehttp "GET /courses/order/9/complete/ HTTP/1.1" 200 15286
+INFO 2025-12-15 17:19:07,114 basehttp "POST /courses/order/9/complete/ HTTP/1.1" 302 0
+INFO 2025-12-15 17:19:07,223 basehttp "GET /courses/order/9/ HTTP/1.1" 200 32366
+INFO 2025-12-15 17:19:22,717 basehttp "GET /courses/ HTTP/1.1" 200 37968
+INFO 2025-12-15 17:19:25,762 basehttp "GET / HTTP/1.1" 200 41410
+INFO 2025-12-15 17:19:25,795 basehttp "GET /static/images/main-hero.jpg HTTP/1.1" 200 397095
+INFO 2025-12-15 17:19:25,918 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 1150
+INFO 2025-12-15 17:19:27,860 basehttp "GET /users/profile/ HTTP/1.1" 200 32621
+INFO 2025-12-15 17:20:33,747 basehttp "GET /feedback/ HTTP/1.1" 200 55214
+INFO 2025-12-15 17:24:12,287 basehttp "GET /courses/ HTTP/1.1" 200 36742
+INFO 2025-12-15 17:24:14,478 basehttp "GET / HTTP/1.1" 200 39995
+INFO 2025-12-15 17:24:14,818 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 1150
+INFO 2025-12-15 17:24:14,828 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 304 0
+INFO 2025-12-15 17:31:13,465 views Начало отправки email для отзыва #15
+INFO 2025-12-15 17:31:13,468 views Отправка email: subject=Новое обращение с рейтингом 3.9/5, to=nickchech@mail.ru
+INFO 2025-12-15 17:31:13,468 views Настройки SMTP: host=smtp.mail.ru, port=587
+INFO 2025-12-15 17:31:13,469 views Отправитель: nickchech@mail.ru
+INFO 2025-12-15 17:31:19,443 views Email отправлен успешно. Результат: 1
+INFO 2025-12-15 17:31:19,451 basehttp "POST /feedback/ HTTP/1.1" 302 0
+INFO 2025-12-15 17:31:19,587 basehttp "GET /feedback/success/ HTTP/1.1" 200 18662
+INFO 2025-12-15 17:37:54,510 basehttp "GET /users/login/ HTTP/1.1" 200 9205
+INFO 2025-12-15 17:38:10,225 basehttp "POST /users/login/ HTTP/1.1" 302 0
+INFO 2025-12-15 17:38:10,308 basehttp "GET /profil/ HTTP/1.1" 200 41435
+INFO 2025-12-15 17:38:10,521 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-15 17:38:10,531 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 304 0
+INFO 2025-12-15 17:38:12,469 basehttp "GET /users/profile/ HTTP/1.1" 200 33414
+INFO 2025-12-15 17:38:12,529 basehttp "GET /media/profile_pics/team-1.jpg HTTP/1.1" 304 0
+INFO 2025-12-15 17:39:18,182 basehttp "GET /courses/ HTTP/1.1" 200 37968
+INFO 2025-12-15 17:39:22,778 basehttp "GET / HTTP/1.1" 200 41410
+INFO 2025-12-15 17:39:22,949 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-15 17:39:22,957 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 304 0
+INFO 2025-12-15 17:39:24,042 basehttp "GET /users/profile/ HTTP/1.1" 200 32621
+INFO 2025-12-15 17:39:26,481 basehttp "GET /courses/order/9/delete/ HTTP/1.1" 200 13500
+INFO 2025-12-15 17:39:31,025 basehttp "POST /courses/order/9/delete/ HTTP/1.1" 302 0
+INFO 2025-12-15 17:39:31,133 basehttp "GET /courses/my-courses/ HTTP/1.1" 200 8551
+INFO 2025-12-15 17:39:34,407 basehttp "GET / HTTP/1.1" 200 41410
+INFO 2025-12-15 17:39:34,538 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-15 17:39:37,842 basehttp "GET /users/profile/ HTTP/1.1" 200 29712
+INFO 2025-12-15 17:39:40,150 basehttp "GET /courses/ HTTP/1.1" 200 37968
+INFO 2025-12-15 17:39:45,560 basehttp "GET /courses/?level=B1&search= HTTP/1.1" 200 18742
+INFO 2025-12-15 17:39:48,675 basehttp "GET /courses/3/enroll/ HTTP/1.1" 200 13016
+INFO 2025-12-15 17:40:21,716 basehttp "POST /courses/3/enroll/ HTTP/1.1" 302 0
+INFO 2025-12-15 17:40:21,826 basehttp "GET /courses/my-courses/ HTTP/1.1" 200 11806
+INFO 2025-12-15 17:40:32,026 basehttp "GET /users/profile/ HTTP/1.1" 200 33414
+INFO 2025-12-15 17:41:01,066 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 19680
+INFO 2025-12-15 17:41:22,274 basehttp "GET /diary/ HTTP/1.1" 200 45468
+INFO 2025-12-15 17:41:56,088 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 19680
+INFO 2025-12-15 17:43:16,621 basehttp "GET /courses/teacher/courses/3/detail/ HTTP/1.1" 200 17778
+INFO 2025-12-15 17:44:01,014 basehttp "GET /courses/order/10/ HTTP/1.1" 200 34055
+WARNING 2025-12-15 17:44:03,578 log Bad Request: /courses/order/110/module/0/complete/
+WARNING 2025-12-15 17:44:03,580 basehttp "POST /courses/order/110/module/0/complete/ HTTP/1.1" 400 72
+WARNING 2025-12-15 17:44:04,992 log Bad Request: /courses/order/111/module/0/complete/
+WARNING 2025-12-15 17:44:04,993 basehttp "POST /courses/order/111/module/0/complete/ HTTP/1.1" 400 72
+WARNING 2025-12-15 17:44:07,825 log Bad Request: /courses/order/110/module/0/complete/
+WARNING 2025-12-15 17:44:07,826 basehttp "POST /courses/order/110/module/0/complete/ HTTP/1.1" 400 72
+INFO 2025-12-15 17:44:11,320 basehttp "GET /courses/order/10/ HTTP/1.1" 200 34055
+WARNING 2025-12-15 17:44:13,889 log Bad Request: /courses/order/110/module/0/complete/
+WARNING 2025-12-15 17:44:13,891 basehttp "POST /courses/order/110/module/0/complete/ HTTP/1.1" 400 72
+INFO 2025-12-15 17:44:56,316 basehttp "GET /users/profile/ HTTP/1.1" 200 32861
+INFO 2025-12-15 17:44:57,775 basehttp "GET /courses/ HTTP/1.1" 200 37968
+INFO 2025-12-15 17:45:19,725 basehttp "GET /courses/9/enroll/ HTTP/1.1" 200 13069
+INFO 2025-12-15 17:45:25,840 basehttp "POST /courses/9/enroll/ HTTP/1.1" 302 0
+INFO 2025-12-15 17:45:25,950 basehttp "GET /courses/my-courses/ HTTP/1.1" 200 13549
+INFO 2025-12-15 17:45:33,100 basehttp "GET /courses/order/11/ HTTP/1.1" 200 30693
+INFO 2025-12-15 17:46:37,032 basehttp "GET /courses/teacher/courses/3/students/ HTTP/1.1" 200 13493
+INFO 2025-12-15 17:47:22,383 basehttp "GET /diary/ HTTP/1.1" 200 45468
+INFO 2025-12-15 17:47:57,465 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 19684
+INFO 2025-12-15 17:48:07,128 basehttp "GET /courses/teacher/courses/create/ HTTP/1.1" 200 12889
+INFO 2025-12-15 17:50:30,476 autoreload C:\Dev\jump_into_django\english_studing\courses\views.py changed, reloading.
+INFO 2025-12-15 17:50:32,792 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 17:51:53,709 basehttp "GET /courses/order/11/ HTTP/1.1" 200 31064
+INFO 2025-12-15 17:51:56,857 basehttp "POST /courses/order/11/module/43/complete/ HTTP/1.1" 200 350
+INFO 2025-12-15 17:52:07,240 basehttp "POST /courses/order/11/module/44/complete/ HTTP/1.1" 200 355
+INFO 2025-12-15 17:52:15,214 basehttp "GET /courses/teacher/courses/9/detail/ HTTP/1.1" 200 16440
+INFO 2025-12-15 17:52:31,142 basehttp "GET /courses/teacher/courses/3/detail/ HTTP/1.1" 200 17778
+INFO 2025-12-15 17:52:42,353 basehttp "GET /courses/my-courses/ HTTP/1.1" 200 13564
+INFO 2025-12-15 17:52:42,590 basehttp "GET /static/images/favicon.ico HTTP/1.1" 200 15406
+INFO 2025-12-15 17:52:44,690 basehttp "GET /courses/order/10/ HTTP/1.1" 200 34426
+INFO 2025-12-15 17:52:47,389 basehttp "POST /courses/order/10/module/10/complete/ HTTP/1.1" 200 350
+INFO 2025-12-15 17:52:49,022 basehttp "POST /courses/order/10/module/11/complete/ HTTP/1.1" 200 355
+INFO 2025-12-15 17:52:55,508 basehttp "GET /courses/teacher/courses/3/detail/ HTTP/1.1" 200 17779
+INFO 2025-12-15 17:53:13,744 basehttp "POST /courses/order/10/module/12/complete/ HTTP/1.1" 200 343
+INFO 2025-12-15 17:53:15,882 basehttp "POST /courses/order/10/module/13/complete/ HTTP/1.1" 200 373
+INFO 2025-12-15 17:53:18,771 basehttp "POST /courses/order/10/module/14/complete/ HTTP/1.1" 200 373
+INFO 2025-12-15 17:53:20,812 basehttp "POST /courses/order/10/module/15/complete/ HTTP/1.1" 200 357
+INFO 2025-12-15 17:53:24,253 basehttp "GET /courses/teacher/courses/3/detail/ HTTP/1.1" 200 17780
+INFO 2025-12-15 17:53:27,486 basehttp "GET /courses/order/10/complete/ HTTP/1.1" 200 15287
+INFO 2025-12-15 17:53:33,447 basehttp "POST /courses/order/10/complete/ HTTP/1.1" 302 0
+INFO 2025-12-15 17:53:33,625 basehttp "GET /courses/order/10/ HTTP/1.1" 200 32370
+INFO 2025-12-15 17:53:36,436 basehttp "GET /courses/teacher/courses/3/detail/ HTTP/1.1" 200 17776
+INFO 2025-12-15 17:54:43,371 basehttp "GET /courses/teacher/courses/3/students/ HTTP/1.1" 200 13510
+INFO 2025-12-15 18:18:32,494 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-12-15 18:18:32,717 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4310
+INFO 2025-12-15 18:18:32,792 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-12-15 18:18:32,796 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-12-15 18:18:32,796 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-12-15 18:18:32,796 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-12-15 18:18:32,802 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-12-15 18:18:32,812 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-12-15 18:18:32,832 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-12-15 18:18:32,838 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+WARNING 2025-12-15 18:18:32,960 log Not Found: /favicon.ico
+WARNING 2025-12-15 18:18:32,960 basehttp "GET /favicon.ico HTTP/1.1" 404 4859
+INFO 2025-12-15 18:18:44,387 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4240
+INFO 2025-12-15 18:18:53,076 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4230
+INFO 2025-12-15 18:18:59,731 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3949
+INFO 2025-12-15 18:19:01,033 basehttp "GET /courses/teacher/courses/3/students/ HTTP/1.1" 200 13510
+INFO 2025-12-15 18:19:03,481 basehttp "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2025-12-15 18:19:03,565 basehttp "GET / HTTP/1.1" 200 39995
+INFO 2025-12-15 18:19:03,729 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-15 18:19:03,737 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 304 0
+INFO 2025-12-15 18:19:08,018 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4535
+INFO 2025-12-15 18:19:15,663 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4659
+INFO 2025-12-15 18:19:37,622 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4669
+INFO 2025-12-15 18:19:48,389 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4659
+INFO 2025-12-15 18:21:47,962 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 18:21:52,310 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-12-15 18:21:52,485 basehttp "GET /admin/ HTTP/1.1" 200 14357
+INFO 2025-12-15 18:21:52,606 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-12-15 18:21:52,631 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-12-15 18:21:52,633 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-12-15 18:22:21,626 basehttp "GET /admin/courses/course/ HTTP/1.1" 200 28133
+INFO 2025-12-15 18:22:21,706 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-12-15 18:22:21,717 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-12-15 18:22:21,733 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-12-15 18:22:21,735 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-12-15 18:22:21,743 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-12-15 18:22:21,750 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-12-15 18:22:21,759 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-12-15 18:22:21,759 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-12-15 18:22:21,787 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-12-15 18:22:21,808 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2025-12-15 18:22:21,845 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-12-15 18:22:21,852 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-12-15 18:22:21,888 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-12-15 18:22:21,889 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-12-15 18:22:21,890 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+ERROR 2025-12-15 18:22:40,480 log Internal Server Error: /admin/courses/course/1/change/
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 840, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\forms\models.py", line 654, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\forms\models.py", line 334, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (duration_weeks) specified for Course
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 1987, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 1840, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 1878, in _changeform_view
+    ModelForm = self.get_form(
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 842, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (duration_weeks) specified for Course. Check fields/fieldsets/exclude attributes of class CourseAdmin.
+ERROR 2025-12-15 18:22:40,484 basehttp "GET /admin/courses/course/1/change/ HTTP/1.1" 500 156110
+INFO 2025-12-15 18:22:42,556 basehttp "GET /admin/courses/course/ HTTP/1.1" 200 28133
+ERROR 2025-12-15 18:23:04,458 log Internal Server Error: /admin/courses/course/1/change/
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 840, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\forms\models.py", line 654, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\forms\models.py", line 334, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (duration_weeks) specified for Course
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 1987, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 1840, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 1878, in _changeform_view
+    ModelForm = self.get_form(
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 842, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (duration_weeks) specified for Course. Check fields/fieldsets/exclude attributes of class CourseAdmin.
+ERROR 2025-12-15 18:23:04,460 basehttp "GET /admin/courses/course/1/change/ HTTP/1.1" 500 156110
+INFO 2025-12-15 18:23:24,016 basehttp "GET /admin/courses/course/ HTTP/1.1" 200 28133
+INFO 2025-12-15 18:23:27,148 basehttp "GET /admin/feedback/feedback/ HTTP/1.1" 200 23246
+INFO 2025-12-15 18:23:27,221 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-12-15 18:23:27,237 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11973
+INFO 2025-12-15 18:23:27,274 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2025-12-15 18:23:44,588 basehttp "GET /admin/feedback/feedback/15/change/ HTTP/1.1" 200 38859
+INFO 2025-12-15 18:23:44,660 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-12-15 18:23:44,660 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-12-15 18:23:44,703 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2025-12-15 18:23:46,512 basehttp "GET /admin/feedback/feedback/ HTTP/1.1" 200 23246
+INFO 2025-12-15 18:28:24,830 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 18:35:28,600 autoreload C:\Dev\jump_into_django\english_studing\english_studing\settings.py changed, reloading.
+INFO 2025-12-15 18:35:29,766 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 18:37:11,592 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 18:39:03,274 autoreload C:\Dev\jump_into_django\english_studing\english_studing\settings.py changed, reloading.
+INFO 2025-12-15 18:39:04,613 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 18:44:28,928 autoreload C:\Dev\jump_into_django\english_studing\english_studing\settings.py changed, reloading.
+INFO 2025-12-15 18:44:30,086 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 18:45:05,391 basehttp "GET / HTTP/1.1" 200 39995
+INFO 2025-12-15 18:45:05,611 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 232111
+INFO 2025-12-15 18:45:05,650 basehttp "GET /static/css/style.css HTTP/1.1" 200 35773
+INFO 2025-12-15 18:45:05,659 basehttp "GET /static/css/fontawesome/css/all.min.css HTTP/1.1" 200 74320
+INFO 2025-12-15 18:45:05,664 basehttp "GET /static/js/script.js HTTP/1.1" 200 34878
+INFO 2025-12-15 18:45:05,690 basehttp "GET /static/js/bootstrap.bundle.min.js HTTP/1.1" 200 80496
+INFO 2025-12-15 18:45:05,710 basehttp "GET /static/images/main-hero.jpg HTTP/1.1" 200 397095
+INFO 2025-12-15 18:45:05,767 basehttp "GET /static/css/fontawesome/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 101224
+INFO 2025-12-15 18:45:05,770 basehttp "GET /static/css/fontawesome/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 113152
+INFO 2025-12-15 18:45:05,981 basehttp "GET /static/images/favicon.ico HTTP/1.1" 200 15406
+INFO 2025-12-15 18:45:06,121 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-15 18:45:06,176 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 200 266575
+INFO 2025-12-15 18:45:06,433 basehttp "GET /static/css/fontawesome/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 18988
+INFO 2025-12-15 18:45:43,085 basehttp "GET /courses/ HTTP/1.1" 200 36742
+INFO 2025-12-15 18:45:57,529 basehttp "GET /users/login/ HTTP/1.1" 200 9205
+INFO 2025-12-15 18:46:08,598 basehttp "POST /users/login/ HTTP/1.1" 302 0
+INFO 2025-12-15 18:46:08,750 basehttp "GET /profil/ HTTP/1.1" 200 41417
+INFO 2025-12-15 18:46:08,992 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-15 18:46:15,450 basehttp "GET /users/profile/ HTTP/1.1" 200 35623
+INFO 2025-12-15 18:46:19,959 basehttp "GET /courses/ HTTP/1.1" 200 37968
+INFO 2025-12-15 18:46:32,766 basehttp "GET /courses/1/ HTTP/1.1" 200 14433
+INFO 2025-12-15 18:46:46,729 basehttp "GET /diary/ HTTP/1.1" 200 44996
+INFO 2025-12-15 18:46:51,825 basehttp "GET / HTTP/1.1" 200 41410
+INFO 2025-12-15 18:46:52,045 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-15 18:46:58,244 basehttp "GET /users/profile/ HTTP/1.1" 200 35623
+INFO 2025-12-15 18:47:17,220 basehttp "GET /courses/order/11/ HTTP/1.1" 200 30751
+INFO 2025-12-15 18:47:32,993 basehttp - Broken pipe from ('192.168.1.101', 51136)
+INFO 2025-12-15 18:47:32,993 basehttp - Broken pipe from ('192.168.1.101', 51144)
+INFO 2025-12-15 18:47:32,993 basehttp - Broken pipe from ('192.168.1.101', 51162)
+INFO 2025-12-15 18:47:32,998 basehttp - Broken pipe from ('192.168.1.101', 51110)
+INFO 2025-12-15 18:47:32,998 basehttp - Broken pipe from ('192.168.1.101', 51124)
+INFO 2025-12-15 18:47:32,998 basehttp - Broken pipe from ('192.168.1.101', 51150)
+INFO 2025-12-15 18:48:17,376 basehttp "GET / HTTP/1.1" 200 41410
+INFO 2025-12-15 18:48:17,700 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-15 18:48:27,706 basehttp - Broken pipe from ('192.168.1.101', 35206)
+INFO 2025-12-15 18:48:27,706 basehttp - Broken pipe from ('192.168.1.101', 35190)
+INFO 2025-12-15 19:08:07,124 basehttp "GET /admin/courses/course/ HTTP/1.1" 200 28133
+INFO 2025-12-15 19:08:08,114 basehttp "GET /admin/ HTTP/1.1" 200 14357
+INFO 2025-12-15 19:08:10,280 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-12-15 19:08:10,475 basehttp "GET /admin/ HTTP/1.1" 200 14357
+INFO 2025-12-15 19:08:11,377 basehttp "GET / HTTP/1.1" 200 41411
+INFO 2025-12-15 19:08:11,841 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-15 19:08:11,854 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 304 0
+INFO 2025-12-15 19:08:36,566 basehttp "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2025-12-15 19:08:36,698 basehttp "GET / HTTP/1.1" 200 39995
+INFO 2025-12-15 19:08:36,788 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-12-15 19:08:37,013 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-15 19:08:40,923 basehttp "GET /users/login/ HTTP/1.1" 200 9205
+INFO 2025-12-15 19:09:05,470 basehttp "POST /users/login/ HTTP/1.1" 302 0
+INFO 2025-12-15 19:09:05,642 basehttp "GET /profil/ HTTP/1.1" 200 41435
+INFO 2025-12-15 19:09:05,919 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-15 19:09:08,622 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 19680
+INFO 2025-12-15 19:09:13,674 basehttp "GET /courses/teacher/courses/9/edit/ HTTP/1.1" 200 13791
+INFO 2025-12-15 19:09:19,164 basehttp "GET /courses/teacher/courses/9/modules/ HTTP/1.1" 200 29857
+INFO 2025-12-15 19:13:24,762 autoreload C:\Dev\jump_into_django\english_studing\profil\urls.py changed, reloading.
+INFO 2025-12-15 19:13:26,858 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 19:13:30,940 autoreload C:\Dev\jump_into_django\english_studing\profil\views.py changed, reloading.
+INFO 2025-12-15 19:13:32,851 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 19:13:39,398 basehttp "GET / HTTP/1.1" 200 41410
+INFO 2025-12-15 19:13:40,267 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-15 19:13:40,374 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 304 0
+INFO 2025-12-15 19:13:42,989 basehttp "GET /users/profile/ HTTP/1.1" 200 36182
+INFO 2025-12-15 19:14:07,907 basehttp - Broken pipe from ('192.168.1.101', 56692)
+INFO 2025-12-15 19:14:07,907 basehttp - Broken pipe from ('192.168.1.101', 56700)
+INFO 2025-12-15 19:14:07,908 basehttp - Broken pipe from ('192.168.1.101', 56676)
+INFO 2025-12-15 20:42:50,639 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 20:42:57,888 basehttp "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2025-12-15 20:42:58,097 basehttp "GET / HTTP/1.1" 200 39995
+INFO 2025-12-15 20:42:58,722 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-15 20:42:58,812 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 304 0
+INFO 2025-12-15 20:43:00,684 basehttp "GET /users/login/ HTTP/1.1" 200 9205
+INFO 2025-12-15 20:43:08,912 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-12-15 20:43:08,990 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4741
+INFO 2025-12-15 20:43:21,201 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-12-15 20:43:21,388 basehttp "GET /admin/ HTTP/1.1" 200 14357
+INFO 2025-12-15 20:43:26,420 basehttp "GET /admin/courses/course/ HTTP/1.1" 200 28133
+INFO 2025-12-15 20:43:26,656 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+ERROR 2025-12-15 20:43:28,745 log Internal Server Error: /admin/courses/course/1/change/
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 840, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\forms\models.py", line 654, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\forms\models.py", line 334, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (duration_weeks) specified for Course
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 1987, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 1840, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 1878, in _changeform_view
+    ModelForm = self.get_form(
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 842, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (duration_weeks) specified for Course. Check fields/fieldsets/exclude attributes of class CourseAdmin.
+ERROR 2025-12-15 20:43:28,756 basehttp "GET /admin/courses/course/1/change/ HTTP/1.1" 500 155981
+INFO 2025-12-15 20:47:29,037 autoreload C:\Dev\jump_into_django\english_studing\courses\models.py changed, reloading.
+INFO 2025-12-15 20:47:31,608 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 21:07:06,580 autoreload Watching for file changes with StatReloader
+ERROR 2025-12-15 21:07:14,611 log Internal Server Error: /admin/courses/course/1/change/
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 840, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\forms\models.py", line 654, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\forms\models.py", line 334, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (duration_weeks) specified for Course
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 1987, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 1840, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 1878, in _changeform_view
+    ModelForm = self.get_form(
+  File "C:\Dev\jump_into_django\english_studing\venv\lib\site-packages\django\contrib\admin\options.py", line 842, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (duration_weeks) specified for Course. Check fields/fieldsets/exclude attributes of class CourseAdmin.
+ERROR 2025-12-15 21:07:14,628 basehttp "GET /admin/courses/course/1/change/ HTTP/1.1" 500 156118
+INFO 2025-12-15 21:07:56,443 autoreload C:\Dev\jump_into_django\english_studing\courses\admin.py changed, reloading.
+INFO 2025-12-15 21:07:57,590 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 21:08:03,331 basehttp "GET /admin/courses/course/1/change/ HTTP/1.1" 200 25356
+INFO 2025-12-15 21:08:03,502 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2025-12-15 21:08:03,552 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-12-15 21:08:03,553 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-12-15 21:08:03,583 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-12-15 21:08:03,766 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-12-15 21:08:07,686 basehttp "GET /admin/courses/coursemodule/ HTTP/1.1" 200 50932
+INFO 2025-12-15 21:08:07,789 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2025-12-15 21:08:12,412 basehttp "GET /admin/courses/coursemodule/24/change/ HTTP/1.1" 200 20662
+INFO 2025-12-15 21:08:12,535 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2025-12-15 21:08:13,978 basehttp "GET /admin/courses/coursemodule/ HTTP/1.1" 200 50932
+INFO 2025-12-15 21:08:17,887 autoreload C:\Dev\jump_into_django\english_studing\courses\admin.py changed, reloading.
+INFO 2025-12-15 21:08:18,948 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 21:10:36,575 basehttp "GET /admin/courses/course/1/change/ HTTP/1.1" 200 25356
+INFO 2025-12-15 21:10:38,445 basehttp "GET /admin/courses/course/ HTTP/1.1" 200 28133
+INFO 2025-12-15 21:10:38,850 basehttp "GET /admin/ HTTP/1.1" 200 14357
+INFO 2025-12-15 21:10:39,429 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-12-15 21:10:39,518 basehttp "GET /admin/ HTTP/1.1" 200 14357
+INFO 2025-12-15 21:10:40,624 basehttp "GET /users/login/ HTTP/1.1" 200 10616
+INFO 2025-12-15 21:10:45,095 basehttp "GET /users/login/ HTTP/1.1" 200 10616
+INFO 2025-12-15 21:10:45,147 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+INFO 2025-12-15 21:10:47,209 basehttp "GET / HTTP/1.1" 200 41411
+INFO 2025-12-15 21:10:47,396 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-15 21:10:53,697 basehttp "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2025-12-15 21:10:53,796 basehttp "GET / HTTP/1.1" 200 39995
+INFO 2025-12-15 21:10:53,972 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-15 21:10:56,329 basehttp "GET /users/login/ HTTP/1.1" 200 9205
+INFO 2025-12-15 21:11:14,114 basehttp "POST /users/login/ HTTP/1.1" 302 0
+INFO 2025-12-15 21:11:14,205 basehttp "GET /profil/ HTTP/1.1" 200 41435
+INFO 2025-12-15 21:11:14,409 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-15 21:21:28,555 autoreload C:\Dev\jump_into_django\english_studing\diary\views.py changed, reloading.
+INFO 2025-12-15 21:21:29,754 autoreload Watching for file changes with StatReloader
+INFO 2025-12-15 21:21:37,412 basehttp "GET /diary/ HTTP/1.1" 200 45312
+INFO 2025-12-16 02:27:39,196 basehttp "GET /courses/ HTTP/1.1" 200 37968
+INFO 2025-12-16 02:27:39,245 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-12-16 02:27:39,245 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+INFO 2025-12-16 02:37:26,799 basehttp "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2025-12-16 02:37:26,937 basehttp "GET / HTTP/1.1" 200 39995
+INFO 2025-12-16 02:37:27,065 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-12-16 02:37:27,065 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+INFO 2025-12-16 02:37:27,352 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-16 02:37:27,400 basehttp "GET /media/profile_pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-12-15_151157.png HTTP/1.1" 304 0
+INFO 2025-12-16 02:37:29,123 basehttp "GET /users/login/ HTTP/1.1" 200 9205
+INFO 2025-12-16 02:37:31,911 basehttp "GET /users/register/ HTTP/1.1" 200 15201
+INFO 2025-12-16 02:43:31,162 basehttp "GET /users/login/ HTTP/1.1" 200 9205
+INFO 2025-12-16 02:43:49,720 basehttp "POST /users/login/ HTTP/1.1" 302 0
+INFO 2025-12-16 02:43:49,853 basehttp "GET /profil/ HTTP/1.1" 200 41435
+INFO 2025-12-16 02:43:50,228 basehttp "GET /api/feedbacks/?page=1&per_page=5 HTTP/1.1" 200 2229
+INFO 2025-12-16 02:43:54,085 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 19680
+INFO 2025-12-16 02:43:56,072 basehttp "GET /courses/teacher/courses/create/ HTTP/1.1" 200 12889
+INFO 2025-12-16 02:45:36,808 basehttp "POST /courses/teacher/courses/create/ HTTP/1.1" 302 0
+INFO 2025-12-16 02:45:36,968 basehttp "GET /courses/teacher/courses/17/modules/ HTTP/1.1" 200 21141
+INFO 2025-12-16 02:46:14,636 basehttp "POST /courses/teacher/courses/17/modules/ HTTP/1.1" 302 0
+INFO 2025-12-16 02:46:14,824 basehttp "GET /courses/teacher/courses/17/detail/ HTTP/1.1" 200 13409
+INFO 2025-12-16 02:46:32,876 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 22628
+INFO 2025-12-16 02:46:35,363 basehttp "GET /courses/teacher/courses/17/edit/ HTTP/1.1" 200 13426
+INFO 2025-12-16 02:46:37,772 basehttp "GET /courses/teacher/courses/17/modules/ HTTP/1.1" 200 21141
+INFO 2025-12-16 02:47:14,160 basehttp "POST /courses/teacher/courses/17/modules/ HTTP/1.1" 302 0
+INFO 2025-12-16 02:47:14,336 basehttp "GET /courses/teacher/courses/17/detail/ HTTP/1.1" 200 13409
+INFO 2025-12-16 02:47:36,298 basehttp "GET /courses/teacher/courses/17/modules/ HTTP/1.1" 200 21141
+INFO 2025-12-16 02:52:59,117 basehttp "GET /diary/ HTTP/1.1" 200 44996
+INFO 2025-12-16 02:53:09,392 basehttp "GET /diary/ HTTP/1.1" 200 45312
+INFO 2025-12-16 02:53:54,910 basehttp "POST /diary/api/add_grade/ HTTP/1.1" 200 431
+INFO 2025-12-16 02:53:58,017 basehttp "POST /diary/api/mark_attendance/ HTTP/1.1" 200 594
+INFO 2025-12-16 02:54:01,499 basehttp "GET /diary/api/student/14/ HTTP/1.1" 200 623
+INFO 2025-12-16 03:05:40,361 autoreload C:\Dev\jump_into_django\english_studing\courses\views.py changed, reloading.
+INFO 2025-12-16 03:05:42,865 autoreload Watching for file changes with StatReloader
+INFO 2025-12-16 03:05:55,746 autoreload C:\Dev\jump_into_django\english_studing\courses\forms.py changed, reloading.
+INFO 2025-12-16 03:05:57,668 autoreload Watching for file changes with StatReloader
+INFO 2025-12-16 03:05:59,388 autoreload C:\Dev\jump_into_django\english_studing\courses\forms.py changed, reloading.
+INFO 2025-12-16 03:06:01,569 autoreload Watching for file changes with StatReloader
+INFO 2025-12-16 03:06:09,925 autoreload C:\Dev\jump_into_django\english_studing\courses\models.py changed, reloading.
+INFO 2025-12-16 03:06:11,866 autoreload Watching for file changes with StatReloader
+INFO 2025-12-16 03:08:19,269 autoreload Watching for file changes with StatReloader
+INFO 2025-12-16 03:08:25,323 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 22628
+INFO 2025-12-16 03:08:30,068 basehttp "GET /courses/teacher/courses/17/edit/ HTTP/1.1" 200 13426
+INFO 2025-12-16 03:08:32,540 basehttp "GET /courses/teacher/courses/17/modules/ HTTP/1.1" 200 23428
+INFO 2025-12-16 03:08:56,025 basehttp "POST /courses/teacher/courses/17/modules/ HTTP/1.1" 302 0
+INFO 2025-12-16 03:08:56,236 basehttp "GET /courses/teacher/courses/17/detail/ HTTP/1.1" 200 13883
+INFO 2025-12-16 03:15:31,999 autoreload C:\Dev\jump_into_django\english_studing\courses\forms.py changed, reloading.
+INFO 2025-12-16 03:15:34,139 autoreload Watching for file changes with StatReloader
+INFO 2025-12-16 03:16:01,092 basehttp "GET /courses/teacher/courses/17/modules/ HTTP/1.1" 200 30108
+INFO 2025-12-16 03:16:29,687 autoreload C:\Dev\jump_into_django\english_studing\courses\forms.py changed, reloading.
+INFO 2025-12-16 03:16:31,583 autoreload Watching for file changes with StatReloader
+WARNING 2025-12-16 03:16:49,800 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-16 03:16:49,803 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4970
+INFO 2025-12-16 03:16:50,237 basehttp "GET /static/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 331017
+INFO 2025-12-16 03:16:50,331 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 451427
+INFO 2025-12-16 03:20:42,519 basehttp "GET /courses/teacher/courses/17/modules/ HTTP/1.1" 200 25694
+WARNING 2025-12-16 03:20:42,583 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-16 03:20:42,584 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4970
+INFO 2025-12-16 03:23:41,794 basehttp "GET /courses/teacher/courses/17/modules/ HTTP/1.1" 200 30566
+INFO 2025-12-16 03:26:06,774 basehttp "GET /courses/teacher/courses/17/modules/ HTTP/1.1" 200 26588
+INFO 2025-12-16 03:29:52,841 basehttp "GET /courses/teacher/courses/17/modules/ HTTP/1.1" 200 25657
+INFO 2025-12-16 03:30:23,270 basehttp "POST /courses/teacher/courses/17/modules/ HTTP/1.1" 302 0
+INFO 2025-12-16 03:30:23,455 basehttp "GET /courses/teacher/courses/17/detail/ HTTP/1.1" 200 14490
+INFO 2025-12-16 03:30:32,987 basehttp "GET /courses/teacher/courses/ HTTP/1.1" 200 22628
+INFO 2025-12-16 03:30:38,063 basehttp "GET /courses/teacher/courses/3/edit/ HTTP/1.1" 200 13737
+INFO 2025-12-16 03:30:39,845 basehttp "GET /courses/teacher/courses/3/modules/ HTTP/1.1" 200 37114
+INFO 2025-12-16 03:30:50,263 basehttp "GET /courses/teacher/courses/9/edit/ HTTP/1.1" 200 13791
+INFO 2025-12-16 03:30:52,912 basehttp "GET /courses/teacher/courses/9/modules/ HTTP/1.1" 200 32640

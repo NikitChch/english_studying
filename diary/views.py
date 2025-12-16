@@ -18,7 +18,14 @@ def diary(request):
     }
     
     if user.user_type == 'teacher':
-        students = CustomUser.objects.filter(user_type='student')
+        students = CustomUser.objects.filter(
+            user_type='student'
+        ).exclude(
+            is_superuser=True
+        ).exclude(
+            is_staff=True
+        )
+        
         students_data = []
         for student in students:
             students_data.append({
@@ -104,6 +111,9 @@ def add_grade_api(request):
         
         student = get_object_or_404(CustomUser, id=student_id, user_type='student')
         
+        if student.is_superuser or student.is_staff:
+            return JsonResponse({'success': False, 'message': 'Пользователь не является студентом'}, status=400)
+        
         try:
             grade_date_obj = datetime.strptime(grade_date, '%Y-%m-%d').date()
         except ValueError:
@@ -160,6 +170,9 @@ def mark_attendance_api(request):
         
         student = get_object_or_404(CustomUser, id=student_id, user_type='student')
         
+        if student.is_superuser or student.is_staff:
+            return JsonResponse({'success': False, 'message': 'Пользователь не является студентом'}, status=400)
+        
         try:
             attendance_date_obj = datetime.strptime(attendance_date, '%Y-%m-%d').date()
         except ValueError:
@@ -208,7 +221,13 @@ def get_student_details_api(request, student_id):
         return JsonResponse({'success': False, 'message': 'Доступ запрещен'}, status=403)
     
     try:
-        student = get_object_or_404(CustomUser, id=student_id, user_type='student')
+        student = get_object_or_404(CustomUser, 
+            id=student_id, 
+            user_type='student'
+        )
+        
+        if student.is_superuser or student.is_staff:
+            return JsonResponse({'success': False, 'message': 'Пользователь не является студентом'}, status=400)
         
         grades = Grade.objects.filter(student=student).select_related('teacher')
         attendance = Attendance.objects.filter(student=student).select_related('teacher')

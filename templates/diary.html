@@ -216,7 +216,6 @@ async function viewStudentDetails(studentId) {
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p><strong>ID:</strong> ${student.id}</p>
                                     <p><strong>Имя пользователя:</strong> ${student.username}</p>
                                     <p><strong>Полное имя:</strong> ${student.full_name || 'Не указано'}</p>
                                     <p><strong>Группа:</strong> ${student.group}</p>
@@ -408,7 +407,6 @@ function loadDiary() {
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
                                         <th>Студент</th>
                                         <th>Группа</th>
                                         <th>Уровень</th>
@@ -420,7 +418,6 @@ function loadDiary() {
                                     ${students.map(student => {
                                         return `
                                             <tr>
-                                                <td>${student.id}</td>
                                                 <td>${student.name}</td>
                                                 <td>${student.group || 'Не указана'}</td>
                                                 <td>${student.level || 'Не указан'}</td>
@@ -552,7 +549,7 @@ function loadDiary() {
             </div>
             
             <div class="row mt-4">
-                <div class="col-md-6">
+                <div class="col-md-30">
                     <div class="content-card">
                         <h4><i class="fas fa-chart-line me-2"></i>Последние оценки</h4>
                         ${grades.length ? `
@@ -584,7 +581,7 @@ function loadDiary() {
                     </div>
                 </div>
                 
-                <div class="col-md-6">
+                <div class="col-md-30">
                     <div class="content-card">
                         <h4><i class="fas fa-calendar-alt me-2"></i>Последние посещения</h4>
                         ${attendance.length ? `

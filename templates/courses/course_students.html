@@ -64,8 +64,7 @@
                             <th>Дата записи</th>
                             <th>Прогресс</th>
                             <th>Статус</th>
-                            <th>Оценка</th>
-                            <th>Действия</th>
+                            <th>Комментарий</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -96,25 +95,15 @@
                                 </span>
                             </td>
                             <td>
-                                {% if order.rating %}
-                                    {% for i in "12345" %}
-                                        {% if forloop.counter <= order.rating %}
-                                            <i class="fas fa-star text-warning"></i>
-                                        {% else %}
-                                            <i class="far fa-star text-warning"></i>
-                                        {% endif %}
-                                    {% endfor %}
+                                {% if order.notes %}
+                                <button type="button" class="btn btn-sm btn-outline-info" 
+                                        data-bs-toggle="popover" 
+                                        data-bs-title="Комментарий студента" 
+                                        data-bs-content="{{ order.notes }}">
+                                    <i class="fas fa-comment"></i>
+                                </button>
                                 {% else %}
-                                    <span class="text-muted">—</span>
-                                {% endif %}
-                            </td>
-                            <td>
-                                {% if order.status == 'in_progress' %}
-                                    <a href="mailto:{{ order.student.email }}" 
-                                       class="btn btn-sm btn-outline-primary" 
-                                       title="Написать студенту">
-                                        <i class="fas fa-envelope"></i>
-                                    </a>
+                                <span class="text-muted">Нет</span>
                                 {% endif %}
                             </td>
                         </tr>
@@ -149,4 +138,11 @@
         </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+});
+</script>
 {% endblock %}

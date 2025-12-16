@@ -14,9 +14,9 @@ class Command(BaseCommand):
             return
         
         teacher_rustam, _ = CustomUser.objects.get_or_create(
-            username='rustam_teacher',
+            username='Rustam',
             defaults={
-                'email': 'rustam@example.com',
+                'email': 'rustam@gmail.com',
                 'first_name': 'Рустам',
                 'last_name': 'Емельянов',
                 'user_type': 'teacher',
@@ -26,13 +26,13 @@ class Command(BaseCommand):
                 'is_active': True
             }
         )
-        teacher_rustam.set_password('password123')
+        teacher_rustam.set_password('Olegator228')
         teacher_rustam.save()
         
         teacher_andrey, _ = CustomUser.objects.get_or_create(
-            username='andrey_teacher',
+            username='Andrey',
             defaults={
-                'email': 'andrey@example.com',
+                'email': 'andrey@gmail.com',
                 'first_name': 'Андрей',
                 'last_name': 'Синиелюбов',
                 'user_type': 'teacher',
@@ -42,13 +42,13 @@ class Command(BaseCommand):
                 'is_active': True
             }
         )
-        teacher_andrey.set_password('password123')
+        teacher_andrey.set_password('Olegator228')
         teacher_andrey.save()
         
         teacher_nikita, _ = CustomUser.objects.get_or_create(
-            username='qw',
+            username='Nikita',
             defaults={
-                'email': 'qw@gmail.com',
+                'email': 'nikitach.mk.09.04@gmail.com',
                 'first_name': 'Никита',
                 'last_name': 'Чеченев',
                 'user_type': 'teacher',
@@ -58,7 +58,7 @@ class Command(BaseCommand):
                 'is_active': True
             }
         )
-        teacher_nikita.set_password('Nikita228')
+        teacher_nikita.set_password('Olegator228')
         teacher_nikita.save()
         
         default_schedule = [

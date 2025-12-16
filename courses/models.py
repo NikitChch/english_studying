@@ -135,6 +135,10 @@ class CourseOrder(models.Model):
         blank=True, 
         verbose_name="Причина отмены"
     )
+    notes = models.TextField(
+        blank=True,
+        verbose_name="Комментарии студента при записи"
+    )
     order_date = models.DateTimeField(auto_now_add=True, verbose_name="Дата заказа")
     start_date = models.DateField(verbose_name="Дата начала обучения")
     expected_end_date = models.DateField(verbose_name="Планируемая дата окончания")
@@ -186,6 +190,19 @@ class CourseOrder(models.Model):
             return True
         return False
     
+    def complete_course_order(self):
+        self.status = 'completed'
+        self.actual_end_date = timezone.now().date()
+        self.progress = 100
+        
+        self.course.current_students -= 1
+        if self.course.current_students < 0:
+            self.course.current_students = 0
+        self.course.save()
+        
+        self.save()
+        return True
+    
     def can_be_cancelled(self):
         return self.status in ['pending', 'paid', 'in_progress']
     
@@ -209,6 +226,12 @@ class CourseOrder(models.Model):
         self.progress = 100
         self.actual_end_date = timezone.now().date()
         self.status = 'completed'
+        
+        self.course.current_students -= 1
+        if self.course.current_students < 0:
+            self.course.current_students = 0
+        self.course.save()
+        
         self.save()
     
     def days_remaining(self):

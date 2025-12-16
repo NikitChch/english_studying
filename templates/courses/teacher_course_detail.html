@@ -63,18 +63,10 @@
                         </div>
                         {% endfor %}
                     </div>
-                    <a href="{% url 'courses:add_modules' course.id %}" class="btn btn-outline-warning btn-sm">
-                        <i class="fas fa-edit me-1"></i>Редактировать модули
-                    </a>
                     {% else %}
                     <div class="alert alert-warning">
                         <i class="fas fa-exclamation-triangle me-2"></i>
                         У этого курса пока нет модулей.
-                        <div class="mt-2">
-                            <a href="{% url 'courses:add_modules' course.id %}" class="btn btn-warning btn-sm">
-                                <i class="fas fa-plus-circle me-1"></i>Добавить модули
-                            </a>
-                        </div>
                     </div>
                     {% endif %}
                 </div>

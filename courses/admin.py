@@ -8,12 +8,14 @@ class CourseAdmin(admin.ModelAdmin):
     list_filter = ['level', 'start_date', 'teacher']
     search_fields = ['name', 'description', 'teacher__username']
     
+    readonly_fields = ['duration_weeks', 'duration_days', 'duration_months', 'total_income']
+    
     fieldsets = (
         ('Основная информация', {
-            'fields': ('name', 'description', 'level', 'duration_weeks')
+            'fields': ('name', 'description', 'level')
         }),
         ('Финансы и расписание', {
-            'fields': ('price', 'start_date', 'end_date')
+            'fields': ('price', 'start_date', 'end_date', 'duration_weeks', 'total_income')
         }),
         ('Персонал и студенты', {
             'fields': ('teacher', 'max_students', 'current_students')

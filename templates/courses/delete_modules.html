@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h3 class="mb-0 text-center">
+                        <i class="fas fa-trash me-2"></i>Удаление модулей
+                    </h3>
+                    <p class="mb-0 text-center mt-2">Курс: {{ course.name }}</p>
+                </div>
+                <div class="card-body">
+                    {% if modules %}
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            Выберите модули для удаления. Это действие нельзя отменить!
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th style="width: 50px;">
+                                            <input type="checkbox" id="select-all">
+                                        </th>
+                                        <th>Название модуля</th>
+                                        <th>Описание</th>
+                                        <th>Порядок</th>
+                                        <th>Длительность (часов)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for module in modules %}
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="module_ids" value="{{ module.id }}" class="module-checkbox">
+                                        </td>
+                                        <td>{{ module.title }}</td>
+                                        <td>{{ module.description|truncatechars:100 }}</td>
+                                        <td>{{ module.order }}</td>
+                                        <td>{{ module.duration_hours }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="d-grid gap-2 mt-3">
+                            <button type="submit" class="btn btn-danger btn-lg" id="delete-button" disabled>
+                                <i class="fas fa-trash-alt me-2"></i>Удалить выбранные модули
+                            </button>
+                            <a href="{% url 'courses:add_modules' course.id %}" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left me-1"></i>Вернуться к редактированию модулей
+                            </a>
+                        </div>
+                    </form>
+                    {% else %}
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        У этого курса пока нет модулей для удаления.
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="{% url 'courses:add_modules' course.id %}" class="btn btn-primary">
+                            <i class="fas fa-arrow-left me-1"></i>Вернуться к добавлению модулей
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const selectAllCheckbox = document.getElementById('select-all');
+    const moduleCheckboxes = document.querySelectorAll('.module-checkbox');
+    const deleteButton = document.getElementById('delete-button');
+    
+    selectAllCheckbox.addEventListener('change', function() {
+        moduleCheckboxes.forEach(checkbox => {
+            checkbox.checked = this.checked;
+        });
+        updateDeleteButton();
+    });
+    
+    moduleCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateDeleteButton);
+    });
+    
+    function updateDeleteButton() {
+        const checkedCount = document.querySelectorAll('.module-checkbox:checked').length;
+        if (checkedCount > 0) {
+            deleteButton.disabled = false;
+            deleteButton.innerHTML = `<i class="fas fa-trash-alt me-2"></i>Удалить выбранные модули (${checkedCount})`;
+        } else {
+            deleteButton.disabled = true;
+            deleteButton.innerHTML = `<i class="fas fa-trash-alt me-2"></i>Удалить выбранные модули`;
+        }
+    }
+});
+</script>
+{% endblock %}
+{% endblock %}

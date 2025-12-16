@@ -106,6 +106,7 @@ def course_enroll(request, pk):
                 status='paid',
                 start_date=timezone.now().date(),
                 expected_end_date=course.end_date,
+                notes=form.cleaned_data.get('notes', '')
             )
             order.save()
             
@@ -203,6 +204,13 @@ def delete_course(request, order_id):
     if request.method == 'POST':
         try:
             course_name = order.course.name
+            
+            if order.status in ['in_progress', 'paid']:
+                order.course.current_students -= 1
+                if order.course.current_students < 0:
+                    order.course.current_students = 0
+                order.course.save()
+            
             order.delete()
             messages.success(request, f'Запись о курсе "{course_name}" успешно удалена.')
             return redirect('courses:my_courses')
@@ -223,6 +231,13 @@ def mark_module_complete(request, order_id, module_id):
     if request.method == 'POST':
         try:
             order = get_object_or_404(CourseOrder, id=order_id, student=request.user)
+            
+            if module_id == 0:
+                return JsonResponse({
+                    'success': False,
+                    'message': 'Неверный ID модуля'
+                })
+            
             module = get_object_or_404(CourseModule, id=module_id, course=order.course)
             
             if order.completed_modules.filter(id=module_id).exists():
@@ -282,6 +297,12 @@ def complete_course(request, order_id):
             
             order.rating = int(form.cleaned_data['rating'])
             order.feedback = form.cleaned_data.get('feedback', '')
+            
+            order.course.current_students -= 1
+            if order.course.current_students < 0:
+                order.course.current_students = 0
+            order.course.save()
+            
             order.save()
             
             messages.success(request, 'Курс успешно завершен! Спасибо за отзыв.')
@@ -355,7 +376,7 @@ def teacher_courses(request):
     total_income = sum(course.current_students * course.price for course in courses)
     
     context = {
-        'page_title': 'Мои курсы (Преподаватель)',
+        'page_title': 'Мои курсы',
         'courses': courses,
         'total_courses': total_courses,
         'total_students': total_students,
@@ -398,14 +419,30 @@ def add_modules(request, pk):
     if request.method == 'POST':
         formset = ModuleFormSet(request.POST, instance=course)
         if formset.is_valid():
-            formset.save()
-            messages.success(request, f'Модули для курса "{course.name}" успешно добавлены!')
-            return redirect('courses:teacher_courses')
+            try:
+                instances = formset.save(commit=False)
+                
+                for obj in formset.deleted_objects:
+                    obj.delete()
+                
+                for instance in instances:
+                    instance.course = course
+                    instance.save()
+                
+                formset.save_m2m()
+                
+                messages.success(request, f'Модули для курса "{course.name}" успешно сохранены!')
+                return redirect('courses:teacher_course_detail', pk=pk)
+                
+            except Exception as e:
+                messages.error(request, f'Ошибка при сохранении: {str(e)}')
+        else:
+            messages.error(request, 'Пожалуйста, исправьте ошибки в форме.')
     else:
         formset = ModuleFormSet(instance=course)
     
     context = {
-        'page_title': f'Добавление модулей: {course.name}',
+        'page_title': f'Редактирование модулей: {course.name}',
         'course': course,
         'formset': formset,
     }
@@ -445,15 +482,24 @@ def delete_course_teacher(request, pk):
         messages.error(request, 'У вас нет прав для удаления этого курса')
         return redirect('courses:teacher_courses')
     
-    if course.orders.filter(status__in=['in_progress', 'paid']).exists():
+    active_orders = course.orders.filter(status__in=['in_progress', 'paid']).exists()
+    if active_orders:
         messages.error(request, 'Нельзя удалить курс с активными студентами')
         return redirect('courses:teacher_courses')
     
     if request.method == 'POST':
-        course_name = course.name
-        course.delete()
-        messages.success(request, f'Курс "{course_name}" успешно удален!')
-        return redirect('courses:teacher_courses')
+        try:
+            course_name = course.name
+            
+            course.orders.all().delete()
+            
+            course.delete()
+            
+            messages.success(request, f'Курс "{course_name}" успешно удален!')
+            return redirect('courses:teacher_courses')
+        except Exception as e:
+            messages.error(request, f'Ошибка при удалении курса: {str(e)}')
+            return redirect('courses:teacher_courses')
     
     context = {
         'page_title': f'Удаление курса: {course.name}',
@@ -524,25 +570,3 @@ def teacher_course_detail(request, pk):
         'total_income': course.total_income,
     }
     return render(request, 'courses/teacher_course_detail.html', context)
-
-
-@login_required
-def teacher_courses(request):
-    if request.user.user_type != 'teacher':
-        messages.error(request, 'Эта страница доступна только преподавателям')
-        return redirect('users:profile')
-    
-    courses = Course.objects.filter(teacher=request.user).order_by('-start_date')
-    
-    total_courses = courses.count()
-    total_students = sum(course.current_students for course in courses)
-    total_income = sum(course.total_income for course in courses)
-    
-    context = {
-        'page_title': 'Мои курсы (Преподаватель)',
-        'courses': courses,
-        'total_courses': total_courses,
-        'total_students': total_students,
-        'total_income': total_income,
-    }
-    return render(request, 'courses/teacher_courses.html', context)

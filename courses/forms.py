@@ -121,8 +121,35 @@ class ModuleForm(forms.ModelForm):
         model = CourseModule
         fields = ['title', 'description', 'order', 'duration_hours']
         widgets = {
-            'description': forms.Textarea(attrs={'rows': 3}),
+            'title': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Название модуля'
+            }),
+            'description': forms.Textarea(attrs={
+                'rows': 2,
+                'class': 'form-control',
+                'placeholder': 'Описание модуля'
+            }),
+            'order': forms.NumberInput(attrs={
+                'class': 'form-control',
+                'min': '1'
+            }),
+            'duration_hours': forms.NumberInput(attrs={
+                'class': 'form-control',
+                'min': '1'
+            }),
         }
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            if 'class' not in field.widget.attrs:
+                if isinstance(field.widget, forms.TextInput):
+                    field.widget.attrs['class'] = 'form-control'
+                elif isinstance(field.widget, forms.Textarea):
+                    field.widget.attrs['class'] = 'form-control'
+                elif isinstance(field.widget, forms.NumberInput):
+                    field.widget.attrs['class'] = 'form-control'
 
 
 ModuleFormSet = forms.inlineformset_factory(
@@ -131,6 +158,6 @@ ModuleFormSet = forms.inlineformset_factory(
     form=ModuleForm,
     extra=1,
     can_delete=True,
-    min_num=1,
-    validate_min=True
+    min_num=0,
+    validate_min=False
 )

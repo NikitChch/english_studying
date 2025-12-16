@@ -24,12 +24,13 @@ class CustomUserCreationForm(UserCreationForm):
         required=False,
         widget=forms.Select(choices=[
             ('', 'Выберите группу'),
-            ('A1', 'A1 - Начальный'),
-            ('A2', 'A2 - Элементарный'),
-            ('B1', 'B1 - Средний'),
-            ('B2', 'B2 - Выше среднего'),
-            ('C1', 'C1 - Продвинутый'),
-        ], attrs={'class': 'form-control'})
+            ('A1', 'A1'),
+            ('A2', 'A2'),
+            ('B1', 'B1'),
+            ('B2', 'B2'),
+            ('C1', 'C1'),
+        ], attrs={'class': 'form-control'}),
+        label="Уровень английского"
     )
     
     level = forms.CharField(

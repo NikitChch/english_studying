@@ -20,6 +20,13 @@
         </div>
         <nav class="sidebar-nav">
         <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home:home' %}">
+                    <i class="fas fa-home me-2"></i>
+                    <span class="sidebar-text">Главная</span>
+                </a>
+            </li>
+
             {% if not user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link {% if request.path == '/users/login/' or request.path == '/login/' %}active{% endif %}" href="{% url 'users:login' %}">
@@ -56,12 +63,6 @@
                 </a>
             </li>
             
-            <li class="nav-item">
-                <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home:home' %}">
-                    <i class="fas fa-home me-2"></i>
-                    <span class="sidebar-text">Главная</span>
-                </a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link {% if 'grammar' in request.path %}active{% endif %}" href="{% url 'grammar:grammar' %}">
                     <i class="fas fa-book me-2"></i>
